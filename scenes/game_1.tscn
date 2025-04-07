@@ -1,11 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=14 format=3 uid="uid://bv35x38lntvhv"]
 
 [ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://assets/ingredients.png" id="1_ygnno"]
 [ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://assets/egg.png" id="2_8rbwk"]
+[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://scenes/FoodChoice.gd" id="2_lyscb"]
 [ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="3_lyscb"]
 [ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://assets/mushroom.png" id="4_luixn"]
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="5_fxokx"]
 [ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="6_6xfxu"]
+[ext_resource type="Script" uid="uid://baheuax16hp6s" path="res://scripts/game_1_button.gd" id="7_8rbwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
+size = Vector2(38, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rbwk"]
+size = Vector2(43, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luixn"]
+size = Vector2(43, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxokx"]
+size = Vector2(83, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfxu"]
+size = Vector2(41, 60)
 
 [node name="game1" type="Node2D"]
 
@@ -13,33 +30,73 @@
 texture = ExtResource("1_ygnno")
 centered = false
 
-[node name="Egg" type="Node2D" parent="."]
+[node name="Egg" type="Area2D" parent="."]
 position = Vector2(371, 293)
+script = ExtResource("2_lyscb")
 
 [node name="eggpic" type="Sprite2D" parent="Egg"]
 texture = ExtResource("2_8rbwk")
 
-[node name="Avovado" type="Node2D" parent="."]
-position = Vector2(289, 287)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
+shape = SubResource("RectangleShape2D_lyscb")
 
-[node name="Avdo" type="Sprite2D" parent="Avovado"]
+[node name="Avocado" type="Area2D" parent="."]
+position = Vector2(289, 287)
+script = ExtResource("2_lyscb")
+
+[node name="Avdo" type="Sprite2D" parent="Avocado"]
 texture = ExtResource("3_lyscb")
 
-[node name="Mushroom" type="Node2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avocado"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8rbwk")
+
+[node name="Mushroom" type="Area2D" parent="."]
 position = Vector2(368, 95)
+script = ExtResource("2_lyscb")
 
 [node name="mushpic" type="Sprite2D" parent="Mushroom"]
 texture = ExtResource("4_luixn")
 
-[node name="Onion" type="Node2D" parent="."]
-position = Vector2(337, 196)
-rotation = 0.358782
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom"]
+position = Vector2(1.5, -2.5)
+shape = SubResource("RectangleShape2D_luixn")
+
+[node name="Onion" type="Area2D" parent="."]
+position = Vector2(331, 186)
+script = ExtResource("2_lyscb")
 
 [node name="onionpic" type="Sprite2D" parent="Onion"]
 texture = ExtResource("5_fxokx")
 
-[node name="Cheese" type="Node2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onion"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_fxokx")
+
+[node name="Cheese" type="Area2D" parent="."]
 position = Vector2(289, 83)
+script = ExtResource("2_lyscb")
 
 [node name="cheesepic" type="Sprite2D" parent="Cheese"]
 texture = ExtResource("6_6xfxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_6xfxu")
+
+[node name="game1Button" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 26.0
+offset_top = 264.0
+offset_right = 178.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 46
+text = "COOK!"
+script = ExtResource("7_8rbwk")
+
+[connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
+[connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]
+[connection signal="input_event" from="Mushroom" to="Mushroom" method="_on_input_event"]
+[connection signal="input_event" from="Onion" to="Onion" method="_on_input_event"]
+[connection signal="input_event" from="Cheese" to="Cheese" method="_on_input_event"]
+[connection signal="pressed" from="game1Button" to="game1Button" method="_on_pressed"]

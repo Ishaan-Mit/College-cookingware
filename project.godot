@@ -15,11 +15,16 @@ run/main_scene="uid://csnkt8nsv062e"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/scale=2.0
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [rendering]
 

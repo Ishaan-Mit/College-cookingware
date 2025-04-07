@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://4htxuv2y8aa6"]
+
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://assets/stove.png" id="1_vttgw"]
+[ext_resource type="Script" uid="uid://nnoxwnrt56un" path="res://scripts/PotScenetext.gd" id="2_r11to"]
+
+[node name="game_2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vttgw")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 15.0
+offset_right = 84.0
+offset_bottom = 38.0
+text = "Cooking Ramen with: "
+script = ExtResource("2_r11to")
