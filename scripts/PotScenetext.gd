@@ -5,4 +5,4 @@ extends Label
 func _ready() -> void:
 	for i in Global.ingredients.size()-1:
 		self.text += Global.ingredients[i] + ", "
-	self.text += Global.ingredients[-1] 
+	self.text += "and "+ Global.ingredients[-1] 
