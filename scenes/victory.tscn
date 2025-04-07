@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://x3tfxksugfc5"]
+
+[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://scripts/victory.gd" id="1_hl81x"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="2_73dpb"]
+[ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://assets/ramen.png" id="3_g6lwx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hn41"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2k88"]
+font_size = 35
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_hl81x")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 334.0
+offset_top = 135.0
+offset_right = 520.0
+offset_bottom = 213.0
+theme_override_font_sizes/font_size = 51
+text = "Restart"
+script = ExtResource("2_73dpb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 650.0
+offset_bottom = 70.0
+text = "You cooked! (ramen) You still suck at cooking btw"
+label_settings = SubResource("LabelSettings_5hn41")
+
+[node name="Ramen" type="Sprite2D" parent="."]
+position = Vector2(161, 131)
+scale = Vector2(0.156516, 0.156516)
+texture = ExtResource("3_g6lwx")
+
+[node name="RatingLabel" type="Label" parent="."]
+offset_left = 303.0
+offset_top = 70.0
+offset_right = 573.0
+offset_bottom = 121.0
+text = "Your Rating: X"
+label_settings = SubResource("LabelSettings_n2k88")
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpcgpt34xfvdy"]
+
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="1_5bdnp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bdnp"]
+font_size = 48
+
+[node name="Defeat" type="Node2D"]
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 60.0
+offset_top = 163.0
+offset_right = 579.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 51
+text = "Restart"
+script = ExtResource("1_5bdnp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 51.0
+offset_right = 575.0
+offset_bottom = 121.0
+text = "You suck at cooking!"
+label_settings = SubResource("LabelSettings_5bdnp")
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
