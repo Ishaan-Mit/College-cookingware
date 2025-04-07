@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://4htxuv2y8aa6"]
 
-[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://scenes/minigame2Manager.gd" id="1_b4gt0"]
+[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://scripts/minigame2Manager.gd" id="1_b4gt0"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://assets/stove.png" id="1_vttgw"]
 [ext_resource type="Script" uid="uid://nnoxwnrt56un" path="res://scripts/PotScenetext.gd" id="2_r11to"]
 [ext_resource type="Script" uid="uid://c87ajx5r1ywyd" path="res://scripts/timerUI.gd" id="3_1oiof"]
