@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv35x38lntvhv"]
+
+[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://assets/ingredients.png" id="1_ygnno"]
+[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://assets/egg.png" id="2_8rbwk"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="3_lyscb"]
+[ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://assets/mushroom.png" id="4_luixn"]
+[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="5_fxokx"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="6_6xfxu"]
+
+[node name="game1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ygnno")
+centered = false
+
+[node name="Egg" type="Node2D" parent="."]
+position = Vector2(371, 293)
+
+[node name="eggpic" type="Sprite2D" parent="Egg"]
+texture = ExtResource("2_8rbwk")
+
+[node name="Avovado" type="Node2D" parent="."]
+position = Vector2(289, 287)
+
+[node name="Avdo" type="Sprite2D" parent="Avovado"]
+texture = ExtResource("3_lyscb")
+
+[node name="Mushroom" type="Node2D" parent="."]
+position = Vector2(368, 95)
+
+[node name="mushpic" type="Sprite2D" parent="Mushroom"]
+texture = ExtResource("4_luixn")
+
+[node name="Onion" type="Node2D" parent="."]
+position = Vector2(337, 196)
+rotation = 0.358782
+
+[node name="onionpic" type="Sprite2D" parent="Onion"]
+texture = ExtResource("5_fxokx")
+
+[node name="Cheese" type="Node2D" parent="."]
+position = Vector2(289, 83)
+
+[node name="cheesepic" type="Sprite2D" parent="Cheese"]
+texture = ExtResource("6_6xfxu")
