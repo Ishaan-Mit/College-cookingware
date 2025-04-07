@@ -1,18 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://4htxuv2y8aa6"]
+[gd_scene load_steps=13 format=3 uid="uid://4htxuv2y8aa6"]
 
+[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://scenes/minigame2Manager.gd" id="1_b4gt0"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://assets/stove.png" id="1_vttgw"]
 [ext_resource type="Script" uid="uid://nnoxwnrt56un" path="res://scripts/PotScenetext.gd" id="2_r11to"]
+[ext_resource type="Script" uid="uid://c87ajx5r1ywyd" path="res://scripts/timerUI.gd" id="3_1oiof"]
+[ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://assets/knife.png" id="4_3sm6k"]
+[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="5_c45dc"]
+[ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://assets/cuttingboard.png" id="5_wgl31"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="6_b4gt0"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="7_kmooo"]
+[ext_resource type="Script" uid="uid://v76xunkdarv1" path="res://scripts/knife.gd" id="9_glh1a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3sm6k"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgl31"]
+font_size = 48
+font_color = Color(0.972664, 0, 0.429456, 1)
 
 [node name="game_2" type="Node2D"]
+script = ExtResource("1_b4gt0")
+targetCuts = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vttgw")
 centered = false
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 44.0
 offset_top = 15.0
 offset_right = 84.0
 offset_bottom = 38.0
 text = "Cooking Ramen with: "
 script = ExtResource("2_r11to")
+
+[node name="TimerModule" type="Node2D" parent="."]
+position = Vector2(2, 145)
+script = ExtResource("3_1oiof")
+
+[node name="Timer" type="Timer" parent="TimerModule"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="TimerModule"]
+offset_left = 481.0
+offset_top = 11.0
+offset_right = 621.0
+offset_bottom = 67.0
+text = "TIMER"
+label_settings = SubResource("LabelSettings_3sm6k")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 272.0
+offset_right = 519.0
+offset_bottom = 342.0
+text = "CHOP!"
+label_settings = SubResource("LabelSettings_wgl31")
+
+[node name="Cuttingboard" type="Sprite2D" parent="."]
+position = Vector2(363, 306)
+scale = Vector2(0.53924, 0.481132)
+texture = ExtResource("5_wgl31")
+
+[node name="Greenonion" type="Sprite2D" parent="."]
+position = Vector2(268, 275)
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("5_c45dc")
+
+[node name="Cheese" type="Sprite2D" parent="."]
+position = Vector2(330, 284)
+rotation = 1.66249
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("6_b4gt0")
+
+[node name="Avdo" type="Sprite2D" parent="."]
+position = Vector2(399, 281)
+scale = Vector2(1.68, 1.68)
+texture = ExtResource("7_kmooo")
+
+[node name="Knife" type="Sprite2D" parent="."]
+position = Vector2(342, 168)
+scale = Vector2(0.272727, 0.272727)
+texture = ExtResource("4_3sm6k")
+script = ExtResource("9_glh1a")

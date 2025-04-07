@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=16 format=3 uid="uid://bv35x38lntvhv"]
 
 [ext_resource type="Script" uid="uid://1762ke7e66hf" path="res://scripts/minigame1Manager.gd" id="1_fxokx"]
 [ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://assets/ingredients.png" id="1_ygnno"]
@@ -25,13 +25,6 @@ size = Vector2(83, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfxu"]
 size = Vector2(41, 60)
-
-[sub_resource type="LabelSettings" id="LabelSettings_fxokx"]
-font_size = 38
-
-[sub_resource type="LabelSettings" id="LabelSettings_6xfxu"]
-font_size = 48
-font_color = Color(0.972664, 0, 0.429456, 1)
 
 [node name="game1" type="Node2D"]
 script = ExtResource("1_fxokx")
@@ -95,14 +88,13 @@ position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_6xfxu")
 
 [node name="game1Button" type="Button" parent="."]
-visible = false
 modulate = Color(1, 0, 0, 1)
-offset_left = 11.0
-offset_top = 269.0
-offset_right = 211.0
-offset_bottom = 341.0
+offset_left = 26.0
+offset_top = 264.0
+offset_right = 178.0
+offset_bottom = 336.0
 theme_override_font_sizes/font_size = 46
-text = "GATHER!"
+text = "COOK!"
 script = ExtResource("7_8rbwk")
 
 [node name="TimerModule" type="Node2D" parent="."]
@@ -118,16 +110,6 @@ offset_left = 481.0
 offset_top = 11.0
 offset_right = 621.0
 offset_bottom = 67.0
-text = "TIMER"
-label_settings = SubResource("LabelSettings_fxokx")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 11.0
-offset_top = 272.0
-offset_right = 519.0
-offset_bottom = 342.0
-text = "GATHER!"
-label_settings = SubResource("LabelSettings_6xfxu")
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
 [connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]
