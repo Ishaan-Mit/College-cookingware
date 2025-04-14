@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://4htxuv2y8aa6"]
 
-[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/minigame2Manager.gd" id="1_rn4r0"]
+[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_e0yil"]
 [ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://Assets/cuttingboard.png" id="5_qtdsr"]
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="6_bn8ff"]
@@ -14,7 +14,7 @@
 font_size = 48
 font_color = Color(0.972664, 0, 0.429456, 1)
 
-[node name="game_2" type="Node2D"]
+[node name="ramen_chop" type="Node2D"]
 script = ExtResource("1_rn4r0")
 targetCuts = 20
 
@@ -58,7 +58,7 @@ texture = ExtResource("9_fq2bp")
 script = ExtResource("10_22gv4")
 
 [node name="Timer" parent="." instance=ExtResource("9_m7yyf")]
-time = 2
+time = 3
 
 [connection signal="cuts_done" from="Knife" to="." method="_on_knife_cuts_done"]
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk3bvmuwsxhmn"]
+
+[ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://Scripts/Ramen/ramen_drop.gd" id="1_3042a"]
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_thtad"]
+[ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="3_kxtix"]
+[ext_resource type="Texture2D" uid="uid://cerryxku7kl60" path="res://Assets/uncookedramen.png" id="4_dmvql"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_51e7x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3042a"]
+font_size = 48
+font_color = Color(0.972664, 0, 0.429456, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3042a"]
+size = Vector2(17, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thtad"]
+size = Vector2(44, 61)
+
+[node name="ramen_drop" type="Node2D"]
+script = ExtResource("1_3042a")
+
+[node name="Stove2" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+scale = Vector2(3.24, 1)
+texture = ExtResource("2_thtad")
+centered = false
+hframes = 3
+
+[node name="Stove" type="Sprite2D" parent="."]
+position = Vector2(431, 0)
+texture = ExtResource("2_thtad")
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Timer" parent="." instance=ExtResource("5_51e7x")]
+time = 5
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 467.0
+offset_top = 161.0
+offset_right = 620.0
+offset_bottom = 231.0
+text = "DROP!"
+label_settings = SubResource("LabelSettings_3042a")
+
+[node name="Pan" type="Area2D" parent="."]
+
+[node name="Pan" type="Sprite2D" parent="Pan"]
+position = Vector2(327, 231)
+texture = ExtResource("3_kxtix")
+hframes = 5
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan"]
+position = Vector2(290.5, 228.5)
+shape = SubResource("RectangleShape2D_3042a")
+
+[node name="Ramen" type="Area2D" parent="."]
+position = Vector2(459, 114)
+metadata/_edit_group_ = true
+
+[node name="Uncookedramen" type="Sprite2D" parent="Ramen"]
+texture = ExtResource("4_dmvql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
+shape = SubResource("RectangleShape2D_thtad")
+
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
+[connection signal="area_entered" from="Pan" to="." method="_on_pan_area_entered"]
