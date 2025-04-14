@@ -10,15 +10,14 @@ config_version=5
 
 [application]
 
-config/name="College cooking Game"
-run/main_scene="uid://csnkt8nsv062e"
+config/name="College Cooking Game"
+run/main_scene="uid://bd6j7i83eohdn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
-GameManager="*res://scripts/gameManager.gd"
+SceneManager="*res://Scenes/scene_manager.tscn"
 
 [display]
 

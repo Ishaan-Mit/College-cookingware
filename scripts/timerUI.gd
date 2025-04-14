@@ -12,10 +12,10 @@ func _ready():
 	label.text = str(snapped(timer.time_left, 0.01))
 	TimerModule.instance = self
 
-func _process(delta):
+func _process(_delta):
 	label.text = str(snapped(timer.time_left, 0.01))
 	if(timer.time_left <= 0):
-		GameManager.goToDefeat()
+		pass
 
 func getRemainingTime():
 	return snapped(timer.time_left, 0.01)

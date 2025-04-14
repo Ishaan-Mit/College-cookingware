@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://bv35x38lntvhv"]
+
+[ext_resource type="Script" uid="uid://1762ke7e66hf" path="res://scripts/minigame1Manager.gd" id="1_3c1cr"]
+[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://assets/ingredients.png" id="2_p4duv"]
+[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://scripts/FoodChoice.gd" id="3_e0c6k"]
+[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://assets/egg.png" id="4_kee1m"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="5_hsbpb"]
+[ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://assets/mushroom.png" id="6_nb2er"]
+[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="7_hqpee"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="8_0l3wy"]
+[ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://assets/hasha.png" id="9_p4duv"]
+[ext_resource type="Script" uid="uid://baheuax16hp6s" path="res://scripts/game_1_button.gd" id="9_upmlq"]
+[ext_resource type="Script" uid="uid://c87ajx5r1ywyd" path="res://scripts/timerUI.gd" id="10_4j825"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
+size = Vector2(38, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rbwk"]
+size = Vector2(43, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luixn"]
+size = Vector2(43, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxokx"]
+size = Vector2(83, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfxu"]
+size = Vector2(41, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0c6k"]
+size = Vector2(39, 142)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxokx"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_6xfxu"]
+font_size = 48
+font_color = Color(0.972664, 0, 0.429456, 1)
+
+[node name="game1" type="Node2D"]
+script = ExtResource("1_3c1cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p4duv")
+centered = false
+
+[node name="Egg" type="Area2D" parent="."]
+position = Vector2(371, 293)
+script = ExtResource("3_e0c6k")
+
+[node name="eggpic" type="Sprite2D" parent="Egg"]
+texture = ExtResource("4_kee1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
+shape = SubResource("RectangleShape2D_lyscb")
+
+[node name="Avocado" type="Area2D" parent="."]
+position = Vector2(289, 287)
+script = ExtResource("3_e0c6k")
+
+[node name="Avdo" type="Sprite2D" parent="Avocado"]
+texture = ExtResource("5_hsbpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avocado"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8rbwk")
+
+[node name="Mushroom" type="Area2D" parent="."]
+position = Vector2(368, 95)
+script = ExtResource("3_e0c6k")
+
+[node name="mushpic" type="Sprite2D" parent="Mushroom"]
+texture = ExtResource("6_nb2er")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom"]
+position = Vector2(1.5, -2.5)
+shape = SubResource("RectangleShape2D_luixn")
+
+[node name="Onion" type="Area2D" parent="."]
+position = Vector2(331, 186)
+script = ExtResource("3_e0c6k")
+
+[node name="onionpic" type="Sprite2D" parent="Onion"]
+texture = ExtResource("7_hqpee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Onion"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_fxokx")
+
+[node name="Cheese" type="Area2D" parent="."]
+position = Vector2(289, 83)
+script = ExtResource("3_e0c6k")
+
+[node name="cheesepic" type="Sprite2D" parent="Cheese"]
+texture = ExtResource("8_0l3wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_6xfxu")
+
+[node name="Hot Sause" type="Area2D" parent="."]
+position = Vector2(289, 83)
+script = ExtResource("3_e0c6k")
+
+[node name="saucepic" type="Sprite2D" parent="Hot Sause"]
+position = Vector2(237, 152)
+texture = ExtResource("9_p4duv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hot Sause"]
+position = Vector2(238.5, 151)
+shape = SubResource("RectangleShape2D_e0c6k")
+
+[node name="game1Button" type="Button" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_left = 11.0
+offset_top = 269.0
+offset_right = 211.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 46
+text = "GATHER!"
+script = ExtResource("9_upmlq")
+
+[node name="TimerModule" type="Node2D" parent="."]
+script = ExtResource("10_4j825")
+
+[node name="Timer" type="Timer" parent="TimerModule"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="TimerModule"]
+offset_left = 481.0
+offset_top = 11.0
+offset_right = 621.0
+offset_bottom = 67.0
+text = "TIMER"
+label_settings = SubResource("LabelSettings_fxokx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 272.0
+offset_right = 519.0
+offset_bottom = 342.0
+text = "GATHER!"
+label_settings = SubResource("LabelSettings_6xfxu")
+
+[connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
+[connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]
+[connection signal="input_event" from="Mushroom" to="Mushroom" method="_on_input_event"]
+[connection signal="input_event" from="Onion" to="Onion" method="_on_input_event"]
+[connection signal="input_event" from="Cheese" to="Cheese" method="_on_input_event"]
+[connection signal="input_event" from="Hot Sause" to="Hot Sause" method="_on_input_event"]
+[connection signal="pressed" from="game1Button" to="game1Button" method="_on_pressed"]

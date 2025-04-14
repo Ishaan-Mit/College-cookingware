@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://o8r1kov8l4n4"]
+
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="1_vgqss"]
+[ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="2_1ue64"]
+
+[node name="ramen_fill" type="Node2D"]
+
+[node name="Stove" type="Sprite2D" parent="."]
+scale = Vector2(3, 1)
+texture = ExtResource("1_vgqss")
+centered = false
+hframes = 3
+
+[node name="Pan" type="Sprite2D" parent="."]
+position = Vector2(458, 241)
+scale = Vector2(1.54523, 1.54523)
+texture = ExtResource("2_1ue64")
+hframes = 5

@@ -4,9 +4,9 @@ var remainingTime = 0
 
 #minigames to load to iterate through, load into this when you load a level?
 var scenes = [
-	preload("res://scenes/game_1.tscn"),
-	preload("res://scenes/game_2.tscn"),
-	preload("res://scenes/game_3.tscn")
+	preload("res://scenes/Ramen/ramen_gather.tscn"),
+	preload("res://scenes/Ramen/ramen_chop.tscn"),
+	preload("res://scenes/Ramen/game_3.tscn")
 ]
 
 # tracks current scene index as you iterate

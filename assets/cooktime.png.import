@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdmxyrawmvla4"
-path="res://.godot/imported/cooktime.png-ebce23ba6d05601ef66a5fc89bc0256b.ctex"
+path="res://.godot/imported/cooktime.png-69b0ef9ad86674232271904591ba648b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cooktime.png"
-dest_files=["res://.godot/imported/cooktime.png-ebce23ba6d05601ef66a5fc89bc0256b.ctex"]
+source_file="res://Assets/cooktime.png"
+dest_files=["res://.godot/imported/cooktime.png-69b0ef9ad86674232271904591ba648b.ctex"]
 
 [params]
 

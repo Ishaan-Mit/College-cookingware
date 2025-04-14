@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://gk1lglu6jxso"]
+
+[ext_resource type="Script" uid="uid://dwd43w4mdq5n8" path="res://Scripts/timer.gd" id="1_ycw00"]
+[ext_resource type="Texture2D" uid="uid://ba0tx6hixgfo0" path="res://Assets/firecolumn.png" id="2_4hjkw"]
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ycw00")
+
+[node name="Progress" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 272.0
+scale = Vector2(1.32309, 1.32309)
+value = 100.0
+fill_mode = 3
+texture_progress = ExtResource("2_4hjkw")
