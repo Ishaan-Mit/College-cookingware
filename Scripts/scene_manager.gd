@@ -4,7 +4,9 @@ extends CanvasLayer
 
 var ingredients = []
 
-func change_scene_success(target: String):
+
+
+func change_scene_success(target: String, instruction: String = ""):
 	anim.play("scene_fade")
 	await anim.animation_finished
 	get_tree().change_scene_to_file(target)

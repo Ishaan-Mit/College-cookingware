@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=21 format=3 uid="uid://bv35x38lntvhv"]
 
 [ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
 [ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://Assets/ingredients.png" id="2_n1jgn"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="7_3sht7"]
 [ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="8_msmal"]
 [ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://Assets/hasha.png" id="9_ho42a"]
+[ext_resource type="Texture2D" uid="uid://cxxo2lv2hj8i5" path="res://Assets/guysilouette.png" id="10_n1jgn"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="10_uci4v"]
+[ext_resource type="Texture2D" uid="uid://eskcad5i5gye" path="res://Assets/ladysilouette.png" id="11_b5m4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
 size = Vector2(38, 40)
@@ -24,7 +26,7 @@ size = Vector2(43, 41)
 size = Vector2(83, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfxu"]
-size = Vector2(41, 60)
+size = Vector2(42, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0c6k"]
 size = Vector2(39, 142)
@@ -100,7 +102,6 @@ script = ExtResource("3_b5m4b")
 texture = ExtResource("8_msmal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
-position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_6xfxu")
 
 [node name="Hot Sause" type="Area2D" parent="."]
@@ -133,6 +134,14 @@ offset_right = 636.0
 offset_bottom = 83.0
 text = "GATHER!"
 label_settings = SubResource("LabelSettings_6xfxu")
+
+[node name="Guysilouette" type="Sprite2D" parent="."]
+position = Vector2(565, 185)
+texture = ExtResource("10_n1jgn")
+
+[node name="Ladysilouette" type="Sprite2D" parent="."]
+position = Vector2(192, 285)
+texture = ExtResource("11_b5m4b")
 
 [node name="Timer" parent="." instance=ExtResource("10_uci4v")]
 time = 3

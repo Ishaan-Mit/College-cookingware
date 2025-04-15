@@ -13,8 +13,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		position = cutting_pos
 		cuts += 1
-		print(cuts)
-		print(cuts_needed)
+		
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		position = init_pos
 	if cuts >= cuts_needed:

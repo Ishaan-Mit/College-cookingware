@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsyx58ocbeh1y"]
+
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="1_pan18"]
+[ext_resource type="Script" uid="uid://d3x7qo1nrs1ua" path="res://Scripts/Ramen/ramen_egg.gd" id="1_qsfvl"]
+[ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="2_qsfvl"]
+
+[node name="ramen_egg" type="Node2D"]
+script = ExtResource("1_qsfvl")
+
+[node name="Stove" type="Sprite2D" parent="."]
+position = Vector2(0, -55)
+scale = Vector2(1, 1.16)
+texture = ExtResource("1_pan18")
+centered = false
+
+[node name="Pan" type="Sprite2D" parent="."]
+position = Vector2(413, 299)
+texture = ExtResource("2_qsfvl")
+hframes = 5

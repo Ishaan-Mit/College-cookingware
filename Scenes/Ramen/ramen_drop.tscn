@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://Scripts/Ramen/ramen_drop.gd" id="1_3042a"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_thtad"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="3_kxtix"]
-[ext_resource type="Texture2D" uid="uid://cerryxku7kl60" path="res://Assets/uncookedramen.png" id="4_dmvql"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_51e7x"]
+[ext_resource type="Texture2D" uid="uid://cp7adahqjugwc" path="res://Assets/uncookedramen2.png" id="5_3042a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3042a"]
 font_size = 48
@@ -57,11 +57,11 @@ position = Vector2(290.5, 228.5)
 shape = SubResource("RectangleShape2D_3042a")
 
 [node name="Ramen" type="Area2D" parent="."]
-position = Vector2(459, 114)
+position = Vector2(459, 100)
 metadata/_edit_group_ = true
 
 [node name="Uncookedramen" type="Sprite2D" parent="Ramen"]
-texture = ExtResource("4_dmvql")
+texture = ExtResource("5_3042a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
 shape = SubResource("RectangleShape2D_thtad")

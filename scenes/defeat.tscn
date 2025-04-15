@@ -17,11 +17,11 @@ text = "Restart"
 script = ExtResource("1_5bdnp")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 67.0
-offset_top = 51.0
-offset_right = 575.0
-offset_bottom = 121.0
-text = "You suck at cooking!"
+offset_left = 58.0
+offset_top = 53.0
+offset_right = 594.0
+offset_bottom = 123.0
+text = "You failed at cooking! :("
 label_settings = SubResource("LabelSettings_5bdnp")
 
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
