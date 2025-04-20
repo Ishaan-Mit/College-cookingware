@@ -11,7 +11,7 @@ font_size = 48
 font_color = Color(0.972664, 0, 0.429456, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3042a"]
-size = Vector2(17, 77)
+size = Vector2(17, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thtad"]
 size = Vector2(44, 61)
@@ -20,14 +20,13 @@ size = Vector2(44, 61)
 script = ExtResource("1_3042a")
 
 [node name="Stove2" type="Sprite2D" parent="."]
-position = Vector2(-16, 0)
-scale = Vector2(3.24, 1)
+scale = Vector2(3, 1)
 texture = ExtResource("2_thtad")
 centered = false
 hframes = 3
 
 [node name="Stove" type="Sprite2D" parent="."]
-position = Vector2(431, 0)
+position = Vector2(91, 0)
 texture = ExtResource("2_thtad")
 centered = false
 hframes = 3
@@ -37,10 +36,10 @@ frame = 2
 time = 5
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 467.0
-offset_top = 161.0
-offset_right = 620.0
-offset_bottom = 231.0
+offset_left = 479.0
+offset_top = 17.0
+offset_right = 632.0
+offset_bottom = 87.0
 text = "DROP!"
 label_settings = SubResource("LabelSettings_3042a")
 
@@ -57,7 +56,7 @@ position = Vector2(290.5, 228.5)
 shape = SubResource("RectangleShape2D_3042a")
 
 [node name="Ramen" type="Area2D" parent="."]
-position = Vector2(459, 100)
+position = Vector2(321, -43)
 metadata/_edit_group_ = true
 
 [node name="Uncookedramen" type="Sprite2D" parent="Ramen"]
@@ -65,6 +64,12 @@ texture = ExtResource("5_3042a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
 shape = SubResource("RectangleShape2D_thtad")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(477, 98)
+color = Color(0.878431, 0, 0, 1)
+polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
+uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="area_entered" from="Pan" to="." method="_on_pan_area_entered"]

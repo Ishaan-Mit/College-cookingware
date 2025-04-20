@@ -32,4 +32,5 @@ text = "Fill"
 [node name="Timer" parent="." instance=ExtResource("4_ivndb")]
 time = 3
 
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

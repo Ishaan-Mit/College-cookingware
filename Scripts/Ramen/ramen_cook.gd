@@ -10,5 +10,5 @@ func _on_timer_time_done() -> void:
 
 func _on_knife_cuts_done() -> void:
 	if not game_done:
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_fill.tscn")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_egg.tscn", "boil!")
 		game_done = true

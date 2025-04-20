@@ -1,19 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsyx58ocbeh1y"]
+[gd_scene load_steps=6 format=3 uid="uid://dsyx58ocbeh1y"]
 
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="1_pan18"]
 [ext_resource type="Script" uid="uid://d3x7qo1nrs1ua" path="res://Scripts/Ramen/ramen_egg.gd" id="1_qsfvl"]
+[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://Assets/ingredients.png" id="2_mmsfj"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="2_qsfvl"]
+[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="5_ufjy0"]
 
 [node name="ramen_egg" type="Node2D"]
 script = ExtResource("1_qsfvl")
 
+[node name="Ingredients2" type="Sprite2D" parent="."]
+scale = Vector2(3.00939, 1)
+texture = ExtResource("2_mmsfj")
+centered = false
+hframes = 3
+frame = 2
+metadata/_edit_lock_ = true
+
+[node name="Ingredients" type="Sprite2D" parent="."]
+texture = ExtResource("2_mmsfj")
+centered = false
+hframes = 3
+metadata/_edit_lock_ = true
+
 [node name="Stove" type="Sprite2D" parent="."]
-position = Vector2(0, -55)
-scale = Vector2(1, 1.16)
+position = Vector2(210, 0)
 texture = ExtResource("1_pan18")
 centered = false
+hframes = 3
+frame = 1
+metadata/_edit_lock_ = true
 
 [node name="Pan" type="Sprite2D" parent="."]
-position = Vector2(413, 299)
+position = Vector2(401, 247)
 texture = ExtResource("2_qsfvl")
 hframes = 5
+frame = 3
+
+[node name="Egg" type="Sprite2D" parent="Pan"]
+position = Vector2(-17, 9)
+texture = ExtResource("5_ufjy0")
+
+[node name="Egg2" type="Sprite2D" parent="Pan"]
+position = Vector2(-50, 12)
+texture = ExtResource("5_ufjy0")
