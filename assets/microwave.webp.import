@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://docyndhfhfvu7"
-path="res://.godot/imported/microwave.webp-cbfef5a9e9e0e9634506c42415362dc0.ctex"
+path="res://.godot/imported/microwave.webp-b9a6ceaf8825b61b2fa9974770f387ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/microwave.webp"
-dest_files=["res://.godot/imported/microwave.webp-cbfef5a9e9e0e9634506c42415362dc0.ctex"]
+source_file="res://assets/microwave.webp"
+dest_files=["res://.godot/imported/microwave.webp-b9a6ceaf8825b61b2fa9974770f387ae.ctex"]
 
 [params]
 

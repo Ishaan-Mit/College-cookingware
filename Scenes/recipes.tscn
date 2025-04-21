@@ -1,6 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://cghs70bi35bvu"]
+[gd_scene load_steps=26 format=3 uid="uid://cghs70bi35bvu"]
 
-[ext_resource type="Script" uid="uid://ivrhw2vh0qdo" path="res://Scripts/recipes.gd" id="1_j2mln"]
+[ext_resource type="Script" uid="uid://ivrhw2vh0qdo" path="res://scripts/recipes.gd" id="1_j2mln"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="2_pmhnq"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_f3m8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmhnq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3m8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vb10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mayhs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgars"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r46lp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y2p2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5pa3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jvdv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2xve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4jvq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hfsu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7wu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6j6u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqa57"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8guh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi11y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qap5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4eph4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi7fv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6orx0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sek6"]
 
 [node name="Recipes" type="Control"]
 layout_mode = 3
@@ -11,6 +57,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j2mln")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(336, 202)
+texture = ExtResource("2_pmhnq")
+
 [node name="Ramen" type="Button" parent="."]
 texture_filter = 2
 layout_mode = 0
@@ -18,7 +68,21 @@ offset_left = 37.0
 offset_top = 20.0
 offset_right = 366.0
 offset_bottom = 98.0
-theme_override_font_sizes/font_size = 51
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_f3m8k")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmhnq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_f3m8k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4vb10")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mayhs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fgars")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_r46lp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2y2p2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q5pa3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6jvdv")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k2xve")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o4jvq")
 text = "Make Ramen"
 
 [node name="Home" type="Button" parent="."]
@@ -29,7 +93,20 @@ offset_left = 43.0
 offset_top = 147.0
 offset_right = 518.0
 offset_bottom = 225.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_f3m8k")
 theme_override_font_sizes/font_size = 51
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4hfsu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_i7wu8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h6j6u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqa57")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h8guh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wi11y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qap5r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4eph4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qi7fv")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6orx0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5sek6")
 text = "Don't Make Ramen"
 
 [connection signal="pressed" from="Ramen" to="." method="_on_ramen_pressed"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba0tx6hixgfo0"
-path="res://.godot/imported/firecolumn.png-f4c79ec201c363d812c320c7cb6e203b.ctex"
+path="res://.godot/imported/firecolumn.png-18fa9d07728485513f3a34f4c8140d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/firecolumn.png"
-dest_files=["res://.godot/imported/firecolumn.png-f4c79ec201c363d812c320c7cb6e203b.ctex"]
+source_file="res://assets/firecolumn.png"
+dest_files=["res://.godot/imported/firecolumn.png-18fa9d07728485513f3a34f4c8140d3d.ctex"]
 
 [params]
 

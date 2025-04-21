@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d17tl7jfpknlw"
-path="res://.godot/imported/greenonion.png-391480543355b8007415c80c87e788e1.ctex"
+path="res://.godot/imported/greenonion.png-0d1845900c1e2b6dc857fa1ab9a2aba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/greenonion.png"
-dest_files=["res://.godot/imported/greenonion.png-391480543355b8007415c80c87e788e1.ctex"]
+source_file="res://assets/greenonion.png"
+dest_files=["res://.godot/imported/greenonion.png-0d1845900c1e2b6dc857fa1ab9a2aba7.ctex"]
 
 [params]
 

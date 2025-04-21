@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6ddaodslqdrk"
-path="res://.godot/imported/avdo.png-a27ef205829753c532ff910fae58a719.ctex"
+path="res://.godot/imported/avdo.png-847f944f11156b3100419cfe3f48d2f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/avdo.png"
-dest_files=["res://.godot/imported/avdo.png-a27ef205829753c532ff910fae58a719.ctex"]
+source_file="res://assets/avdo.png"
+dest_files=["res://.godot/imported/avdo.png-847f944f11156b3100419cfe3f48d2f7.ctex"]
 
 [params]
 

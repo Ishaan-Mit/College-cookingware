@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd6j7i83eohdn"]
+[gd_scene load_steps=16 format=3 uid="uid://bd6j7i83eohdn"]
 
-[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://Scripts/Start.gd" id="1_3bxa3"]
+[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://scripts/Start.gd" id="1_3bxa3"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="2_5ogh5"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="2_r48yj"]
+
+[sub_resource type="FontVariation" id="FontVariation_5ogh5"]
+base_font = ExtResource("2_r48yj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r48yj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ogh5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb6bl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk01k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3wvq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg4io"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iceld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pwkw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bn4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmsyr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knwj7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,13 +38,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3bxa3")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(336, 202)
+texture = ExtResource("2_5ogh5")
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 141.0
 offset_top = 85.0
 offset_right = 493.0
 offset_bottom = 273.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = SubResource("FontVariation_5ogh5")
 theme_override_font_sizes/font_size = 131
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r48yj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5ogh5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lb6bl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rk01k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_o3wvq")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pg4io")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iceld")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7pwkw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5bn4p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qmsyr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_knwj7")
 text = "Start!"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

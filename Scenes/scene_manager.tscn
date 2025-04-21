@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1ejm3by8gm3f"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ejm3by8gm3f"]
 
-[ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://Scripts/scene_manager.gd" id="1_mk1ro"]
+[ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://scripts/scene_manager.gd" id="1_mk1ro"]
+[ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="2_8j8h1"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_py5r8"]
 
 [sub_resource type="Animation" id="Animation_r3jrp"]
 length = 0.001
@@ -60,6 +63,11 @@ _data = {
 [node name="Scene Manager" type="CanvasLayer"]
 script = ExtResource("1_mk1ro")
 
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(336, 202)
+texture = ExtResource("2_8j8h1")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,8 +88,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_py5r8")
 theme_override_font_sizes/font_size = 96
 text = "LABEL"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8bihv")
+volume_db = -7.0
+autoplay = true
+max_polyphony = 2
+
+[node name="FXPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="FXPlayer2" type="AudioStreamPlayer" parent="."]

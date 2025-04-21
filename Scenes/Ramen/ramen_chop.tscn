@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://4htxuv2y8aa6"]
 
-[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
-[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_e0yil"]
-[ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://Assets/cuttingboard.png" id="5_qtdsr"]
-[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="6_bn8ff"]
-[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="7_3j1g7"]
-[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="8_4k4ks"]
-[ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://Assets/knife.png" id="9_fq2bp"]
+[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://assets/stove.png" id="2_e0yil"]
+[ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://assets/cuttingboard.png" id="5_qtdsr"]
+[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="6_bn8ff"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="7_3j1g7"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="8_4k4ks"]
+[ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://assets/knife.png" id="9_fq2bp"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="9_m7yyf"]
-[ext_resource type="Script" uid="uid://v76xunkdarv1" path="res://Scripts/Ramen/knife.gd" id="10_22gv4"]
+[ext_resource type="Script" uid="uid://v76xunkdarv1" path="res://scripts/Ramen/knife.gd" id="10_22gv4"]
 
 [node name="ramen_chop" type="Node2D"]
 script = ExtResource("1_rn4r0")

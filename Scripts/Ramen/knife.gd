@@ -11,6 +11,7 @@ func _ready():
 func _input(event):
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		SceneManager.play_sfx("res://assets/audio/chop.wav")
 		position = cutting_pos
 		cuts += 1
 		

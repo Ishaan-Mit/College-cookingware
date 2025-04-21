@@ -11,6 +11,7 @@ func _ready() -> void:
 	tween = get_tree().create_tween().set_loops()
 	tween.tween_property(polygon, "position:x", -300, randf_range(0.7, 1.5)).as_relative()
 	tween.tween_property(polygon, "position:x", 300, randf_range(0.7, 1.5)).as_relative()
+	SceneManager.play_sfx("res://assets/audio/boiling.wav")
 
 
 func _input(event: InputEvent) -> void:
@@ -21,7 +22,9 @@ func _input(event: InputEvent) -> void:
 
 func _on_timer_time_done() -> void:
 	SceneManager.change_scene_defeat()
+	SceneManager.stop_sfx()
 
 func _on_pan_area_entered(area: Area2D) -> void:
 	if area == ramen:
+		SceneManager.play_sfx2("res://assets/audio/splash.wav")
 		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")

@@ -1,27 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpcgpt34xfvdy"]
+[gd_scene load_steps=17 format=3 uid="uid://cpcgpt34xfvdy"]
 
-[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://Scripts/defeatButton.gd" id="1_5bdnp"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="1_5bdnp"]
+[ext_resource type="VideoStream" uid="uid://b23vmnos07t3l" path="res://assets/video/fail_screen.ogv" id="1_gahff"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="1_ms7ji"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="2_gahff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ms7ji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gahff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g201e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcqoj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bjg3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxdad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5y8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dawsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54cg8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ioro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6uy4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5bdnp"]
 font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
 
 [node name="Defeat" type="Node2D"]
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.335, 0.335)
+stream = ExtResource("1_gahff")
+autoplay = true
+loop = true
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(336, 202)
+texture = ExtResource("1_ms7ji")
+
 [node name="Button1" type="Button" parent="."]
-offset_left = 60.0
-offset_top = 163.0
-offset_right = 579.0
-offset_bottom = 290.0
-theme_override_font_sizes/font_size = 51
-text = "Restart"
+offset_left = 324.0
+offset_top = 272.0
+offset_right = 843.0
+offset_bottom = 399.0
+scale = Vector2(0.679999, 0.679999)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_gahff")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ms7ji")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gahff")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g201e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dcqoj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6bjg3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wxdad")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n5y8p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_dawsw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_54cg8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6ioro")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w6uy4")
+text = "Restart!"
 script = ExtResource("1_5bdnp")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 58.0
-offset_top = 53.0
-offset_right = 594.0
-offset_bottom = 123.0
-text = "You failed at cooking! :("
+offset_left = 355.0
+offset_top = 234.0
+offset_right = 926.0
+offset_bottom = 304.0
+scale = Vector2(0.76, 0.76)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_gahff")
+text = "You're cooked..."
 label_settings = SubResource("LabelSettings_5bdnp")
 
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
