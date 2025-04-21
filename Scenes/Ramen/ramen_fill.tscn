@@ -19,7 +19,6 @@ position = Vector2(458, 241)
 scale = Vector2(1.54523, 1.54523)
 texture = ExtResource("2_1ue64")
 hframes = 5
-frame = 3
 
 [node name="Button" type="Button" parent="."]
 offset_left = 148.0

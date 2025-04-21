@@ -1,14 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk3bvmuwsxhmn"]
+[gd_scene load_steps=8 format=3 uid="uid://dk3bvmuwsxhmn"]
 
 [ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://Scripts/Ramen/ramen_drop.gd" id="1_3042a"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_thtad"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="3_kxtix"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_51e7x"]
 [ext_resource type="Texture2D" uid="uid://cp7adahqjugwc" path="res://Assets/uncookedramen2.png" id="5_3042a"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3042a"]
-font_size = 48
-font_color = Color(0.972664, 0, 0.429456, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3042a"]
 size = Vector2(17, 23)
@@ -34,14 +30,6 @@ frame = 2
 
 [node name="Timer" parent="." instance=ExtResource("5_51e7x")]
 time = 5
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 479.0
-offset_top = 17.0
-offset_right = 632.0
-offset_bottom = 87.0
-text = "DROP!"
-label_settings = SubResource("LabelSettings_3042a")
 
 [node name="Pan" type="Area2D" parent="."]
 

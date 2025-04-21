@@ -10,7 +10,7 @@ func _ready() -> void:
 	instruction.scale = Vector2(0,0)
 
 func change_scene_success(target: String, text: String = ""):
-	var tween = get_tree().create_tween()
+	var _tween = get_tree().create_tween()
 	anim.play("scene_fade")
 	await anim.animation_finished
 	get_tree().change_scene_to_file(target)

@@ -8,9 +8,9 @@ var moving = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ramen.position = Vector2(0,-50)
-	tween = get_tree().create_tween()
-	tween.tween_property(polygon, "position:x", -300, randf_range(1, 2.5)).as_relative()
-	tween.tween_property(polygon, "position:x", 300, randf_range(1, 2.5)).as_relative()
+	tween = get_tree().create_tween().set_loops()
+	tween.tween_property(polygon, "position:x", -300, randf_range(0.7, 1.5)).as_relative()
+	tween.tween_property(polygon, "position:x", 300, randf_range(0.7, 1.5)).as_relative()
 
 
 func _input(event: InputEvent) -> void:
@@ -24,4 +24,4 @@ func _on_timer_time_done() -> void:
 
 func _on_pan_area_entered(area: Area2D) -> void:
 	if area == ramen:
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "shop!")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
