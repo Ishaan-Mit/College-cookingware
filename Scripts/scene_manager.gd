@@ -12,6 +12,9 @@ var ingredients = []
 
 func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	music.process_mode = Node.PROCESS_MODE_ALWAYS
+	fx.process_mode = Node.PROCESS_MODE_ALWAYS
+	fx2.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func change_scene_success(target: String, text: String = ""):
 	get_tree().paused = true
@@ -28,6 +31,7 @@ func change_scene_success(target: String, text: String = ""):
 func change_scene_defeat():
 	lives -= 1
 	get_tree().paused = true
+	instruction.text = ""
 	anim.play("scene_fade")
 	await anim.animation_finished
 	await get_tree().create_timer(1).timeout
