@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bje2j41msysi4"
-path="res://.godot/imported/boiling.wav-f9986171bd9acfed933943d6cb0a81a1.sample"
+path="res://.godot/imported/boiling.wav-556a3e9ec861ad0e513caa2e0f21e8d8.sample"
 
 [deps]
 
-source_file="res://assets/audio/boiling.wav"
-dest_files=["res://.godot/imported/boiling.wav-f9986171bd9acfed933943d6cb0a81a1.sample"]
+source_file="res://Assets/audio/boiling.wav"
+dest_files=["res://.godot/imported/boiling.wav-556a3e9ec861ad0e513caa2e0f21e8d8.sample"]
 
 [params]
 

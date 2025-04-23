@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2fs5mddhfoqe"
-path="res://.godot/imported/newramen.png-e8a2028e02b4fb6df8c5eb77b2b24423.ctex"
+path="res://.godot/imported/newramen.png-2c3d60086eb8701ecad5d7228d712e08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/newramen.png"
-dest_files=["res://.godot/imported/newramen.png-e8a2028e02b4fb6df8c5eb77b2b24423.ctex"]
+source_file="res://Assets/newramen.png"
+dest_files=["res://.godot/imported/newramen.png-2c3d60086eb8701ecad5d7228d712e08.ctex"]
 
 [params]
 

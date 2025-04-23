@@ -11,8 +11,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if button.button_pressed:
 		fill_level += 1
-		SceneManager.play_sfx("res://assets/audio/waterfill.wav")
-	pan.frame = int(fill_level/20)
+		SceneManager.play_sfx("res://Assets/audio/waterfill.wav")
+	pan.frame = min(4,int(fill_level/20))
+
 func _on_timer_time_done() -> void:
 	if pan.frame == 3:
 		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_drop.tscn", "drop!")
@@ -22,4 +23,3 @@ func _on_timer_time_done() -> void:
 func _on_button_button_up() -> void:
 	if pan.frame != 3:
 		fill_level += 5
-	pass # Replace with function body.

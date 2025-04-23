@@ -1,9 +1,27 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpcgpt34xfvdy"]
+[gd_scene load_steps=19 format=3 uid="uid://cpcgpt34xfvdy"]
 
-[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="1_5bdnp"]
-[ext_resource type="VideoStream" uid="uid://b23vmnos07t3l" path="res://assets/video/fail_screen.ogv" id="1_gahff"]
-[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="1_ms7ji"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://Scripts/defeatButton.gd" id="1_5bdnp"]
+[ext_resource type="Texture2D" uid="uid://d4e1nf4d4xncf" path="res://Assets/defeat1.png" id="1_g201e"]
+[ext_resource type="Texture2D" uid="uid://cw6anb2dffc8y" path="res://Assets/defeat2.png" id="2_dcqoj"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="2_gahff"]
+[ext_resource type="Texture2D" uid="uid://dguap4qybbt0h" path="res://Assets/defeat3.png" id="3_6bjg3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxdad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g201e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dcqoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6bjg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ms7ji"]
 
@@ -34,18 +52,12 @@ outline_size = 5
 
 [node name="Defeat" type="Node2D"]
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.335, 0.335)
-stream = ExtResource("1_gahff")
-autoplay = true
-loop = true
-
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(336, 202)
-texture = ExtResource("1_ms7ji")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(0.333333, 0.333333)
+sprite_frames = SubResource("SpriteFrames_wxdad")
+autoplay = "default"
+frame_progress = 0.870303
 
 [node name="Button1" type="Button" parent="."]
 offset_left = 324.0
@@ -69,11 +81,12 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6ioro")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6uy4")
 text = "Restart!"
 script = ExtResource("1_5bdnp")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 355.0
 offset_top = 234.0
-offset_right = 926.0
+offset_right = 720.0
 offset_bottom = 304.0
 scale = Vector2(0.76, 0.76)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -81,5 +94,6 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_gahff")
 text = "You're cooked..."
 label_settings = SubResource("LabelSettings_5bdnp")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]

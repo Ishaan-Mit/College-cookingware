@@ -1,15 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=20 format=3 uid="uid://bv35x38lntvhv"]
 
-[ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
-[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://assets/ingredients.png" id="2_n1jgn"]
-[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://scripts/foodChoice.gd" id="3_b5m4b"]
-[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://assets/egg.png" id="4_qtxxp"]
-[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://assets/avdo.png" id="5_ubo7c"]
-[ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://assets/mushroom.png" id="6_qhwlb"]
-[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://assets/greenonion.png" id="7_3sht7"]
-[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://assets/cheese.png" id="8_msmal"]
-[ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://assets/hasha.png" id="9_ho42a"]
+[ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
+[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://Assets/ingredients.png" id="2_n1jgn"]
+[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://Scripts/foodChoice.gd" id="3_b5m4b"]
+[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="4_qtxxp"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="5_ubo7c"]
+[ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://Assets/mushroom.png" id="6_qhwlb"]
+[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="7_3sht7"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="8_msmal"]
+[ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://Assets/hasha.png" id="9_ho42a"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="10_uci4v"]
+[ext_resource type="Texture2D" uid="uid://eskcad5i5gye" path="res://Assets/ladysilouette.png" id="11_l6cc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
 size = Vector2(38, 40)
@@ -28,6 +29,14 @@ size = Vector2(42, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0c6k"]
 size = Vector2(39, 142)
+
+[sub_resource type="Animation" id="Animation_n1jgn"]
+resource_name = "move_lady"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b5m4b"]
+_data = {
+&"move_lady": SubResource("Animation_n1jgn")
+}
 
 [node name="ramen_gather" type="Node2D"]
 script = ExtResource("1_uci4v")
@@ -103,6 +112,15 @@ shape = SubResource("RectangleShape2D_e0c6k")
 
 [node name="Timer" parent="." instance=ExtResource("10_uci4v")]
 time = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b5m4b")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-127, 326)
+texture = ExtResource("11_l6cc0")
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
 [connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]

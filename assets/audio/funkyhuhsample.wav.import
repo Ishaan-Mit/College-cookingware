@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dryg4ndcgenyg"
-path="res://.godot/imported/funkyhuhsample.wav-97a5140806d83dfc5059a5377340f027.sample"
+path="res://.godot/imported/funkyhuhsample.wav-7a7748f277e283abe377205492bf923b.sample"
 
 [deps]
 
-source_file="res://assets/audio/funkyhuhsample.wav"
-dest_files=["res://.godot/imported/funkyhuhsample.wav-97a5140806d83dfc5059a5377340f027.sample"]
+source_file="res://Assets/audio/funkyhuhsample.wav"
+dest_files=["res://.godot/imported/funkyhuhsample.wav-7a7748f277e283abe377205492bf923b.sample"]
 
 [params]
 

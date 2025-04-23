@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8q7h7rdb1cx1"
-path="res://.godot/imported/goofyrecorderbit.wav-24497f5f64161a2d9e6d52657d2cf7aa.sample"
+path="res://.godot/imported/goofyrecorderbit.wav-56756dd042d0937463e31cd217e599ec.sample"
 
 [deps]
 
-source_file="res://assets/audio/goofyrecorderbit.wav"
-dest_files=["res://.godot/imported/goofyrecorderbit.wav-24497f5f64161a2d9e6d52657d2cf7aa.sample"]
+source_file="res://Assets/audio/goofyrecorderbit.wav"
+dest_files=["res://.godot/imported/goofyrecorderbit.wav-56756dd042d0937463e31cd217e599ec.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bksn87koskl8e"
-path="res://.godot/imported/srank.wav-0bb0c5a8150bdb2ed0603c7c0ca56d2d.sample"
+path="res://.godot/imported/srank.wav-463ef704267dd6181dbf2691b13c7ab0.sample"
 
 [deps]
 
-source_file="res://assets/audio/srank.wav"
-dest_files=["res://.godot/imported/srank.wav-0bb0c5a8150bdb2ed0603c7c0ca56d2d.sample"]
+source_file="res://Assets/audio/srank.wav"
+dest_files=["res://.godot/imported/srank.wav-463ef704267dd6181dbf2691b13c7ab0.sample"]
 
 [params]
 

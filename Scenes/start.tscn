@@ -1,8 +1,37 @@
-[gd_scene load_steps=16 format=3 uid="uid://bd6j7i83eohdn"]
+[gd_scene load_steps=20 format=3 uid="uid://bd6j7i83eohdn"]
 
-[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://scripts/Start.gd" id="1_3bxa3"]
-[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://assets/background.jpg" id="2_5ogh5"]
+[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://Scripts/Start.gd" id="1_3bxa3"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_5ogh5"]
 [ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="2_r48yj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ogh5"]
+atlas = ExtResource("2_5ogh5")
+region = Rect2(852, 0, 426, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb6bl"]
+atlas = ExtResource("2_5ogh5")
+region = Rect2(852, 240, 426, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk01k"]
+atlas = ExtResource("2_5ogh5")
+region = Rect2(852, 480, 426, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3wvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ogh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb6bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk01k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="FontVariation" id="FontVariation_5ogh5"]
 base_font = ExtResource("2_r48yj")
@@ -38,9 +67,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3bxa3")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(336, 202)
-texture = ExtResource("2_5ogh5")
+[node name="Background" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.50235, 1.5)
+sprite_frames = SubResource("SpriteFrames_o3wvq")
+autoplay = "default"
+frame_progress = 0.391311
+centered = false
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

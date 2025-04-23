@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ecr3boysbike"
-path="res://.godot/imported/splash.wav-5ec4fd8293fbd42c27becff16a2e488f.sample"
+path="res://.godot/imported/splash.wav-6bac0267862989c420a80ddb8b680af0.sample"
 
 [deps]
 
-source_file="res://assets/audio/splash.wav"
-dest_files=["res://.godot/imported/splash.wav-5ec4fd8293fbd42c27becff16a2e488f.sample"]
+source_file="res://Assets/audio/splash.wav"
+dest_files=["res://.godot/imported/splash.wav-6bac0267862989c420a80ddb8b680af0.sample"]
 
 [params]
 

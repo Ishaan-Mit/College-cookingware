@@ -15,13 +15,13 @@ func _ready() -> void:
 	tween.tween_property(arrow, "position:y", -104, randf_range(0.4,1)).as_relative()
 	tween.tween_property(arrow, "position:y", 104, randf_range(0.4, 1)).as_relative()
 	SceneManager.stop_sfx()
-	SceneManager.play_sfx("res://assets/audio/boiling.wav")
+	SceneManager.play_sfx("res://Assets/audio/boiling.wav")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if arrow.overlaps_area(good):
 			arrow_2.position.y -= 30
-			SceneManager.play_sfx2("res://assets/audio/stokeflame2.wav")
+			SceneManager.play_sfx2("res://Assets/audio/stokeflame2.wav")
 		else:
 			arrow_2.position.y += 15
 			SceneManager.play_sfx2("res://assets/audio/stokeflame.wav")
@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 func _on_timer_time_done() -> void:
 	if arrow_2.position.y >= 80 or arrow_2.position.y <= 128:
 		SceneManager.change_scene_success("res://Scenes/victory.tscn", "done")
-		SceneManager.play_music("res://assets/audio/goofyrecorderbit.wav")
+		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
 	else:
 		SceneManager.change_scene_defeat()
 		

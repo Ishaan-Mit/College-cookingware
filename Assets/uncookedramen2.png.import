@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp7adahqjugwc"
-path="res://.godot/imported/uncookedramen2.png-59d3eb5e6c21f02e603fe5eb354f3f98.ctex"
+path="res://.godot/imported/uncookedramen2.png-57270d9ae46819e83a91e2db0e7b7e0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/uncookedramen2.png"
-dest_files=["res://.godot/imported/uncookedramen2.png-59d3eb5e6c21f02e603fe5eb354f3f98.ctex"]
+source_file="res://Assets/uncookedramen2.png"
+dest_files=["res://.godot/imported/uncookedramen2.png-57270d9ae46819e83a91e2db0e7b7e0d.ctex"]
 
 [params]
 

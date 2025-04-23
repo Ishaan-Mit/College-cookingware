@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3l6ks3ad1aqu"
-path="res://.godot/imported/hasha.png-4b87b6f69027b388c609982796aa947d.ctex"
+path="res://.godot/imported/hasha.png-5f89adfe25af41fbcdc5a444a3b2c5d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hasha.png"
-dest_files=["res://.godot/imported/hasha.png-4b87b6f69027b388c609982796aa947d.ctex"]
+source_file="res://Assets/hasha.png"
+dest_files=["res://.godot/imported/hasha.png-5f89adfe25af41fbcdc5a444a3b2c5d2.ctex"]
 
 [params]
 

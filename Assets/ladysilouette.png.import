@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://eskcad5i5gye"
-path="res://.godot/imported/ladysilouette.png-c959dba393d9c6b3816d3c4a651c67bc.ctex"
+path="res://.godot/imported/ladysilouette.png-8b63eea3d102b71cba7a11abfb333c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ladysilouette.png"
-dest_files=["res://.godot/imported/ladysilouette.png-c959dba393d9c6b3816d3c4a651c67bc.ctex"]
+source_file="res://Assets/ladysilouette.png"
+dest_files=["res://.godot/imported/ladysilouette.png-8b63eea3d102b71cba7a11abfb333c16.ctex"]
 
 [params]
 

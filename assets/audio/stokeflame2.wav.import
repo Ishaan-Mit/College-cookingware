@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvypniwc3nl71"
-path="res://.godot/imported/stokeflame2.wav-e9bffc193780ad429b9e4d760f99f7a0.sample"
+path="res://.godot/imported/stokeflame2.wav-bdcf19cf26081f0cc7d419280c34f3f6.sample"
 
 [deps]
 
-source_file="res://assets/audio/stokeflame2.wav"
-dest_files=["res://.godot/imported/stokeflame2.wav-e9bffc193780ad429b9e4d760f99f7a0.sample"]
+source_file="res://Assets/audio/stokeflame2.wav"
+dest_files=["res://.godot/imported/stokeflame2.wav-bdcf19cf26081f0cc7d419280c34f3f6.sample"]
 
 [params]
 

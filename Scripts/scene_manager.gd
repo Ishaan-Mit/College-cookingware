@@ -1,7 +1,9 @@
 extends CanvasLayer
 
+var lives = 3
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var instruction: Label = $Instruction
+@onready var instruction: Label = $Background/Instruction
 @onready var fx = $FXPlayer
 @onready var fx2 = $FXPlayer2
 @onready var music = $MusicPlayer
@@ -9,30 +11,33 @@ extends CanvasLayer
 var ingredients = []
 
 func _ready() -> void:
-	self.process_mode = PROCESS_MODE_ALWAYS
-	instruction.scale = Vector2(0,0)
+	self.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 func change_scene_success(target: String, text: String = ""):
-	var _tween = get_tree().create_tween()
+	get_tree().paused = true
+	instruction.text = text.capitalize()
 	anim.play("scene_fade")
 	await anim.animation_finished
-	get_tree().change_scene_to_file(target)
-	get_tree().paused = true
 	if text != "":
-		instruction.text = text.capitalize()
-		anim.play("text_pop")
-		await anim.animation_finished
+		await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file(target)
 	anim.play_backwards("scene_fade")
 	await anim.animation_finished
 	get_tree().paused = false
 
 func change_scene_defeat():
+	lives -= 1
+	get_tree().paused = true
 	anim.play("scene_fade")
 	await anim.animation_finished
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 	anim.play_backwards("scene_fade")
 	SceneManager.play_music("res://assets/audio/goofyrecorderbit.wav")
 	stop_sfx()
+	await anim.animation_finished
+	get_tree().paused = false
+
 
 func add_ingredient(ingredient: String):
 	ingredients.append(ingredient)

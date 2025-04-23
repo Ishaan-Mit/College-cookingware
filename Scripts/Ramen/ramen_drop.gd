@@ -11,7 +11,7 @@ func _ready() -> void:
 	tween = get_tree().create_tween().set_loops()
 	tween.tween_property(polygon, "position:x", -300, randf_range(0.7, 1.5)).as_relative()
 	tween.tween_property(polygon, "position:x", 300, randf_range(0.7, 1.5)).as_relative()
-	SceneManager.play_sfx("res://assets/audio/boiling.wav")
+	SceneManager.play_sfx("res://Assets/audio/boiling.wav")
 
 
 func _input(event: InputEvent) -> void:
