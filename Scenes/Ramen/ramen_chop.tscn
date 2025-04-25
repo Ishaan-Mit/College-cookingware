@@ -1,50 +1,86 @@
-[gd_scene load_steps=9 format=3 uid="uid://4htxuv2y8aa6"]
+[gd_scene load_steps=8 format=3 uid="uid://4htxuv2y8aa6"]
 
 [ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_e0yil"]
-[ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://Assets/cuttingboard.png" id="5_qtdsr"]
-[ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="6_bn8ff"]
-[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="7_3j1g7"]
-[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="8_4k4ks"]
+[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="3_8l838"]
 [ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://Assets/knife.png" id="9_fq2bp"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="9_m7yyf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m12uf"]
+size = Vector2(6, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l838"]
+size = Vector2(11, 112)
+
 [node name="ramen_chop" type="Node2D"]
 script = ExtResource("1_rn4r0")
-targetCuts = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_e0yil")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Cuttingboard" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(838, 450)
-scale = Vector2(0.53924, 0.481132)
-texture = ExtResource("5_qtdsr")
+[node name="Egg" type="Node2D" parent="."]
 
-[node name="Greenonion" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(752, 424)
-scale = Vector2(1.68, 1.68)
-texture = ExtResource("6_bn8ff")
+[node name="Board" type="Polygon2D" parent="Egg"]
+position = Vector2(-57, 61)
+scale = Vector2(1.18068, 1.05808)
+color = Color(0.83377, 0.453174, 0.3244, 1)
+polygon = PackedVector2Array(255.785, 154.053, 255.785, 280.697, 406.545, 280.697, 406.545, 154.053)
 
-[node name="Cheese" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(818, 430)
-rotation = 1.66249
-scale = Vector2(1.68, 1.68)
-texture = ExtResource("7_3j1g7")
+[node name="Egg" type="Area2D" parent="Egg"]
 
-[node name="Avdo" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(899, 413)
-scale = Vector2(1.68, 1.68)
-texture = ExtResource("8_4k4ks")
+[node name="Egg" type="Sprite2D" parent="Egg/Egg"]
+position = Vector2(279.75, 291.401)
+scale = Vector2(1.30264, 1.30264)
+texture = ExtResource("3_8l838")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg/Egg"]
+position = Vector2(280, 290)
+shape = SubResource("RectangleShape2D_m12uf")
+
+[node name="Egg2" type="Area2D" parent="Egg"]
+
+[node name="Egg2" type="Sprite2D" parent="Egg/Egg2"]
+position = Vector2(337.75, 293.401)
+scale = Vector2(1.30264, 1.30264)
+texture = ExtResource("3_8l838")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Egg/Egg2"]
+position = Vector2(337, 290)
+shape = SubResource("RectangleShape2D_m12uf")
+
+[node name="Egg3" type="Area2D" parent="Egg"]
+
+[node name="Egg3" type="Sprite2D" parent="Egg/Egg3"]
+position = Vector2(391.75, 294.401)
+scale = Vector2(1.30264, 1.30264)
+texture = ExtResource("3_8l838")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Egg/Egg3"]
+position = Vector2(395, 290)
+shape = SubResource("RectangleShape2D_m12uf")
+
+[node name="Line2D" type="Line2D" parent="Egg"]
+position = Vector2(-3, 0)
+points = PackedVector2Array(283, 246, 283, 332)
+width = 2.185
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="Egg"]
+position = Vector2(54, 0)
+points = PackedVector2Array(283, 246, 283, 332)
+width = 2.185
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="Egg"]
+position = Vector2(112, 0)
+points = PackedVector2Array(283, 246, 283, 332)
+width = 2.185
+default_color = Color(0, 0, 0, 1)
 
 [node name="Green Onion" type="Node2D" parent="."]
-position = Vector2(0, 31)
+position = Vector2(0, 54)
 
 [node name="Board" type="Polygon2D" parent="Green Onion"]
 position = Vector2(-53, 32)
@@ -90,13 +126,25 @@ points = PackedVector2Array(263, 103, 249, 335)
 width = 2.185
 default_color = Color(0, 0, 0, 1)
 
-[node name="Knife" type="Sprite2D" parent="."]
-position = Vector2(418, 296)
+[node name="Timer" parent="." instance=ExtResource("9_m7yyf")]
+time = 20
+
+[node name="Knife" type="Area2D" parent="."]
+position = Vector2(441, 324)
+
+[node name="Knife" type="Sprite2D" parent="Knife"]
 rotation = 1.67417
 scale = Vector2(0.281421, 0.174204)
 texture = ExtResource("9_fq2bp")
 
-[node name="Timer" parent="." instance=ExtResource("9_m7yyf")]
-time = 3
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife"]
+position = Vector2(-9.5, -49)
+shape = SubResource("RectangleShape2D_8l838")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 141.0
+offset_top = 17.0
+offset_right = 181.0
+offset_bottom = 40.0
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

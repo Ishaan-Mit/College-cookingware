@@ -53,8 +53,8 @@ texture = ExtResource("5_3042a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
 shape = SubResource("RectangleShape2D_thtad")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(477, 98)
+[node name="Arrow" type="Polygon2D" parent="."]
+position = Vector2(226, 98)
 color = Color(0.878431, 0, 0, 1)
 polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
 uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
