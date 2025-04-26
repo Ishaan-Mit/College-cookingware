@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmrdp0t6wyst5"]
+
+[ext_resource type="Script" uid="uid://c8pr88rbhqtc2" path="res://scripts/Ramen/ramen_crack.gd" id="1_u07bo"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="2_4g0t6"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_5l1oo"]
+[ext_resource type="Texture2D" uid="uid://buymhycl1p64p" path="res://Assets/check.png" id="4_8cwi3"]
+[ext_resource type="Texture2D" uid="uid://005u4s20bjba" path="res://Assets/cross.png" id="5_ieuog"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2rfu"]
+font = ExtResource("3_5l1oo")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="RamenCrack" type="Node2D"]
+script = ExtResource("1_u07bo")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16, 9)
+color = Color(0.439049, 0.439049, 0.439049, 1)
+metadata/_edit_lock_ = true
+
+[node name="Timer" parent="." instance=ExtResource("2_4g0t6")]
+
+[node name="MeterBackground" type="ColorRect" parent="."]
+offset_left = 146.0
+offset_top = 292.0
+offset_right = 186.0
+offset_bottom = 332.0
+scale = Vector2(9.68, 0.4)
+color = Color(0.893315, 0.251764, 0, 1)
+
+[node name="SweetSpot" type="ColorRect" parent="MeterBackground"]
+layout_mode = 0
+offset_left = 17.5
+offset_right = 22.5
+offset_bottom = 40.0
+color = Color(0, 0.643137, 0, 1)
+
+[node name="Meter" type="ColorRect" parent="MeterBackground"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 19.965
+offset_bottom = 35.0
+color = Color(0, 0.352941, 0.803922, 0.678431)
+
+[node name="Egg1Label" type="Node2D" parent="."]
+position = Vector2(258, 58)
+scale = Vector2(0.86, 0.86)
+
+[node name="Label" type="Label" parent="Egg1Label"]
+offset_left = -28.0
+offset_top = -55.0
+offset_right = 28.0
+offset_bottom = -32.0
+text = "Egg 1: "
+label_settings = SubResource("LabelSettings_f2rfu")
+
+[node name="Check" type="Sprite2D" parent="Egg1Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_8cwi3")
+
+[node name="Cross" type="Sprite2D" parent="Egg1Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_ieuog")
+
+[node name="Egg2Label" type="Node2D" parent="."]
+position = Vector2(338, 58)
+scale = Vector2(0.86, 0.86)
+
+[node name="Label" type="Label" parent="Egg2Label"]
+offset_left = -28.0
+offset_top = -55.0
+offset_right = 28.0
+offset_bottom = -32.0
+text = "Egg 2: "
+label_settings = SubResource("LabelSettings_f2rfu")
+
+[node name="Check" type="Sprite2D" parent="Egg2Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_8cwi3")
+
+[node name="Cross" type="Sprite2D" parent="Egg2Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_ieuog")
+
+[node name="Egg3Label" type="Node2D" parent="."]
+position = Vector2(409, 58)
+scale = Vector2(0.86, 0.86)
+
+[node name="Label" type="Label" parent="Egg3Label"]
+offset_left = -28.0
+offset_top = -55.0
+offset_right = 28.0
+offset_bottom = -32.0
+text = "Egg 3: "
+label_settings = SubResource("LabelSettings_f2rfu")
+
+[node name="Check" type="Sprite2D" parent="Egg3Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_8cwi3")
+
+[node name="Cross" type="Sprite2D" parent="Egg3Label"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_ieuog")

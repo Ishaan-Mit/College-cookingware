@@ -50,7 +50,5 @@ bbcode_enabled = true
 text = "[color=black]Best regards, 
 the greatest student[/color]"
 scroll_active = false
-visible_characters = 99
-visible_ratio = 2.82857
 
 [node name="Timer" parent="." instance=ExtResource("3_chwsi")]

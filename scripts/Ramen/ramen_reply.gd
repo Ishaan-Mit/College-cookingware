@@ -16,6 +16,7 @@ func _ready() -> void:
 		full_text_length = full_text.length()
 		TextBody.text = ""
 		#print(full_text_length)
+
 #mouse detection
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
