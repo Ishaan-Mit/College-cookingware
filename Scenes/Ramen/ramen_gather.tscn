@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://bv35x38lntvhv"]
 
-[ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
+[ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
 [ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://Assets/ingredients.png" id="2_n1jgn"]
-[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://Scripts/foodChoice.gd" id="3_b5m4b"]
+[ext_resource type="Script" uid="uid://52it5q5ou386" path="res://scripts/foodChoice.gd" id="3_b5m4b"]
 [ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="4_qtxxp"]
 [ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="5_ubo7c"]
 [ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://Assets/mushroom.png" id="6_qhwlb"]

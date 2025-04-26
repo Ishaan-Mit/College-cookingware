@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gk1lglu6jxso"]
 
 [ext_resource type="Script" uid="uid://dwd43w4mdq5n8" path="res://scripts/timer.gd" id="1_ycw00"]
-[ext_resource type="Texture2D" uid="uid://ba0tx6hixgfo0" path="res://assets/firecolumn.png" id="2_4hjkw"]
+[ext_resource type="Texture2D" uid="uid://ba0tx6hixgfo0" path="res://Assets/firecolumn.png" id="2_4hjkw"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
