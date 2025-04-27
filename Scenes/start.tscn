@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bd6j7i83eohdn"]
 
-[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://Scripts/Start.gd" id="1_3bxa3"]
+[ext_resource type="Script" uid="uid://c5movb6m42cbr" path="res://scripts/Start.gd" id="1_3bxa3"]
 [ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_5ogh5"]
 [ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="2_r48yj"]
 
