@@ -14,9 +14,8 @@ var frozen = false
 
 func _on_colander_area_entered(area: Area2D) -> void:
 	if area == ramen:
-		#SceneManager.change_scene_success("res://Scenes/Ramen/ramen_reply.tscn", "reply!")
-		print("win here")
-
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_victory.tscn")
+		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("stop and drop")
@@ -41,3 +40,7 @@ func moveArrow(delta: float) -> void:
 	else: if(arrow.position.x  > lowerXBound && retracting):
 		arrow.position.x  -= arrowSpeed * delta
 	#print(Meter.size.x)
+
+
+func _on_timer_time_done() -> void:
+	pass # Replace with function body.

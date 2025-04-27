@@ -42,10 +42,12 @@ func _process(delta: float) -> void:
 	elif cook_temp < 6:
 		middle.show()
 	elif cook_temp < 12:
-		if flipped:
-			SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
 		cooked.show()
-		flip_label.show()
+		if flipped:
+			await get_tree().create_timer(0.5).timeout
+			SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
+		else:
+			flip_label.show()
 	else:
 		burnt.show()
 		await get_tree().create_timer(0.5).timeout

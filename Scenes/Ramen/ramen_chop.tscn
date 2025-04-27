@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://4htxuv2y8aa6"]
 
-[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
+[ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_cook.gd" id="1_rn4r0"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_e0yil"]
 [ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="3_8l838"]
 [ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://Assets/knife.png" id="9_fq2bp"]
@@ -29,13 +29,13 @@ color = Color(0.83377, 0.453174, 0.3244, 1)
 polygon = PackedVector2Array(216, 84, 215.978, 279.753, 447.201, 279.753, 447, 84)
 
 [node name="Polygon2D" type="Polygon2D" parent="Pork"]
-color = Color(0.757586, 0.297064, 0.412264, 1)
+color = Color(0.722006, 0.322326, 0.25691, 1)
 polygon = PackedVector2Array(241, 209, 240, 287, 411, 296, 416, 208)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Pork"]
 z_index = 2
 position = Vector2(0, -16)
-color = Color(0.862745, 0.4, 0.505882, 1)
+color = Color(0.8, 0.376471, 0.305882, 1)
 polygon = PackedVector2Array(241, 209, 240, 287, 411, 296, 416, 208)
 
 [node name="Line2D" type="Line2D" parent="Pork"]
