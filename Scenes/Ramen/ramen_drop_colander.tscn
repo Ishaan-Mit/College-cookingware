@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhe3gitwiwt4t"]
+
+[ext_resource type="Script" uid="uid://dpfyq8dur8vx2" path="res://scripts/Ramen/ramen_drop_colander.gd" id="1_fihw1"]
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_wmy2d"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_2u0n0"]
+[ext_resource type="Texture2D" uid="uid://dwtxtfrnhp41p" path="res://Assets/collander.png" id="4_fihw1"]
+[ext_resource type="Texture2D" uid="uid://cp7adahqjugwc" path="res://Assets/uncookedramen2.png" id="5_sqb6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n64hr"]
+size = Vector2(73, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvmo6"]
+size = Vector2(44, 61)
+
+[node name="RamenDropColander" type="Node2D"]
+script = ExtResource("1_fihw1")
+arrowSpeed = 250
+lowerXBound = 151
+upperXBound = 550
+
+[node name="Stove2" type="Sprite2D" parent="."]
+scale = Vector2(3, 1)
+texture = ExtResource("2_wmy2d")
+centered = false
+hframes = 3
+
+[node name="Stove" type="Sprite2D" parent="."]
+position = Vector2(91, 0)
+texture = ExtResource("2_wmy2d")
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Timer" parent="." instance=ExtResource("3_2u0n0")]
+time = 5
+
+[node name="Pan" type="Area2D" parent="."]
+position = Vector2(48, 24)
+
+[node name="Pan" type="Sprite2D" parent="Pan"]
+position = Vector2(291, 228)
+scale = Vector2(0.110633, 0.110633)
+texture = ExtResource("4_fihw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan"]
+position = Vector2(288.5, 231)
+shape = SubResource("RectangleShape2D_n64hr")
+
+[node name="Ramen" type="Area2D" parent="."]
+position = Vector2(321, -43)
+metadata/_edit_group_ = true
+
+[node name="Uncookedramen" type="Sprite2D" parent="Ramen"]
+texture = ExtResource("5_sqb6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
+shape = SubResource("RectangleShape2D_wvmo6")
+
+[node name="Arrow" type="Polygon2D" parent="."]
+position = Vector2(550, 98)
+color = Color(0.878431, 0, 0, 1)
+polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
+uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
+
+[connection signal="area_entered" from="Pan" to="." method="_on_colander_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dk3bvmuwsxhmn"]
 
-[ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://Scripts/Ramen/ramen_drop.gd" id="1_3042a"]
+[ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://scripts/Ramen/ramen_drop.gd" id="1_3042a"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_thtad"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="3_kxtix"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_51e7x"]

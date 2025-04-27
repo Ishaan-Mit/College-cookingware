@@ -1,0 +1,43 @@
+extends Node2D
+
+@onready var ramen: Area2D = $Ramen
+
+@onready var arrow = $Arrow
+
+@export var arrowSpeed = 20
+@export var lowerXBound = 0
+@export var upperXBound = 100
+@export var timeToDrop = 0.3
+var retracting = false
+
+var frozen = false
+
+func _on_colander_area_entered(area: Area2D) -> void:
+	if area == ramen:
+		#SceneManager.change_scene_success("res://Scenes/Ramen/ramen_reply.tscn", "reply!")
+		print("win here")
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		print("stop and drop")
+		frozen = true
+		#move ramen to position
+		ramen.position = arrow.position
+		var tween = get_tree().create_tween()
+		tween.tween_property(ramen, "position:y", 218, 0.5)
+
+func _process(delta: float) -> void:
+	if(!frozen): moveArrow(delta)
+
+func moveArrow(delta: float) -> void:
+	#check if retracting
+	if(arrow.position.x <= lowerXBound):
+		retracting = false
+	if(arrow.position.x  >= upperXBound):
+		retracting = true
+	#move the arrow
+	if(arrow.position.x  < upperXBound && !retracting):
+		arrow.position.x  += arrowSpeed * delta
+	else: if(arrow.position.x  > lowerXBound && retracting):
+		arrow.position.x  -= arrowSpeed * delta
+	#print(Meter.size.x)

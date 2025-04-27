@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://bintupi1av1tq"]
+[gd_scene load_steps=21 format=3 uid="uid://qapjgbrwmepq"]
 
-[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://scripts/victory.gd" id="1_cusql"]
-[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_k2m4w"]
-[ext_resource type="Texture2D" uid="uid://cdylkg2c5j0gr" path="res://Assets/win_screen.png" id="3_hiedy"]
-[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_mit2u"]
-[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="5_awbia"]
-[ext_resource type="Texture2D" uid="uid://c2fs5mddhfoqe" path="res://Assets/newramen.png" id="6_phv8o"]
-[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="7_m762d"]
+[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://scripts/victory.gd" id="1_hl81x"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="2_7yj50"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="2_73dpb"]
+[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_f34f5"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="2_slr2v"]
+[ext_resource type="Texture2D" uid="uid://cdylkg2c5j0gr" path="res://Assets/win_screen.png" id="3_xy5eq"]
+[ext_resource type="Texture2D" uid="uid://c2fs5mddhfoqe" path="res://Assets/newramen.png" id="6_hbb2g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xy5eq"]
 
@@ -31,7 +31,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k74ab"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hn41"]
-font = ExtResource("4_mit2u")
+font = ExtResource("2_slr2v")
 font_size = 26
 font_color = Color(0, 0, 0, 1)
 
@@ -41,12 +41,12 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 7
 
 [node name="Victory" type="Node2D"]
-script = ExtResource("1_cusql")
+script = ExtResource("1_hl81x")
 
 [node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(360, 203)
 scale = Vector2(0.565, 0.565)
-texture = ExtResource("2_k2m4w")
+texture = ExtResource("2_f34f5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_top = -2.0
@@ -57,7 +57,7 @@ scale = Vector2(15.92, 9.08)
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(350, 193.5)
 scale = Vector2(0.725, 0.725)
-texture = ExtResource("3_hiedy")
+texture = ExtResource("3_xy5eq")
 
 [node name="Button1" type="Button" parent="."]
 offset_left = 425.0
@@ -66,7 +66,7 @@ offset_right = 627.0
 offset_bottom = 332.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("4_mit2u")
+theme_override_fonts/font = ExtResource("2_slr2v")
 theme_override_font_sizes/font_size = 51
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xy5eq")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hbb2g")
@@ -80,7 +80,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_5v66y")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_apju7")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k74ab")
 text = "Restart!"
-script = ExtResource("5_awbia")
+script = ExtResource("2_73dpb")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 232.0
@@ -90,7 +90,7 @@ offset_bottom = 96.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_mit2u")
+theme_override_fonts/font = ExtResource("2_slr2v")
 theme_override_font_sizes/font_size = 14
 text = "You cooked 
 edible ramen!"
@@ -101,7 +101,7 @@ horizontal_alignment = 1
 position = Vector2(302, 201)
 rotation = 0.211864
 scale = Vector2(0.246372, 0.246372)
-texture = ExtResource("6_phv8o")
+texture = ExtResource("6_hbb2g")
 
 [node name="RatingLabel" type="Label" parent="."]
 offset_left = 363.0
@@ -109,7 +109,7 @@ offset_top = 218.0
 offset_right = 633.0
 offset_bottom = 269.0
 rotation = -0.182787
-theme_override_fonts/font = ExtResource("7_m762d")
+theme_override_fonts/font = ExtResource("2_7yj50")
 text = "Your Rating: S"
 label_settings = SubResource("LabelSettings_n2k88")
 horizontal_alignment = 1
