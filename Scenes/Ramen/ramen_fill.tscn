@@ -1,32 +1,49 @@
-[gd_scene load_steps=17 format=3 uid="uid://o8r1kov8l4n4"]
+[gd_scene load_steps=11 format=3 uid="uid://o8r1kov8l4n4"]
 
 [ext_resource type="Script" uid="uid://dbilbp1l1w6lt" path="res://Scripts/Ramen/ramen_fill.gd" id="1_1ue64"]
 [ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="1_vgqss"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="2_1ue64"]
-[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_dcgty"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="4_ivndb"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcgty"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dcgty"]
+polygon = PackedVector2Array(-69.9534, 27.0787, -75.9709, 15.0437, -75.9709, 39.1137, -33.8484, 45.1312, 8.27405, 39.1137, 8.27405, 15.0437, 2.25656, 27.0787, -9.77844, 33.0962, -33.8484, 39.1137, -57.9184, 33.0962)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4to5o"]
+[sub_resource type="Curve" id="Curve_dcgty"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.0588235, 0.808989), 0.0, 0.0, 0, 0]
+point_count = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbt1q"]
+[sub_resource type="Curve" id="Curve_4to5o"]
+_limits = [0.0, 84.92, 0.0, 1.0]
+_data = [Vector2(0.0220588, 6.6791), 0.0, 0.0, 0, 0]
+point_count = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bgio"]
+[sub_resource type="Curve" id="Curve_xbt1q"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.0220588, 0), 0.0, 0.0, 0, 0]
+point_count = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x1dj"]
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_6bgio"]
+curve_x = SubResource("Curve_dcgty")
+curve_y = SubResource("Curve_4to5o")
+curve_z = SubResource("Curve_xbt1q")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6sti"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yea5j"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slt7w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_leo17"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mnvl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nj14"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dcgty"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 160.92
+initial_velocity_max = 195.4
+gravity = Vector3(0, 98, 0)
+scale_min = 1.5
+scale_max = 2.0
+scale_over_velocity_curve = SubResource("CurveXYZTexture_6bgio")
+color = Color(0.270747, 0.511406, 0.785858, 1)
+hue_variation_min = -0.02
+hue_variation_max = -0.01
+collision_mode = 2
 
 [node name="ramen_fill" type="Node2D"]
 script = ExtResource("1_1ue64")
@@ -38,36 +55,48 @@ centered = false
 hframes = 3
 
 [node name="Pan" type="Sprite2D" parent="."]
-position = Vector2(458, 241)
-scale = Vector2(1.54523, 1.54523)
+position = Vector2(525, 236)
+scale = Vector2(1.32946, 1.32946)
 texture = ExtResource("2_1ue64")
 hframes = 5
 
-[node name="Button" type="Button" parent="."]
-offset_left = 148.0
-offset_top = 107.0
-offset_right = 304.0
-offset_bottom = 225.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("4_dcgty")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dcgty")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4to5o")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_xbt1q")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6bgio")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7x1dj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_c6sti")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_yea5j")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_slt7w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_leo17")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3mnvl")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0nj14")
-text = "Fill!"
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Pan"]
+occluder = SubResource("OccluderPolygon2D_dcgty")
 
 [node name="Timer" parent="." instance=ExtResource("4_ivndb")]
-time = 3
+time = 8
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="Pipe" type="Node2D" parent="."]
+position = Vector2(408, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Pipe"]
+position = Vector2(17, 48)
+amount = 313
+lifetime = 1.3
+preprocess = 0.5
+visibility_rect = Rect2(-100, -20.37, 199.83, 200)
+process_material = SubResource("ParticleProcessMaterial_dcgty")
+
+[node name="ColorRect" type="ColorRect" parent="Pipe"]
+offset_left = 2.0
+offset_right = 34.0
+offset_bottom = 40.0
+color = Color(0.255659, 0.255659, 0.255659, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Pipe"]
+offset_left = -6.0
+offset_top = 40.0
+offset_right = 42.0
+offset_bottom = 56.0
+color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="WaterDrag" type="HSlider" parent="."]
+offset_left = 330.0
+offset_top = 93.0
+offset_right = 580.0
+offset_bottom = 109.0
+max_value = 250.0
+
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
+[connection signal="drag_ended" from="WaterDrag" to="." method="_on_water_drag_drag_ended"]
+[connection signal="drag_started" from="WaterDrag" to="." method="_on_water_drag_drag_started"]
