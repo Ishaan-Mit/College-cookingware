@@ -9,8 +9,8 @@ var moving = true
 func _ready() -> void:
 	ramen.position = Vector2(0,-50)
 	tween = get_tree().create_tween().set_loops()
-	tween.tween_property(polygon, "position:x", 177, randf_range(0.7, 1.5))
 	tween.tween_property(polygon, "position:x", 477, randf_range(0.7, 1.5))
+	tween.tween_property(polygon, "position:x", 177, randf_range(0.7, 1.5))
 	SceneManager.play_sfx("res://Assets/audio/boiling.wav")
 
 
