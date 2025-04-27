@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="8_msmal"]
 [ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://Assets/hasha.png" id="9_ho42a"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="10_uci4v"]
-[ext_resource type="Texture2D" uid="uid://eskcad5i5gye" path="res://Assets/ladysilouette.png" id="11_l6cc0"]
+[ext_resource type="PackedScene" uid="uid://dkqg658npdg8c" path="res://Scenes/Ramen/ramen_guy_shopper.tscn" id="11_l6cc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
 size = Vector2(38, 40)
@@ -118,9 +118,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_b5m4b")
 }
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-127, 326)
-texture = ExtResource("11_l6cc0")
+[node name="Guysilouette" parent="." instance=ExtResource("11_l6cc0")]
+position = Vector2(774, 212)
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
 [connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]

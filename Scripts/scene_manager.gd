@@ -11,7 +11,7 @@ var lives = 3
 var ingredients = []
 
 func _ready() -> void:
-	self.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
 	fx.process_mode = Node.PROCESS_MODE_ALWAYS
 	fx2.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -42,6 +42,12 @@ func change_scene_defeat():
 	await anim.animation_finished
 	get_tree().paused = false
 
+
+func _on_pause_pressed() -> void:
+	if get_tree().paused:
+		get_tree().paused  = false
+	elif !get_tree().paused:
+		get_tree().paused = true
 
 func add_ingredient(ingredient: String):
 	ingredients.append(ingredient)

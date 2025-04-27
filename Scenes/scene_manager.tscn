@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c1ejm3by8gm3f"]
 
-[ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://scripts/scene_manager.gd" id="1_mk1ro"]
+[ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://Scripts/scene_manager.gd" id="1_mk1ro"]
 [ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://Assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
 [ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_8j8h1"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_py5r8"]
@@ -104,6 +104,14 @@ _data = {
 [node name="Scene Manager" type="CanvasLayer"]
 script = ExtResource("1_mk1ro")
 
+[node name="Pause" type="Button" parent="."]
+modulate = Color(0.548963, 0.548963, 0.548963, 1)
+offset_right = 40.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "||"
+clip_text = true
+
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 0)
 scale = Vector2(1.50235, 1.5)
@@ -151,3 +159,5 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("5_py5r8")
 theme_override_font_sizes/font_size = 116
 text = "Test"
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

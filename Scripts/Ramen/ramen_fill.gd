@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time_track += delta
+	time_track += delta*1.5
 	pan.position.x = 450 + 70 * sin(time_track)
 	pipe.position.x = 330+water_drag.value
 	
