@@ -28,6 +28,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			if currentClicks >= targetClicks:
 				print("win")
+				SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
 				#connect to next minigame here...
 
 #failure...

@@ -27,4 +27,4 @@ func _on_timer_time_done() -> void:
 func _on_pan_area_entered(area: Area2D) -> void:
 	if area == ramen:
 		SceneManager.play_sfx2("res://assets/audio/splash.wav")
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_reply.tscn", "reply!")

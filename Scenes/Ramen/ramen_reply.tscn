@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://73k8cjcdgehs"]
 
-[ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://scripts/Ramen/ramen_reply.gd" id="1_3jy63"]
+[ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://Scripts/Ramen/ramen_reply.gd" id="1_3jy63"]
 [ext_resource type="Texture2D" uid="uid://fd1wfsgq7cev" path="res://Assets/greyboxmonitor.png" id="2_ng5uj"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_chwsi"]
 

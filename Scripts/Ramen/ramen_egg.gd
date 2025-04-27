@@ -30,8 +30,7 @@ func _input(event: InputEvent) -> void:
 		
 func _on_timer_time_done() -> void:
 	if arrow_2.position.y >= 80 or arrow_2.position.y <= 128:
-		SceneManager.change_scene_success("res://Scenes/victory.tscn", "done")
-		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
 	else:
 		SceneManager.change_scene_defeat()
 		
