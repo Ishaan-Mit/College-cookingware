@@ -18,7 +18,6 @@ func _on_colander_area_entered(area: Area2D) -> void:
 		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		print("stop and drop")
 		frozen = true
 		#move ramen to position
 		ramen.position = arrow.position
@@ -43,4 +42,4 @@ func moveArrow(delta: float) -> void:
 
 
 func _on_timer_time_done() -> void:
-	pass # Replace with function body.
+	SceneManager.change_scene_defeat()

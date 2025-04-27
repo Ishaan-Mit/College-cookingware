@@ -70,7 +70,7 @@ func _process(delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if mode == "green onion":
-			SceneManager.play_sfx("res://assets/audio/chop.wav")
+			SceneManager.play_sfx("res://Assets/audio/chop.wav")
 			knife.position.x -= 10
 			knife.position.y += 50
 			await get_tree().create_timer(0.1).timeout

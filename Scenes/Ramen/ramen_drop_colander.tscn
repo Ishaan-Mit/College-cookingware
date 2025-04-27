@@ -62,4 +62,5 @@ color = Color(0.878431, 0, 0, 1)
 polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
 uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
 
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="area_entered" from="Pan" to="." method="_on_colander_area_entered"]

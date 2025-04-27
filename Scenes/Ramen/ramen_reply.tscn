@@ -37,7 +37,6 @@ offset_right = 445.0
 offset_bottom = 196.0
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "[color=black]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla [/color]"
 scroll_active = false
 
 [node name="outro" type="RichTextLabel" parent="."]

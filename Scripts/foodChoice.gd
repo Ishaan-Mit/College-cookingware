@@ -6,4 +6,4 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if event.pressed:
 				self.hide()
 				SceneManager.add_ingredient(self.name)
-				SceneManager.play_sfx("res://assets/audio/grabnew.wav")
+				SceneManager.play_sfx("res://Assets/audio/grabnew.wav")
