@@ -15,7 +15,6 @@ func _ready() -> void:
 		file.close()
 		full_text_length = full_text.length()
 		TextBody.text = ""
-		#print(full_text_length)
 
 #mouse detection
 func _input(event):
@@ -28,8 +27,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			if currentClicks >= targetClicks:
 				print("win")
-				SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
-				#connect to next minigame here...
+				SceneManager.change_scene_success("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!")
 
 #failure...
 func _on_timer_time_done() -> void:

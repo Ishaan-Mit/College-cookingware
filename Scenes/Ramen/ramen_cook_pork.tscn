@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://bunc6fo6hp7xb"]
+
+[ext_resource type="Script" uid="uid://d1r5luvy6tegs" path="res://Scripts/Ramen/ramen_cook_pork.gd" id="1_ggdcr"]
+[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_78kyy"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_a2wg0"]
+[ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="4_yf0tl"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_i0ir1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggdcr"]
+height = 80.0
+
+[node name="ramen_cook_pork" type="Node2D"]
+script = ExtResource("1_ggdcr")
+
+[node name="Stove2" type="Sprite2D" parent="."]
+scale = Vector2(3, 1)
+texture = ExtResource("2_78kyy")
+centered = false
+hframes = 3
+
+[node name="Stove" type="Sprite2D" parent="."]
+position = Vector2(182, 0)
+texture = ExtResource("2_78kyy")
+centered = false
+hframes = 3
+frame = 1
+
+[node name="Timer" parent="." instance=ExtResource("3_a2wg0")]
+time = 15
+
+[node name="Pan" type="Sprite2D" parent="."]
+position = Vector2(385, 316.25)
+scale = Vector2(1, 0.440218)
+texture = ExtResource("4_yf0tl")
+hframes = 5
+
+[node name="Pork" type="Node2D" parent="."]
+
+[node name="Raw" type="Polygon2D" parent="Pork"]
+position = Vector2(352, 312)
+color = Color(0.847059, 0.415686, 0.454902, 1)
+polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+
+[node name="Middle" type="Polygon2D" parent="Pork"]
+position = Vector2(352, 312)
+color = Color(0.790071, 0.35401, 0.445331, 1)
+polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+
+[node name="Cooked" type="Polygon2D" parent="Pork"]
+position = Vector2(352, 312)
+color = Color(0.8, 0.376471, 0.305882, 1)
+polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+
+[node name="Burnt" type="Polygon2D" parent="Pork"]
+position = Vector2(352, 312)
+color = Color(0.243373, 0.0830534, 0.0574086, 1)
+polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+
+[node name="BadTemp" type="ColorRect" parent="."]
+offset_left = 376.0
+offset_top = 24.0
+offset_right = 632.0
+offset_bottom = 48.0
+color = Color(1, 0.176471, 0.145098, 1)
+
+[node name="GoodTemp" type="Area2D" parent="."]
+position = Vector2(504, 24)
+
+[node name="ColorRect" type="ColorRect" parent="GoodTemp"]
+offset_right = 88.0
+offset_bottom = 24.0
+color = Color(0.215686, 0.8, 0.145098, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GoodTemp"]
+polygon = PackedVector2Array(0, 0, 0, 24, 88, 24, 88, 0)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 176.0
+offset_right = 616.0
+offset_bottom = 232.0
+toggle_mode = true
+text = "Stove: Off"
+
+[node name="Arrow" type="Area2D" parent="."]
+position = Vector2(480, 72)
+metadata/_edit_group_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Arrow"]
+polygon = PackedVector2Array(0, -24, -24, 0, -8, 0, -8, 56, 8, 56, 8, 0, 24, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow"]
+shape = SubResource("CapsuleShape2D_ggdcr")
+
+[node name="FlipButton" type="Button" parent="."]
+offset_left = 208.0
+offset_top = 136.0
+offset_right = 352.0
+offset_bottom = 232.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_i0ir1")
+theme_override_font_sizes/font_size = 76
+text = "Flip"
+
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]
+[connection signal="pressed" from="FlipButton" to="." method="_on_flip_button_pressed"]
