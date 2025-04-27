@@ -26,7 +26,7 @@ hframes = 3
 frame = 1
 
 [node name="Timer" parent="." instance=ExtResource("3_a2wg0")]
-time = 25
+time = 30
 
 [node name="Pan" type="Sprite2D" parent="."]
 position = Vector2(385, 316.25)
