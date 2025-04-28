@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	
 	if particles.emitting and abs(pan.position.x-pipe.position.x) < 40:
 		fill_level += 0.5
-		SceneManager.play_sfx("res://Assets/audio/waterfill.wav")
+		if(!SceneManager.is_sfx_playing()): SceneManager.play_sfx("res://Assets/audio/waterfill.wav")
 	
 	pan.frame = min(6,int(fill_level/30))
 
