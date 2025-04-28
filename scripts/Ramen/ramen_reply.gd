@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		currentClicks += 1
+		SceneManager.play_sfx("res://Assets/audio/typing2.wav")
 
 #failure...
 func _on_timer_time_done() -> void:
