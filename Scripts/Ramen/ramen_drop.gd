@@ -20,6 +20,7 @@ func _input(event: InputEvent) -> void:
 		tween = get_tree().create_tween()
 		ramen.position.x = polygon.position.x
 		tween.tween_property(ramen, "position:y", 150, 0.5)
+		SceneManager.play_sfx2("res://Assets/audio/throw.wav")
 
 func _on_timer_time_done() -> void:
 	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_reply.tscn", "reply!")

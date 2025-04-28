@@ -12,7 +12,7 @@ extends Node2D
 var temperature = 100
 var cook_temp = 0
 var flipped = false
-
+var playDing = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	temperature = 100
@@ -44,15 +44,21 @@ func _process(delta: float) -> void:
 		raw.show()
 		middle.hide()
 		cooked.hide()
+		playDing = false
 	elif cook_temp < 6:
 		middle.show()
 	elif cook_temp < 12:
 		cooked.show()
+		if(!playDing): 
+				SceneManager.play_sfx("res://Assets/audio/ding2.wav")
+				playDing = true
 		if flipped:
 			SceneManager.stop_sfx()
 			SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
 		else:
-			if(!SceneManager.is_sfx2_playing()): SceneManager.play_sfx2("res://Assets/audio/ding2.wav")
+			if(!playDing): 
+				SceneManager.play_sfx("res://Assets/audio/ding2.wav")
+				playDing = true
 			flip_label.show()
 	else:
 		burnt.show()
