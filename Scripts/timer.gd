@@ -6,12 +6,11 @@ var time_left = 0
 signal time_done
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	progress.value = 0
-	
-	
+	progress.value = 8
+	time *= 100/74
 
 func _process(delta: float) -> void:
 	time_left += delta
-	progress.value = min(100, 100*time_left/time)
-	if time_left >= time:
+	progress.value = min(74, 100*time_left/time)
+	if progress.value >= 74:
 		time_done.emit()

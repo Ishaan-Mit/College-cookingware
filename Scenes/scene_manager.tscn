@@ -1,39 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1ejm3by8gm3f"]
+[gd_scene load_steps=11 format=3 uid="uid://c1ejm3by8gm3f"]
 
 [ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://Scripts/scene_manager.gd" id="1_mk1ro"]
 [ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://Assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
-[ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_8j8h1"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_py5r8"]
+[ext_resource type="Texture2D" uid="uid://ddjgjoo0ki6al" path="res://Assets/door.jpg" id="3_t7rfq"]
 [ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="5_py5r8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_py5r8"]
-atlas = ExtResource("2_8j8h1")
-region = Rect2(0, 0, 426, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t7rfq"]
-atlas = ExtResource("2_8j8h1")
-region = Rect2(0, 240, 426, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_thx0b"]
-atlas = ExtResource("2_8j8h1")
-region = Rect2(0, 480, 426, 240)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ccwmf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_py5r8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t7rfq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_thx0b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
+[ext_resource type="Texture2D" uid="uid://bvbibk72rc04r" path="res://Assets/border.png" id="6_t7rfq"]
 
 [sub_resource type="Animation" id="Animation_r3jrp"]
 length = 0.001
@@ -104,6 +76,20 @@ _data = {
 [node name="Scene Manager" type="CanvasLayer"]
 script = ExtResource("1_mk1ro")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_t7rfq")
+expand_mode = 1
+
 [node name="Pause" type="Button" parent="."]
 modulate = Color(0.548963, 0.548963, 0.548963, 1)
 offset_right = 40.0
@@ -112,16 +98,14 @@ theme_override_font_sizes/font_size = 24
 text = "||"
 clip_text = true
 
-[node name="Background" type="AnimatedSprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 0)
-scale = Vector2(1.50235, 1.5)
-sprite_frames = SubResource("SpriteFrames_ccwmf")
-autoplay = "default"
-frame_progress = 0.671766
+scale = Vector2(1.02236, 1.07463)
+texture = ExtResource("3_t7rfq")
 centered = false
 
 [node name="Instruction" type="Label" parent="Background"]
-modulate = Color(0.223103, 0.223103, 0.223103, 1)
+modulate = Color(0.389287, 0.389287, 0.389286, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -132,6 +116,16 @@ theme_override_font_sizes/font_size = 71
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Lives" type="Label" parent="Background"]
+offset_left = 5.32499
+offset_right = 127.325
+offset_bottom = 37.0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = -4
+theme_override_fonts/font = ExtResource("5_py5r8")
+theme_override_font_sizes/font_size = 31
+text = "Lives: 3"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

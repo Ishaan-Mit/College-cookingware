@@ -21,7 +21,7 @@ func _ready() -> void:
 	$Pork.hide()
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat()
+	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!")
 
 func _on_knife_cuts_done() -> void:
 	SceneManager.change_scene_success("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!")
@@ -72,13 +72,14 @@ func _input(event):
 		if mode == "green onion":
 			SceneManager.play_sfx("res://Assets/audio/chop.wav")
 			knife.position.x -= 10
+			$"Green Onion/SpringFull".value -= 4
 			knife.position.y += 50
 			await get_tree().create_timer(0.1).timeout
 			knife.position.y -= 50
 			cuts_done += 1
 		
 		elif mode == "egg":
-			SceneManager.play_sfx("res://assets/audio/chop.wav")
+			SceneManager.play_sfx("res://Assets/audio/chop.wav")
 			knife.position.y += 50
 			await get_tree().create_timer(0.1).timeout
 			knife.position.y -= 50
@@ -87,4 +88,5 @@ func _input(event):
 				if egg in [egg, egg_2, egg_3] and egg not in egg_cut_list:
 					SceneManager.play_sfx("res://Assets/audio/grabnew.wav")
 					egg_cut_list.append(egg)
+					egg.get_child(0).set_frame(1)
 					cuts_done += 1

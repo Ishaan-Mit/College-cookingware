@@ -1,0 +1,38 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://co223idyam4bk"]
+
+[sub_resource type="Curve" id="Curve_dcgty"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.0588235, 0.808989), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_4to5o"]
+_limits = [0.0, 84.92, 0.0, 1.0]
+_data = [Vector2(0.0220588, 6.6791), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_xbt1q"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.0220588, 0), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_6bgio"]
+curve_x = SubResource("Curve_dcgty")
+curve_y = SubResource("Curve_4to5o")
+curve_z = SubResource("Curve_xbt1q")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 160.92
+initial_velocity_max = 195.4
+gravity = Vector3(0, 98, 0)
+scale_min = 1.5
+scale_max = 2.0
+scale_over_velocity_curve = SubResource("CurveXYZTexture_6bgio")
+color = Color(0.270747, 0.511406, 0.785858, 1)
+hue_variation_min = -0.02
+hue_variation_max = -0.01
+collision_mode = 2

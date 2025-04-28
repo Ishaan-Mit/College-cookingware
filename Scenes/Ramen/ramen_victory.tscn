@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://bintupi1av1tq"]
 
-[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://scripts/victory.gd" id="1_cusql"]
+[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://Scripts/victory.gd" id="1_cusql"]
 [ext_resource type="Texture2D" uid="uid://deh51yjbn08j1" path="res://Assets/background.jpg" id="2_k2m4w"]
 [ext_resource type="Texture2D" uid="uid://cdylkg2c5j0gr" path="res://Assets/win_screen.png" id="3_hiedy"]
 [ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_mit2u"]
-[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="5_awbia"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://Scripts/defeatButton.gd" id="5_awbia"]
 [ext_resource type="Texture2D" uid="uid://c2fs5mddhfoqe" path="res://Assets/newramen.png" id="6_phv8o"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="7_m762d"]
 

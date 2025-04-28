@@ -50,14 +50,15 @@ func randomizeTBPosition(object: TextureButton):
 
 func _process(delta: float) -> void:
 	if(currenttItems >= targetItems):
-		print("win go next minigame")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
+		# print("win go next minigame")
 
 func _on_cutting_board_pressed() -> void:
 	cuttingBoard.hide()
 	cuttingBoardUI.hide()
 	#SceneManager.add_ingredient(self.name)
-	SceneManager.play_sfx("res://assets/audio/grabnew.wav")
-	print("cutting board grab")
+	SceneManager.play_sfx("res://Assets/audio/grabnew.wav")
+	# print("cutting board grab")
 	currenttItems += 1
 
 
@@ -65,11 +66,10 @@ func _on_collander_pressed() -> void:
 	collander.hide()
 	collanderUI.hide()
 	#SceneManager.add_ingredient(self.name)
-	SceneManager.play_sfx("res://assets/audio/grabnew.wav")
-	print("collander board grab")
+	SceneManager.play_sfx("res://Assets/audio/grabnew.wav")
+	# print("collander board grab")
 	currenttItems += 1
 
 
 func _on_timer_time_done() -> void:
-	#SceneManager.change_scene_defeat()
-	print("loss.")
+	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_chop.tscn", "chop!")

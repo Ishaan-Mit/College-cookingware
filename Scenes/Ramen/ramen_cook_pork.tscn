@@ -1,60 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://bunc6fo6hp7xb"]
+[gd_scene load_steps=17 format=3 uid="uid://bunc6fo6hp7xb"]
 
 [ext_resource type="Script" uid="uid://d1r5luvy6tegs" path="res://Scripts/Ramen/ramen_cook_pork.gd" id="1_ggdcr"]
-[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_78kyy"]
+[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_e3phg"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_a2wg0"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="4_yf0tl"]
+[ext_resource type="Texture2D" uid="uid://cwbi23miusitw" path="res://Assets/cooked.png" id="5_a5dub"]
+[ext_resource type="Texture2D" uid="uid://dl6eapcreao8i" path="res://Assets/burnpork.png" id="5_e3phg"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_i0ir1"]
+[ext_resource type="Texture2D" uid="uid://cjlv0wo5ramqc" path="res://Assets/mid.png" id="6_e3phg"]
+[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_yf0tl"]
+[ext_resource type="Texture2D" uid="uid://dia1f74dct4ro" path="res://Assets/raw.png" id="7_d562s"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_p77mv"]
+[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_nd7nq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggdcr"]
 height = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
+atlas = ExtResource("7_p77mv")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
+atlas = ExtResource("8_nd7nq")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5dub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhwlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sht7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="ramen_cook_pork" type="Node2D"]
 script = ExtResource("1_ggdcr")
 
 [node name="Stove2" type="Sprite2D" parent="."]
-scale = Vector2(3, 1)
-texture = ExtResource("2_78kyy")
+scale = Vector2(0.4, 0.351563)
+texture = ExtResource("2_e3phg")
 centered = false
-hframes = 3
-
-[node name="Stove" type="Sprite2D" parent="."]
-position = Vector2(182, 0)
-texture = ExtResource("2_78kyy")
-centered = false
-hframes = 3
-frame = 1
 
 [node name="Timer" parent="." instance=ExtResource("3_a2wg0")]
 time = 30
 
 [node name="Pan" type="Sprite2D" parent="."]
-position = Vector2(385, 316.25)
-scale = Vector2(1, 0.440218)
+position = Vector2(360.094, 291.045)
+scale = Vector2(0.105621, 0.105621)
 texture = ExtResource("4_yf0tl")
-hframes = 5
 
 [node name="Pork" type="Node2D" parent="."]
+position = Vector2(321.094, 303.795)
+scale = Vector2(0.0841155, 0.0841155)
 
-[node name="Raw" type="Polygon2D" parent="Pork"]
-position = Vector2(352, 312)
-color = Color(0.847059, 0.415686, 0.454902, 1)
-polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+[node name="Raw" type="Sprite2D" parent="Pork"]
+texture = ExtResource("7_d562s")
 
-[node name="Middle" type="Polygon2D" parent="Pork"]
-position = Vector2(352, 312)
-color = Color(0.790071, 0.35401, 0.445331, 1)
-polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+[node name="Mid" type="Sprite2D" parent="Pork"]
+texture = ExtResource("6_e3phg")
 
-[node name="Cooked" type="Polygon2D" parent="Pork"]
-position = Vector2(352, 312)
-color = Color(0.8, 0.376471, 0.305882, 1)
-polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+[node name="Cooked" type="Sprite2D" parent="Pork"]
+texture = ExtResource("5_a5dub")
 
-[node name="Burnt" type="Polygon2D" parent="Pork"]
-position = Vector2(352, 312)
-color = Color(0.243373, 0.0830534, 0.0574086, 1)
-polygon = PackedVector2Array(32, -8, 32, 16, -32, 16, -32, -8)
+[node name="Burnpork" type="Sprite2D" parent="Pork"]
+texture = ExtResource("5_e3phg")
 
 [node name="BadTemp" type="ColorRect" parent="."]
 offset_left = 376.0
@@ -101,6 +115,18 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_i0ir1")
 theme_override_font_sizes/font_size = 76
 text = "Flip"
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(216, 65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_yf0tl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
+position = Vector2(23.6828, 23.6828)
+scale = Vector2(0.675668, 0.675668)
+sprite_frames = SubResource("SpriteFrames_a5dub")
+autoplay = "default"
+frame_progress = 0.893334
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

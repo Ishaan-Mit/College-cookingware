@@ -1,54 +1,131 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk3bvmuwsxhmn"]
+[gd_scene load_steps=25 format=3 uid="uid://dk3bvmuwsxhmn"]
 
 [ext_resource type="Script" uid="uid://cqmfjvh8mssb" path="res://Scripts/Ramen/ramen_drop.gd" id="1_3042a"]
-[ext_resource type="Texture2D" uid="uid://b47ecqc270c3h" path="res://Assets/stove.png" id="2_thtad"]
-[ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="3_kxtix"]
+[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_vdadg"]
+[ext_resource type="Texture2D" uid="uid://c1t04isyrx1hw" path="res://Assets/waterbucket5.png" id="4_dmvql"]
+[ext_resource type="Texture2D" uid="uid://cxipidd86br2u" path="res://Assets/drop1.png" id="4_vdadg"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_51e7x"]
-[ext_resource type="Texture2D" uid="uid://cp7adahqjugwc" path="res://Assets/uncookedramen2.png" id="5_3042a"]
+[ext_resource type="Texture2D" uid="uid://c43s51h8g21c6" path="res://Assets/drop2.png" id="5_tqb4b"]
+[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_dmvql"]
+[ext_resource type="Texture2D" uid="uid://bsn6nwrjxhdnd" path="res://Assets/drop3.png" id="6_vf8dg"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_51e7x"]
+[ext_resource type="Texture2D" uid="uid://8uq80igidfxh" path="res://Assets/drop4.png" id="7_66lyf"]
+[ext_resource type="Texture2D" uid="uid://dmgksjqqt1ya2" path="res://Assets/drop5.png" id="8_jp5no"]
+[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_vor58"]
+[ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="10_vdadg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jgma"]
+atlas = ExtResource("4_vdadg")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_452ye"]
+atlas = ExtResource("5_tqb4b")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3sht"]
+atlas = ExtResource("6_vf8dg")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25wg3"]
+atlas = ExtResource("7_66lyf")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynnis"]
+atlas = ExtResource("8_jp5no")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmvql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jgma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_452ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3sht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25wg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynnis")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3042a"]
-size = Vector2(17, 23)
+size = Vector2(17, 96.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thtad"]
 size = Vector2(44, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
+atlas = ExtResource("7_51e7x")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
+atlas = ExtResource("8_vor58")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqjie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhwlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sht7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="ramen_drop" type="Node2D"]
 script = ExtResource("1_3042a")
 
 [node name="Stove2" type="Sprite2D" parent="."]
-scale = Vector2(3, 1)
-texture = ExtResource("2_thtad")
+scale = Vector2(0.4, 0.351562)
+texture = ExtResource("2_vdadg")
 centered = false
-hframes = 3
-
-[node name="Stove" type="Sprite2D" parent="."]
-position = Vector2(91, 0)
-texture = ExtResource("2_thtad")
-centered = false
-hframes = 3
-frame = 2
 
 [node name="Timer" parent="." instance=ExtResource("5_51e7x")]
 time = 5
+
+[node name="PanDrop" type="AnimatedSprite2D" parent="."]
+position = Vector2(305, 208)
+scale = Vector2(0.189648, 0.189648)
+sprite_frames = SubResource("SpriteFrames_dmvql")
+frame = 4
+frame_progress = 1.0
 
 [node name="Pan" type="Area2D" parent="."]
 
 [node name="Pan" type="Sprite2D" parent="Pan"]
 position = Vector2(327, 231)
-texture = ExtResource("3_kxtix")
-hframes = 5
-frame = 3
+scale = Vector2(0.189643, 0.189643)
+texture = ExtResource("4_dmvql")
+offset = Vector2(-100, 0)
+region_enabled = true
+region_rect = Rect2(243.238, 687.293, 1175.48, 870.201)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pan"]
-position = Vector2(290.5, 228.5)
+position = Vector2(310, 212.25)
 shape = SubResource("RectangleShape2D_3042a")
 
 [node name="Ramen" type="Area2D" parent="."]
-position = Vector2(321, -43)
+position = Vector2(307, -66)
+scale = Vector2(1.27861, 1.28224)
 metadata/_edit_group_ = true
 
 [node name="Uncookedramen" type="Sprite2D" parent="Ramen"]
-texture = ExtResource("5_3042a")
+scale = Vector2(0.151414, 0.151414)
+texture = ExtResource("10_vdadg")
+offset = Vector2(-23.11, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
 shape = SubResource("RectangleShape2D_thtad")
@@ -58,6 +135,17 @@ position = Vector2(226, 98)
 color = Color(0.878431, 0, 0, 1)
 polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
 uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(504, 94)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_dmvql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
+position = Vector2(23.6828, 23.6828)
+scale = Vector2(0.675668, 0.675668)
+sprite_frames = SubResource("SpriteFrames_kqjie")
+autoplay = "default"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="area_entered" from="Pan" to="." method="_on_pan_area_entered"]

@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://duj5lg77wgmr0"]
+[gd_scene load_steps=3 format=3 uid="uid://duj5lg77wgmr0"]
 
 [ext_resource type="Texture2D" uid="uid://eskcad5i5gye" path="res://Assets/ladysilouette.png" id="1_1i6d3"]
+[ext_resource type="Script" uid="uid://cpu0ow8i8dps2" path="res://Scripts/Ramen/ramen_lady_shopper.gd" id="2_b8clw"]
 
 [node name="ramen_lady_shopper" type="Sprite2D"]
+position = Vector2(758, 363)
 texture = ExtResource("1_1i6d3")
+centered = false
+offset = Vector2(-96, -374)
+script = ExtResource("2_b8clw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -374.0
+offset_right = -96.0
+offset_bottom = -374.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

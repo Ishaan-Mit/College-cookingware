@@ -23,4 +23,4 @@ func _input(event):
 
 #failure...
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat()
+	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!")

@@ -49,7 +49,8 @@ func checkMeter():
 		fails += 1
 		successLabels[stage - 1].get_node("Cross").visible = true
 		if(fails >= 2):
-			SceneManager.change_scene_defeat()
+			pass
+			#SceneManager.change_scene_defeat()
 	print(Meter.size.x)
 
 func moveMeter(delta: float) -> void:

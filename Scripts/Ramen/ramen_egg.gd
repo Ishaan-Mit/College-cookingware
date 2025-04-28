@@ -4,13 +4,12 @@ extends Node2D
 @onready var arrow_2: Area2D = $arrow2
 @onready var good: Area2D = $good
 @onready var bad: Area2D = $bad
+@onready var pan: AnimatedSprite2D = $Pan
 
 var tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#if not SceneManager.has_ingredient("Egg"):
-	#	SceneManager.change_scene_success("res://Scenes/recipes.tscn")
 	tween = get_tree().create_tween().set_loops()
 	tween.tween_property(arrow, "position:y", -104, randf_range(0.4,1)).as_relative()
 	tween.tween_property(arrow, "position:y", 104, randf_range(0.4, 1)).as_relative()
@@ -24,13 +23,17 @@ func _input(event: InputEvent) -> void:
 			SceneManager.play_sfx2("res://Assets/audio/stokeflame2.wav")
 		else:
 			arrow_2.position.y += 15
-			SceneManager.play_sfx2("res://assets/audio/stokeflame.wav")
+			SceneManager.play_sfx2("res://Assets/audio/stokeflame.wav")
 		arrow_2.position.y = max(40, arrow_2.position.y)
-		arrow_2.position.y = min(224, arrow_2.position.y)
+		arrow_2.position.y = min(224, arrow_2.position.y) 
+		
+func _process(delta: float) -> void:
+	if arrow_2.position.y >= 80 and arrow_2.position.y <= 128:
+		pan.play("default")
 		
 func _on_timer_time_done() -> void:
-	if arrow_2.position.y >= 80 or arrow_2.position.y <= 128:
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
+	if arrow_2.position.y >= 80 and arrow_2.position.y <= 128:
+		pan.play("new_animation")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_find.tscn", "find!")
 	else:
-		SceneManager.change_scene_defeat()
-		
+		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_find.tscn", "find!")

@@ -1,18 +1,21 @@
 extends Node2D
 
-func _on_timer_time_done() -> void:
-	SceneManager.change_scene_success("res://Scenes/Ramen/ramen_fill.tscn", "fill!")
+@onready var people: Node2D = $People
 
-func _process(delta: float) -> void:
-	if randi_range(1, 200) == 14:
-		lady_move()
+func _on_timer_time_done() -> void:
+	print(SceneManager.ingredients)
+	if SceneManager.has_ingredient("Ramen"):
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_fill.tscn", "fill!")
+	else:
+		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_fill.tscn", "fill!")
+
+func _process(_delta: float) -> void:
+	if randi_range(1, 100) == 14:
+		person_move()
 		
-func lady_move():
+func person_move():
 	print("make")
-	var sprite = Sprite2D.new()
-	var tween = get_tree().create_tween()
-	sprite.position = Vector2(-120, 350)
-	sprite.texture = load("res://Assets/ladysilouette.png")
-	tween.tween_property(sprite, "position:y", 100, 3)
-	sprite.queue_free()
-	pass
+	var person = preload("res://Scenes/Ramen/ramen_guy_shopper.tscn")
+	if randi_range(1,2) == 1:
+		person = preload("res://Scenes/Ramen/ramen_lady_shopper.tscn")
+	people.add_child(person.instantiate())

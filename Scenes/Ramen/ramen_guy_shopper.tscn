@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkqg658npdg8c"]
+[gd_scene load_steps=3 format=3 uid="uid://dkqg658npdg8c"]
 
 [ext_resource type="Texture2D" uid="uid://cxxo2lv2hj8i5" path="res://Assets/guysilouette.png" id="1_3is3i"]
+[ext_resource type="Script" uid="uid://ckpxco1l8k0yr" path="res://Scripts/Ramen/ramen_guy_shopper.gd" id="2_3ej1j"]
 
 [node name="ramen_guy_shopper" type="Sprite2D"]
+position = Vector2(750, 400)
 texture = ExtResource("1_3is3i")
+centered = false
+offset = Vector2(-91, -404)
+script = ExtResource("2_3ej1j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -404.0
+offset_right = -91.0
+offset_bottom = -404.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

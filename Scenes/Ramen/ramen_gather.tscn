@@ -1,130 +1,120 @@
-[gd_scene load_steps=20 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=18 format=3 uid="uid://bv35x38lntvhv"]
 
 [ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
-[ext_resource type="Texture2D" uid="uid://bvt60re8scgdf" path="res://Assets/ingredients.png" id="2_n1jgn"]
+[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_n1jgn"]
 [ext_resource type="Script" uid="uid://52it5q5ou386" path="res://Scripts/foodChoice.gd" id="3_b5m4b"]
-[ext_resource type="Texture2D" uid="uid://c25a5qfm0oho4" path="res://Assets/egg.png" id="4_qtxxp"]
-[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="5_ubo7c"]
-[ext_resource type="Texture2D" uid="uid://dcj8u3gcuxbu1" path="res://Assets/mushroom.png" id="6_qhwlb"]
+[ext_resource type="Texture2D" uid="uid://lo55ywt6g8k1" path="res://Assets/frid.png" id="3_qtxxp"]
+[ext_resource type="Texture2D" uid="uid://cyveqylro38ma" path="res://Assets/egg_trio.png" id="4_uci4v"]
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="7_3sht7"]
-[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="8_msmal"]
-[ext_resource type="Texture2D" uid="uid://3l6ks3ad1aqu" path="res://Assets/hasha.png" id="9_ho42a"]
+[ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="8_b5m4b"]
+[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="10_b5m4b"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="10_uci4v"]
-[ext_resource type="PackedScene" uid="uid://dkqg658npdg8c" path="res://Scenes/Ramen/ramen_guy_shopper.tscn" id="11_l6cc0"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="11_qtxxp"]
+[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="12_ubo7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
-size = Vector2(38, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rbwk"]
-size = Vector2(43, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_luixn"]
-size = Vector2(43, 41)
+size = Vector2(61, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxokx"]
 size = Vector2(83, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfxu"]
-size = Vector2(42, 62)
+size = Vector2(64, 54)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0c6k"]
-size = Vector2(39, 142)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
+atlas = ExtResource("11_qtxxp")
+region = Rect2(0, 0, 1280, 1280)
 
-[sub_resource type="Animation" id="Animation_n1jgn"]
-resource_name = "move_lady"
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
+atlas = ExtResource("12_ubo7c")
+region = Rect2(0, 0, 1280, 1280)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b5m4b"]
-_data = {
-&"move_lady": SubResource("Animation_n1jgn")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_msmal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhwlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sht7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="ramen_gather" type="Node2D"]
 script = ExtResource("1_uci4v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.351562)
 texture = ExtResource("2_n1jgn")
 centered = false
 
+[node name="Frid" type="Sprite2D" parent="."]
+position = Vector2(320, 208)
+scale = Vector2(0.665804, 0.665804)
+texture = ExtResource("3_qtxxp")
+
 [node name="Egg" type="Area2D" parent="."]
-position = Vector2(371, 293)
+position = Vector2(296, 208)
 script = ExtResource("3_b5m4b")
 
 [node name="eggpic" type="Sprite2D" parent="Egg"]
-texture = ExtResource("4_qtxxp")
+rotation = 0.310593
+scale = Vector2(0.203278, 0.203278)
+texture = ExtResource("4_uci4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
 shape = SubResource("RectangleShape2D_lyscb")
 
-[node name="Avocado" type="Area2D" parent="."]
-position = Vector2(289, 287)
-script = ExtResource("3_b5m4b")
-
-[node name="Avdo" type="Sprite2D" parent="Avocado"]
-texture = ExtResource("5_ubo7c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Avocado"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_8rbwk")
-
-[node name="Mushroom" type="Area2D" parent="."]
-position = Vector2(368, 95)
-script = ExtResource("3_b5m4b")
-
-[node name="mushpic" type="Sprite2D" parent="Mushroom"]
-texture = ExtResource("6_qhwlb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mushroom"]
-position = Vector2(1.5, -2.5)
-shape = SubResource("RectangleShape2D_luixn")
-
 [node name="Onion" type="Area2D" parent="."]
-position = Vector2(331, 186)
+position = Vector2(296, 285)
 script = ExtResource("3_b5m4b")
 
 [node name="onionpic" type="Sprite2D" parent="Onion"]
+scale = Vector2(0.31134, 0.31134)
 texture = ExtResource("7_3sht7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Onion"]
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_fxokx")
 
-[node name="Cheese" type="Area2D" parent="."]
-position = Vector2(289, 83)
+[node name="Ramen" type="Area2D" parent="."]
+position = Vector2(392, 200)
 script = ExtResource("3_b5m4b")
 
-[node name="cheesepic" type="Sprite2D" parent="Cheese"]
-texture = ExtResource("8_msmal")
+[node name="ramenpic" type="Sprite2D" parent="Ramen"]
+position = Vector2(-5, 4)
+rotation = 0.302132
+scale = Vector2(0.107445, 0.107445)
+texture = ExtResource("8_b5m4b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramen"]
 shape = SubResource("RectangleShape2D_6xfxu")
 
-[node name="Hot Sause" type="Area2D" parent="."]
-position = Vector2(289, 83)
-script = ExtResource("3_b5m4b")
+[node name="People" type="Node2D" parent="."]
 
-[node name="saucepic" type="Sprite2D" parent="Hot Sause"]
-position = Vector2(237, 152)
-texture = ExtResource("9_ho42a")
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(493, 65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_b5m4b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hot Sause"]
-position = Vector2(238.5, 151)
-shape = SubResource("RectangleShape2D_e0c6k")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
+position = Vector2(23.6828, 23.6828)
+scale = Vector2(0.675668, 0.675668)
+sprite_frames = SubResource("SpriteFrames_msmal")
+autoplay = "default"
+frame_progress = 0.0376988
 
 [node name="Timer" parent="." instance=ExtResource("10_uci4v")]
-time = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b5m4b")
-}
-
-[node name="Guysilouette" parent="." instance=ExtResource("11_l6cc0")]
-position = Vector2(774, 212)
+offset_left = -58.0
+offset_top = -23.0
+offset_right = -58.0
+offset_bottom = -23.0
+time = 8
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
-[connection signal="input_event" from="Avocado" to="Avocado" method="_on_input_event"]
-[connection signal="input_event" from="Mushroom" to="Mushroom" method="_on_input_event"]
 [connection signal="input_event" from="Onion" to="Onion" method="_on_input_event"]
-[connection signal="input_event" from="Cheese" to="Cheese" method="_on_input_event"]
-[connection signal="input_event" from="Hot Sause" to="Hot Sause" method="_on_input_event"]
+[connection signal="input_event" from="Ramen" to="Ramen" method="_on_input_event"]
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

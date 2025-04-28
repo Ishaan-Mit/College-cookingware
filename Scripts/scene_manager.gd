@@ -4,6 +4,7 @@ var lives = 3
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var instruction: Label = $Background/Instruction
+@onready var live_label: Label = $Background/Lives
 @onready var fx = $FXPlayer
 @onready var fx2 = $FXPlayer2
 @onready var music = $MusicPlayer
@@ -28,17 +29,23 @@ func change_scene_success(target: String, text: String = ""):
 	await anim.animation_finished
 	get_tree().paused = false
 
-func change_scene_defeat():
+func change_scene_defeat(target: String, text: String = ""):
 	lives -= 1
+	print(lives)
+	live_label.text = "Lives: " + str(lives)
 	get_tree().paused = true
-	instruction.text = ""
+	instruction.text = text.capitalize()
+	if lives == 0:
+		instruction.text = ""
 	anim.play("scene_fade")
 	await anim.animation_finished
-	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
+	if text != "":
+		await get_tree().create_timer(2).timeout
+	if lives > 0:
+		get_tree().change_scene_to_file(target)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 	anim.play_backwards("scene_fade")
-	SceneManager.play_music("res://assets/audio/goofyrecorderbit.wav")
-	stop_sfx()
 	await anim.animation_finished
 	get_tree().paused = false
 

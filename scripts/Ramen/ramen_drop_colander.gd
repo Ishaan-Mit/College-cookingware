@@ -21,8 +21,8 @@ func _input(event):
 		frozen = true
 		#move ramen to position
 		ramen.position = arrow.position
-		var tween = get_tree().create_tween()
-		tween.tween_property(ramen, "position:y", 218, 0.5)
+	var tween = get_tree().create_tween()
+		tween.tween_property(ramen, "position:y", 305, 0.75)
 
 func _process(delta: float) -> void:
 	if(!frozen): moveArrow(delta)
@@ -42,4 +42,4 @@ func moveArrow(delta: float) -> void:
 
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat()
+	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_victory.tscn")
