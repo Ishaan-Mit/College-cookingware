@@ -34,6 +34,6 @@ func _process(delta: float) -> void:
 func _on_timer_time_done() -> void:
 	if arrow_2.position.y >= 80 and arrow_2.position.y <= 128:
 		pan.play("new_animation")
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_find.tscn", "find!")
+		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
 	else:
-		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_find.tscn", "find!")
+		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
