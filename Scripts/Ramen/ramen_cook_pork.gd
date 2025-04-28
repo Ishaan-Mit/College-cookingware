@@ -21,6 +21,7 @@ func _ready() -> void:
 	middle.hide()
 	cooked.hide()
 	burnt.hide()
+	#SceneManager.play_sfx("res://Assets/audio/stoveloop.wav")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,6 +35,10 @@ func _process(delta: float) -> void:
 	
 	if arrow.overlaps_area(good_temp):
 		cook_temp += delta
+		if(!SceneManager.is_sfx3_playing()): 
+			SceneManager.play_sfx3("res://Assets/audio/sizzle.wav")
+	else:
+		SceneManager.stop_sfx()
 	
 	if cook_temp < 3:
 		raw.show()
@@ -44,18 +49,23 @@ func _process(delta: float) -> void:
 	elif cook_temp < 12:
 		cooked.show()
 		if flipped:
+			SceneManager.stop_sfx()
 			SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
 		else:
+			if(!SceneManager.is_sfx2_playing()): SceneManager.play_sfx2("res://Assets/audio/ding2.wav")
 			flip_label.show()
 	else:
 		burnt.show()
+		SceneManager.stop_sfx()
 		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		button.text = "Stove: On"
+		SceneManager.play_sfx2("res://Assets/audio/stovelight.wav")
 	else:
 		button.text = "Stove: Off"
+		SceneManager.play_sfx2("res://Assets/audio/stoveoff.wav")
 
 func _on_flip_button_pressed() -> void:
 	if cook_temp > 6 and cook_temp < 12:
@@ -64,4 +74,5 @@ func _on_flip_button_pressed() -> void:
 		flip_label.hide()
 
 func _on_timer_time_done() -> void:
+	SceneManager.stop_sfx()
 	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")

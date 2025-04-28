@@ -7,6 +7,7 @@ var lives = 3
 @onready var live_label: Label = $Background/Lives
 @onready var fx = $FXPlayer
 @onready var fx2 = $FXPlayer2
+@onready var fx3 = $FXPlayer3
 @onready var music = $MusicPlayer
 
 var ingredients = []
@@ -72,6 +73,11 @@ func play_sfx2(path):
 	fx2.stream = sound
 	fx2.play()
 
+func play_sfx3(path):
+	var sound = load(path)
+	fx3.stream = sound
+	fx3.play()
+
 func play_music(path):
 	var sound = load(path)
 	music.stream = sound
@@ -80,6 +86,12 @@ func play_music(path):
 func stop_sfx():
 	fx.stop()
 	fx2.stop()
+	fx3.stop()
 
 func is_sfx_playing() -> bool:
-	return fx2.playing || fx.playing
+	return fx2.playing || fx.playing || fx3.playing
+
+func is_sfx3_playing() -> bool:
+	return fx3.playing
+func is_sfx2_playing() -> bool:
+	return fx2.playing

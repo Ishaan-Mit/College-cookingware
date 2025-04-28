@@ -141,6 +141,9 @@ max_polyphony = 2
 [node name="FXPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="FXPlayer2" type="AudioStreamPlayer" parent="."]
+max_polyphony = 2
+
+[node name="FXPlayer3" type="AudioStreamPlayer" parent="."]
 
 [node name="Label" type="Label" parent="."]
 visible = false
