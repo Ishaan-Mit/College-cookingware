@@ -14,6 +14,7 @@ var frozen = false
 
 func _on_colander_area_entered(area: Area2D) -> void:
 	if area == ramen:
+		ramen.hide()
 		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_victory.tscn")
 		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
 func _input(event):
@@ -21,7 +22,7 @@ func _input(event):
 		frozen = true
 		#move ramen to position
 		ramen.position = arrow.position
-	var tween = get_tree().create_tween()
+		var tween = get_tree().create_tween()
 		tween.tween_property(ramen, "position:y", 305, 0.75)
 
 func _process(delta: float) -> void:

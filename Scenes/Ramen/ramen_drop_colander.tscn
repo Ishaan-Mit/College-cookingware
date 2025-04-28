@@ -42,7 +42,6 @@ script = ExtResource("1_fihw1")
 arrowSpeed = 250
 lowerXBound = 151
 upperXBound = 550
-timeToDrop = null
 
 [node name="Stove2" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.351563)
