@@ -10,6 +10,7 @@ var egg_cut_list = []
 @onready var egg_2: Area2D = $Egg/Egg2
 @onready var egg_3: Area2D = $Egg/Egg3
 
+var slicePlaying = false
 
 func _ready() -> void:
 	mode = "green onion"
@@ -64,6 +65,10 @@ func _process(delta: float) -> void:
 			var mouse_pos = get_global_mouse_position()
 			if mouse_pos.distance_to(knife.position) <= 30:
 				knife.position = Vector2(min(mouse_pos[0], 450), 300)
+				if(!SceneManager.is_sfx_playing()): 
+					SceneManager.play_sfx("res://Assets/audio/sliceloop.wav")
+			else:
+				SceneManager.stop_sfx()
 			if knife.position.x <= 220:
 				_on_knife_cuts_done()
 

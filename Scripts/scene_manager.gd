@@ -80,3 +80,6 @@ func play_music(path):
 func stop_sfx():
 	fx.stop()
 	fx2.stop()
+
+func is_sfx_playing() -> bool:
+	return fx2.playing || fx.playing
