@@ -63,3 +63,5 @@ texture = ExtResource("5_xmc3u")
 position = Vector2(80, -80)
 scale = Vector2(0.49633, 0.49633)
 texture = ExtResource("6_oshj2")
+
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
