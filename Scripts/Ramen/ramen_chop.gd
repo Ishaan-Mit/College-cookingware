@@ -22,10 +22,10 @@ func _ready() -> void:
 	$Pork.hide()
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!", 1, false)
 
 func _on_knife_cuts_done() -> void:
-	SceneManager.change_scene_success("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_drop_colander.tscn", "drain!", 1, true)
 	
 
 
@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 	if mode == "pork":
 		if Input.is_action_pressed("mouse_left"):
 			var mouse_pos = get_global_mouse_position()
-			if mouse_pos.distance_to(knife.position) <= 30:
+			if mouse_pos.distance_to(knife.position) <= 60:
 				knife.position = Vector2(min(mouse_pos[0], 450), 300)
 				if(!SceneManager.is_sfx_playing()): 
 					SceneManager.play_sfx("res://Assets/audio/sliceloop.wav")

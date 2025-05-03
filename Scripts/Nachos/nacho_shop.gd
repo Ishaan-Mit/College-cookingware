@@ -1,0 +1,55 @@
+extends Node2D
+
+@onready var grid: GridContainer = $ColorRect/GridContainer
+
+
+var row = 0
+var col = 0
+var used_coords = []
+var needed = ["Tortillas", "Oil", "Nacho Cheese", "Milk"]
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$ColorRect/GridContainer/TextureButton5.grab_focus()
+	pass # Replace with function body.
+
+
+func col_select(col_num):
+	col = col_num
+	$ColorRect/GridContainer/TextureButton2.grab_focus()
+	
+func row_select(row_num):
+	row = row_num
+	var item = grid.get_child(row*4+col)
+	SceneManager.add_ingredient(item.text)
+	item.modulate = Color("ffffff00")
+	$ColorRect/GridContainer/TextureButton5.grab_focus()
+	print(SceneManager.ingredients)
+	used_coords.append([col, row])
+
+func _on_texture_button_pressed() -> void:
+	row_select(0)
+
+func _on_texture_button_2_pressed() -> void:
+	row_select(1)
+
+func _on_texture_button_3_pressed() -> void:
+	row_select(2)
+
+func _on_texture_button_4_pressed() -> void:
+	col_select(1)
+
+func _on_texture_button_5_pressed() -> void:
+	col_select(2)
+	
+func _on_texture_button_6_pressed() -> void:
+	col_select(3)
+
+
+func _on_timer_time_done() -> void:
+	for item in needed:
+		if not SceneManager.has_ingredient(item):
+			SceneManager.change_scene("res://Scenes/defeat.tscn", "Aww", 0, false)
+	SceneManager.change_scene("res://Scenes/start.tscn", "Yay")
+	pass # Replace with function body.

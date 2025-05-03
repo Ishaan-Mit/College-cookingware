@@ -27,13 +27,13 @@ func _input(event: InputEvent) -> void:
 		arrow_2.position.y = max(40, arrow_2.position.y)
 		arrow_2.position.y = min(224, arrow_2.position.y) 
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if arrow_2.position.y >= 80 and arrow_2.position.y <= 128:
 		pan.play("default")
 		
 func _on_timer_time_done() -> void:
 	if arrow_2.position.y >= 80 and arrow_2.position.y <= 128:
 		pan.play("new_animation")
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_find.tscn", "find!", 1)
 	else:
-		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_chop.tscn", "chop!")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_fnd.tscn", "find!", 1, false)

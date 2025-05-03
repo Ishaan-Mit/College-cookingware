@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://Assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_py5r8"]
 [ext_resource type="Texture2D" uid="uid://ddjgjoo0ki6al" path="res://Assets/door.jpg" id="3_t7rfq"]
-[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="5_py5r8"]
 [ext_resource type="Texture2D" uid="uid://bvbibk72rc04r" path="res://Assets/border.png" id="6_t7rfq"]
+[ext_resource type="Texture2D" uid="uid://cktne2x4f32l" path="res://Assets/heart.png" id="6_thx0b"]
 
 [sub_resource type="Animation" id="Animation_r3jrp"]
 length = 0.001
@@ -113,19 +113,44 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_py5r8")
 theme_override_font_sizes/font_size = 71
+text = "Task"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Lives" type="Label" parent="Background"]
-offset_left = 5.32499
-offset_right = 127.325
-offset_bottom = 37.0
-theme_override_constants/outline_size = 8
-theme_override_constants/shadow_outline_size = -4
-theme_override_fonts/font = ExtResource("5_py5r8")
-theme_override_font_sizes/font_size = 31
-text = "Lives: 3"
+[node name="Hearts" type="HBoxContainer" parent="Background"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 272.0
+offset_bottom = 56.0
+
+[node name="1" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="2" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="3" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="4" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="5" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="6" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
+
+[node name="7" type="TextureRect" parent="Background/Hearts"]
+layout_mode = 2
+texture = ExtResource("6_thx0b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -139,22 +164,11 @@ autoplay = true
 max_polyphony = 2
 
 [node name="FXPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
 
 [node name="FXPlayer2" type="AudioStreamPlayer" parent="."]
 max_polyphony = 2
 
 [node name="FXPlayer3" type="AudioStreamPlayer" parent="."]
-
-[node name="Label" type="Label" parent="."]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("5_py5r8")
-theme_override_font_sizes/font_size = 116
-text = "Test"
 
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

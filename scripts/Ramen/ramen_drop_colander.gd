@@ -16,8 +16,9 @@ func _on_colander_area_entered(area: Area2D) -> void:
 	if area == ramen:
 		SceneManager.play_sfx("res://Assets/audio/successedit.wav")
 		ramen.hide()
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_victory.tscn")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_victory.tscn")
 		SceneManager.play_music("res://Assets/audio/goofyrecorderbit.wav")
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		frozen = true
@@ -45,4 +46,4 @@ func moveArrow(delta: float) -> void:
 
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_victory.tscn")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_victory.tscn", "", 0, false)

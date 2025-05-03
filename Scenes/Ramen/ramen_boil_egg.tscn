@@ -86,6 +86,7 @@ centered = false
 position = Vector2(392, 216)
 scale = Vector2(0.155715, 0.155715)
 sprite_frames = SubResource("SpriteFrames_h0gct")
+animation = &"new_animation"
 offset = Vector2(-100, 0)
 
 [node name="bad" type="Area2D" parent="."]

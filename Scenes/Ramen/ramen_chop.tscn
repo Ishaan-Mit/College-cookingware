@@ -103,7 +103,7 @@ default_color = Color(0.325441, 0.325441, 0.325441, 1)
 end_cap_mode = 1
 
 [node name="Egg" type="Node2D" parent="."]
-position = Vector2(0, 211)
+position = Vector2(0, 45)
 
 [node name="Board" type="Polygon2D" parent="Egg"]
 visible = false
@@ -128,6 +128,7 @@ frame_progress = 0.727069
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Egg/Egg"]
 position = Vector2(280, 290)
+scale = Vector2(2.04, 1)
 shape = SubResource("RectangleShape2D_m12uf")
 
 [node name="Line2D" type="Line2D" parent="Egg/Egg"]
@@ -147,6 +148,7 @@ frame_progress = 0.998612
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Egg/Egg2"]
 position = Vector2(337, 290)
+scale = Vector2(2.04, 1)
 shape = SubResource("RectangleShape2D_m12uf")
 
 [node name="Line2D2" type="Line2D" parent="Egg/Egg2"]
@@ -166,6 +168,7 @@ frame_progress = 0.966125
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Egg/Egg3"]
 position = Vector2(395, 290)
+scale = Vector2(2.04, 1)
 shape = SubResource("RectangleShape2D_m12uf")
 
 [node name="Line2D3" type="Line2D" parent="Egg/Egg3"]

@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 				playDing = true
 		if flipped:
 			SceneManager.stop_sfx()
-			SceneManager.change_scene_success("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
+			SceneManager.change_scene("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!", 1)
 		else:
 			if(!playDing): 
 				SceneManager.play_sfx("res://Assets/audio/ding2.wav")
@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 	else:
 		burnt.show()
 		SceneManager.stop_sfx()
-		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!", 1, false)
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -81,4 +81,4 @@ func _on_flip_button_pressed() -> void:
 
 func _on_timer_time_done() -> void:
 	SceneManager.stop_sfx()
-	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!", 1, false	)

@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	TextBody.text = "[color=black]" + display + "[/color]" #displays text
 	
 	if currentClicks >= targetClicks:
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!", 1)
 
 #mouse detection
 func _input(event):
@@ -24,4 +24,4 @@ func _input(event):
 
 #failure...
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!", 1, false)

@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 		SceneManager.play_sfx2("res://Assets/audio/throw.wav")
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_reply.tscn", "reply!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_reply.tscn", "reply!", 3, false)
 	SceneManager.stop_sfx()
 
 func _on_pan_area_entered(area: Area2D) -> void:
@@ -35,4 +35,4 @@ func _on_pan_area_entered(area: Area2D) -> void:
 		await $PanDrop.animation_finished
 		SceneManager.stop_sfx()
 		SceneManager.play_sfx2("res://Assets/audio/splash.wav")
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_reply.tscn", "reply!")
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_reply.tscn", "reply!", 3)

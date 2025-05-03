@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cpcgpt34xfvdy"]
 
-[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://scripts/defeatButton.gd" id="1_5bdnp"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://Scripts/defeatButton.gd" id="1_5bdnp"]
 [ext_resource type="Texture2D" uid="uid://d4e1nf4d4xncf" path="res://Assets/defeat1.png" id="1_g201e"]
 [ext_resource type="Texture2D" uid="uid://cw6anb2dffc8y" path="res://Assets/defeat2.png" id="2_dcqoj"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="2_gahff"]

@@ -64,7 +64,7 @@ animations = [{
 }]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dcgty"]
-polygon = PackedVector2Array(-369.29, 553.935, 430.838, 553.935, 430.838, 615.483, -369.29, 615.483)
+polygon = PackedVector2Array(-323.129, 469.307, -292.355, 438.532, -238.5, 407.758, -69.2419, 384.677, 192.339, 384.677, 315.436, 400.065, 376.984, 430.839, 407.758, 461.613, 400.065, 500.081, 315.436, 553.936, 223.113, 592.403, 53.855, 607.791, -246.194, 553.936)
 
 [node name="ramen_fill" type="Node2D"]
 script = ExtResource("1_1ue64")
@@ -81,11 +81,11 @@ sprite_frames = SubResource("SpriteFrames_lnm81")
 offset = Vector2(-100, 0)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Pan"]
-position = Vector2(-38.4677, -30.7741)
+position = Vector2(-38.4677, -523.161)
 occluder = SubResource("OccluderPolygon2D_dcgty")
 
 [node name="Timer" parent="." instance=ExtResource("4_ivndb")]
-time = 12
+time = 16
 
 [node name="Pipe" type="Node2D" parent="."]
 position = Vector2(328, 0)

@@ -1,15 +1,15 @@
 extends CanvasLayer
 
-var lives = 3
-
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var instruction: Label = $Background/Instruction
-@onready var live_label: Label = $Background/Lives
 @onready var fx = $FXPlayer
 @onready var fx2 = $FXPlayer2
 @onready var fx3 = $FXPlayer3
 @onready var music = $MusicPlayer
+@onready var hearts: HBoxContainer = $Background/Hearts
 
+var lives = 3
+var heart = preload("res://Assets/heart.png")
 var ingredients = []
 
 func _ready() -> void:
@@ -18,31 +18,21 @@ func _ready() -> void:
 	fx.process_mode = Node.PROCESS_MODE_ALWAYS
 	fx2.process_mode = Node.PROCESS_MODE_ALWAYS
 
-func change_scene_success(target: String, text: String = ""):
+## File Path to next scene [br]
+## Description of next minigame [br]
+## Controls: 0: None, 1: Click, 2: Drag, 3: keyboard [br]
+## success, True: Yes Success, False: Not Success
+func change_scene(target: String, text: String = "", controls: int = 0, success: bool = true):
 	get_tree().paused = true
-	instruction.text = text.capitalize()
+	instruction.text = text
 	anim.play("scene_fade")
 	await anim.animation_finished
-	if text != "":
+	if text != "" or not success:
+		if not success:
+			update_lives(lives-1)
+			play_sfx("res://Assets/audio/throw.wav")
 		await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_file(target)
-	anim.play_backwards("scene_fade")
-	await anim.animation_finished
-	get_tree().paused = false
-
-func change_scene_defeat(target: String, text: String = ""):
-	lives -= 1
-	print(lives)
-	live_label.text = "Lives: " + str(lives)
-	get_tree().paused = true
-	instruction.text = text.capitalize()
-	if lives == 0:
-		instruction.text = ""
-	anim.play("scene_fade")
-	await anim.animation_finished
-	if text != "":
-		await get_tree().create_timer(2).timeout
-	if lives > 0:
+	if lives != 0:
 		get_tree().change_scene_to_file(target)
 	else:
 		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
@@ -50,6 +40,12 @@ func change_scene_defeat(target: String, text: String = ""):
 	await anim.animation_finished
 	get_tree().paused = false
 
+
+
+func update_lives(health: int):
+	lives = health
+	for i in hearts.get_child_count():
+		hearts.get_child(i).visible = lives > i
 
 func _on_pause_pressed() -> void:
 	if get_tree().paused:
@@ -62,6 +58,9 @@ func add_ingredient(ingredient: String):
 	
 func has_ingredient(ingredient: String):
 	return ingredient in ingredients
+
+func clear_ingredients():
+	ingredients = []
 
 func play_sfx(path):
 	var sound = load(path)

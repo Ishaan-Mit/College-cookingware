@@ -29,10 +29,7 @@ func _process(delta: float) -> void:
 	pan.frame = min(6,int(fill_level/30))
 
 func _on_timer_time_done() -> void:
-	if pan.frame == 4:
-		SceneManager.change_scene_success("res://Scenes/Ramen/ramen_drop.tscn", "drop!")
-	else:
-		SceneManager.change_scene_defeat("res://Scenes/Ramen/ramen_drop.tscn", "drop!")
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_drop.tscn", "drop!", 1, pan.frame == 4)
 
 func _on_water_drag_drag_started() -> void:
 	particles.emitting = true
