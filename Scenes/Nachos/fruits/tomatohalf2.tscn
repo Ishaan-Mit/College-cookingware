@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://deedkw5xpj6r2"]
+
+[ext_resource type="Texture2D" uid="uid://bahiqede2u525" path="res://Assets/tomatohalf2.png" id="1_tdtmt"]
+
+[node name="Tomatohalf2" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Tomatohalf2" type="Sprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("1_tdtmt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.215, 0.215)
+polygon = PackedVector2Array(-174, -65.5, -174, -64.3, -181.2, -63.5, -187.4, -63.5, -192.4, -50.5, -193.7, -50.5, -197, -28.6, -197, 6.7, -193, 25.9, -193, 30.8, -185, 53.9, -185, 57, -169, 87, -169, 89.2, -150, 113.1, -150, 115.4, -127, 137.3, -127, 138.5, -102, 156.5, -102, 157.7, -70, 173.7, -70, 175, -45, 182.9, -45, 184.2, -16, 189.2, -16, 190.4, 16.9, 192.5, 18.1, 192.5, 42.2, 189.5, 49.3, 189.5, 75.3, 181.5, 79.5, 181.5, 92.5, 174.5, 95.3, 174.5, 90, 133.5, 90, 128.2, 75, 85, 75, 81.9, 50, 40, 50, 37.7, 12, -3.39999, 12, -4.5, -30, -33.5, -30, -34.8, -62, -48.8, -62, -50, -83, -56, -83, -57.2, -127, -64.3, -127, -65.5)

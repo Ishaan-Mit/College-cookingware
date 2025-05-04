@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://e1ltjveae1v3"]
+
+[ext_resource type="Script" uid="uid://cc3dl4610keoy" path="res://Scripts/Nachos/fruit.gd" id="1_el500"]
+[ext_resource type="Texture2D" uid="uid://o5a11w7r4x41" path="res://Assets/jalapeno.png" id="1_jo0if"]
+[ext_resource type="PackedScene" uid="uid://7oy63k6i8tsx" path="res://Scenes/Nachos/fruits/fruithalf1.tscn" id="2_agcj1"]
+[ext_resource type="PackedScene" uid="uid://caytjpb75t6gc" path="res://Scenes/Nachos/fruits/fruithalf2.tscn" id="3_wxh71"]
+
+[node name="jalapeno" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.8
+script = ExtResource("1_el500")
+half1 = ExtResource("2_agcj1")
+half2 = ExtResource("3_wxh71")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.215377, 0.215377)
+texture = ExtResource("1_jo0if")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.215377, 0.215377)
+polygon = PackedVector2Array(186, -215.8, 186, -213.5, 174, -213.5, 171, -209.5, 167.8, -209.5, 171, -203.1, 168.9, -199.5, 167.6, -199.5, 166.6, -197, 188.2, -176.5, 191.3, -156.5, 189, -134.6, 189, -132, 181, -118, 181, -116.4, 174, -110.4, 147.3, -99, 139, -101.1, 139, -102.4, 117, -103.5, 100.6, -103.5, 81.6, -96.5, 78.4, -96.5, -19.6, -35.5, -21.7, -35.5, -44.7, -18.5, -46.7, -18.5, -124.8, 44.5, -126.8, 44.5, -186.9, 99.5, -188.1, 99.5, -207.1, 128.5, -208.4, 128.5, -219.4, 159.5, -221.3, 159.5, -219, 176.8, -219, 179.4, -206, 190.4, -206, 192, -179, 199, -179, 200.7, -140.8, 197.5, -136.6, 197.5, 20.3, 129.5, 23.5, 129.5, 62.5, 109.5, 64.6, 109.5, 127.6, 70.5, 129.7, 70.5, 151.7, 52.5, 153.9, 52.5, 177.9, 25.5, 179.3, 25.5, 189.3, 4.5, 190.7, 4.5, 200, -53.3, 200, -60.1, 204.1, -67.5, 205.4, -67.5, 219.4, -108.5, 220.8, -108.5, 223.8, -132.5, 225.2, -132.5, 223, -154.5, 223, -162.9, 217, -179, 217, -182.1, 203, -204.2, 203, -206.7)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://caytjpb75t6gc"]
+
+[ext_resource type="Texture2D" uid="uid://o5a11w7r4x41" path="res://Assets/jalapeno.png" id="1_fat10"]
+[ext_resource type="Texture2D" uid="uid://uws4grm3n7n8" path="res://Assets/jalapenohalf2.png" id="2_4fceb"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.8
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.215377, 0.215377)
+texture = ExtResource("1_fat10")
+
+[node name="Jalapenohalf2" type="Sprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("2_4fceb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.215, 0.215)
+polygon = PackedVector2Array(-57, -12.7, -57, -9.5, -124.7, 44.5, -126.8, 44.5, -186.9, 99.5, -188.1, 99.5, -207.1, 128.5, -208.4, 128.5, -219.4, 159.5, -221, 159.5, -221, 175.2, -210, 188.2, -210, 190, -179, 198.9, -179, 200.6, -153.9, 199.5, -146.7, 199.5, -136.7, 196.5, -133.6, 196.5, -78.7, 172.5, -75.5, 172.5, -24, 147.8, -24, 146.8, 20.4, 129.5, 23.6, 129.5, 36.5, 121.5, 39.4, 121.5, 33, 86.1, 33, 82, 15, 46.9, 15, 44.7, -13, 14.6, -13, 13.4, -29, 2.5, -29, 1.3)
