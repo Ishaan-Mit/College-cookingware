@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb2e10dao1o3"]
+[gd_scene load_steps=6 format=3 uid="uid://j187nujlnd02"]
 
-[ext_resource type="Script" uid="uid://biuupaygfuivd" path="res://Scripts/Nachos/nacho_tortilla.gd" id="1_qm3u6"]
+[ext_resource type="Script" path="res://Scripts/Nachos/nacho_tortilla.gd" id="1_qm3u6"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_gasrt"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_gasrt"]
 

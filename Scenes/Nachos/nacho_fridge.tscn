@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6fa22t5sjgwy"]
+
+[ext_resource type="Script" uid="uid://bkbjx4763sbqq" path="res://Scripts/Nachos/nacho_fridge.gd" id="1_yowej"]
+[ext_resource type="Texture2D" uid="uid://cib2n1n1iuk1g" path="res://Assets/fridge.png" id="2_jnw37"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_j5mfw"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="4_jnw37"]
+[ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="5_j5mfw"]
+[ext_resource type="Script" uid="uid://dcpffon4vpkix" path="res://Scripts/Nachos/fridgebutton.gd" id="6_mxorl"]
+
+[node name="NachoFridge" type="Node2D" node_paths=PackedStringArray("playAreas", "avocado", "sampleButton")]
+script = ExtResource("1_yowej")
+numObjects = 30
+playAreas = [NodePath("PlayArea"), NodePath("PlayArea2")]
+avocado = NodePath("Avocado")
+sampleButton = NodePath("TextureButton")
+
+[node name="Fridge" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("2_jnw37")
+metadata/_edit_lock_ = true
+
+[node name="Timer" parent="." instance=ExtResource("3_j5mfw")]
+offset_left = -62.0
+offset_top = 1.0
+offset_right = -62.0
+offset_bottom = 1.0
+metadata/_edit_lock_ = true
+
+[node name="Avocado" type="TextureButton" parent="."]
+offset_left = 114.0
+offset_top = 172.0
+offset_right = 154.0
+offset_bottom = 222.0
+texture_normal = ExtResource("4_jnw37")
+texture_pressed = ExtResource("4_jnw37")
+texture_hover = ExtResource("4_jnw37")
+texture_disabled = ExtResource("4_jnw37")
+texture_focused = ExtResource("4_jnw37")
+
+[node name="PlayArea" type="ColorRect" parent="."]
+offset_left = 114.0
+offset_top = 172.0
+offset_right = 496.0
+offset_bottom = 257.0
+color = Color(0.427451, 0.427451, 0.427451, 0)
+
+[node name="PlayArea2" type="ColorRect" parent="."]
+offset_left = 118.0
+offset_top = 21.0
+offset_right = 476.0
+offset_bottom = 76.0
+mouse_filter = 2
+color = Color(0.427451, 0.427451, 0.427451, 0)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -204.0
+offset_top = 112.0
+offset_right = -164.0
+offset_bottom = 169.0
+texture_normal = ExtResource("5_j5mfw")
+texture_pressed = ExtResource("5_j5mfw")
+texture_hover = ExtResource("5_j5mfw")
+texture_disabled = ExtResource("5_j5mfw")
+texture_focused = ExtResource("5_j5mfw")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[connection signal="pressed" from="Avocado" to="." method="_on_avocado_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_riffraff_pressed"]
