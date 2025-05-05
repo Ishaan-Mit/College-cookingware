@@ -35,6 +35,9 @@ func good_cut():
 	get_node("Tortilla" + str(cuts_done)).hide()
 	get_node("Tortilla" + str(cuts_done+1)).show()
 	
+	if cuts_done == 4:
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_emoji.tscn", "Rizz!", )
+	
 	
 
 func _on_start_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
