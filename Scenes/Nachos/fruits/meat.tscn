@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ejt1kwuacm0"]
+
+[ext_resource type="Texture2D" uid="uid://b3cwodhhw3uts" path="res://Assets/meatball.png" id="1_ffarw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sapij"]
+
+[node name="Meat" type="Node2D"]
+
+[node name="Meat" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meat"]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_sapij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meat"]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_ffarw")
+
+[node name="Meat2" type="RigidBody2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meat2"]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_sapij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meat2"]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_ffarw")
+
+[node name="Meat3" type="RigidBody2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meat3"]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_sapij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meat3"]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_ffarw")
+
+[node name="Meat4" type="RigidBody2D" parent="."]
+position = Vector2(-4, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meat4"]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_sapij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meat4"]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_ffarw")
+
+[node name="Meat5" type="RigidBody2D" parent="."]
+position = Vector2(4, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meat5"]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_sapij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Meat5"]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_ffarw")

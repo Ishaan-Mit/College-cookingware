@@ -1,0 +1,168 @@
+[gd_scene load_steps=15 format=3 uid="uid://ctofwk1m4tnth"]
+
+[ext_resource type="Texture2D" uid="uid://br38m4ygbys4n" path="res://Assets/bowl.png" id="1_1mnlr"]
+[ext_resource type="Script" uid="uid://bo1p8aipfoxu1" path="res://Scripts/Nachos/nacho_plate.gd" id="1_k6ick"]
+[ext_resource type="Texture2D" uid="uid://bercj18xplbup" path="res://Assets/chipbag.png" id="2_gcdvv"]
+[ext_resource type="Script" uid="uid://6bd6nq0p1r55" path="res://Scripts/Nachos/chipbag.gd" id="3_k6ick"]
+[ext_resource type="Texture2D" uid="uid://b7456pdq6duvg" path="res://Assets/chips.png" id="4_gcdvv"]
+[ext_resource type="Texture2D" uid="uid://fp5blmsd60fj" path="res://Assets/cheesebottle.png" id="6_lonth"]
+[ext_resource type="Script" uid="uid://t4tp02hwr10n" path="res://Scripts/Nachos/cheese_bottle.gd" id="7_y75r0"]
+[ext_resource type="Texture2D" uid="uid://c4tuhceyn8q3x" path="res://Assets/meatbowl.png" id="8_fo6km"]
+[ext_resource type="Texture2D" uid="uid://sx3ytf5ybjl6" path="res://Assets/spoon.png" id="9_8dant"]
+[ext_resource type="Script" uid="uid://dqgkechryicjo" path="res://Scripts/Nachos/spoon.gd" id="10_wwtah"]
+[ext_resource type="Texture2D" uid="uid://jix28sce1x8g" path="res://Assets/spoonmeat.png" id="11_8dant"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q74f"]
+size = Vector2(168, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lonth"]
+size = Vector2(58.5, 43)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo6km"]
+radius = 14.94
+height = 60.4684
+
+[node name="NachoPlate" type="Node2D"]
+script = ExtResource("1_k6ick")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 639.0
+offset_bottom = 361.0
+color = Color(0.568973, 0.568973, 0.568973, 1)
+
+[node name="Bowl" type="Sprite2D" parent="."]
+position = Vector2(324, 301)
+scale = Vector2(0.552632, 0.397368)
+texture = ExtResource("1_1mnlr")
+
+[node name="BowlArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea"]
+position = Vector2(321, 280.75)
+shape = SubResource("RectangleShape2D_0q74f")
+
+[node name="ChipSprite" type="Area2D" parent="BowlArea"]
+visible = false
+
+[node name="Sprite" type="Sprite2D" parent="BowlArea/ChipSprite"]
+position = Vector2(326, 274)
+scale = Vector2(0.369444, 0.176389)
+texture = ExtResource("4_gcdvv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BowlArea/ChipSprite"]
+position = Vector2(326, 274)
+scale = Vector2(0.369444, 0.176389)
+polygon = PackedVector2Array(14, -180, -53.4, -180, -67.3, -176, -74.7, -176, -79.7, -172, -84.5, -172, -101.5, -162, -104.7, -162, -121.7, -148, -124.9, -148, -149.9, -120, -151.2, -120, -174.7, -76, -192.5, -76, -203.6, -70, -206.9, -70, -231.9, -42, -233.3, -42, -242, -22.9, -242, 33.9, -234.1, 47, -232, 69.2, -232, 74.6, -222, 89.6, -222, 92.9, -210, 103.9, -210, 105.2, -184, 118.2, -184, 119.5, -154.3, 128, -137.4, 128, -136, 131.4, -136, 136.5, -126, 153.4, -126, 156.8, -118, 165.7, -118, 168.7, -108.8, 166, -107.8, 166, -102, 171.8, -102, 173.7, -61.2, 180, 66.6, 180, 75.1, 178, 88.7, 178, 96.7, 172, 102.9, 172, 107.9, 166, 110, 166, 110, 145.6, 104, 132.6, 104, 131.6, 110, 124, 111.5, 124, 117.6, 101.4, 130, 117.6, 130, 120.9, 146, 135.9, 146, 137.3, 165.6, 146, 180.4, 146, 201.4, 138, 203.8, 138, 214.8, 127, 217, 127, 232, 108, 233.3, 108, 242, 87.7, 242, 46.1, 237, 29.7, 237, 27.3, 228, 15.3, 228, 13.2, 194, -21.8, 194, -23.2, 170.5, -36, 168.5, -36, 174, -45.5, 174, -74.6, 166, -87.6, 166, -90.9, 144, -111.9, 144, -113.2, 126, -122.3, 126, -123.7, 110, -126.7, 110, -128, 67.5, -128, 60.5, -124, 60, -146.7, 56, -151.7, 56, -154.9, 40, -170, 40, -171.4, 32, -174.5, 32, -175.6)
+
+[node name="Left" type="Area2D" parent="BowlArea/ChipSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea/ChipSprite/Left"]
+position = Vector2(263.75, 265)
+shape = SubResource("RectangleShape2D_lonth")
+
+[node name="Middle" type="Area2D" parent="BowlArea/ChipSprite"]
+position = Vector2(65, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea/ChipSprite/Middle"]
+position = Vector2(258, 261)
+shape = SubResource("RectangleShape2D_lonth")
+
+[node name="Right" type="Area2D" parent="BowlArea/ChipSprite"]
+position = Vector2(123, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea/ChipSprite/Right"]
+position = Vector2(260, 270)
+shape = SubResource("RectangleShape2D_lonth")
+
+[node name="ChipBag" type="TextureButton" parent="." node_paths=PackedStringArray("chipTimer")]
+offset_left = 399.0
+offset_top = 158.0
+offset_right = 1003.0
+offset_bottom = 794.0
+rotation = 3.10843
+scale = Vector2(0.18, 0.18)
+texture_normal = ExtResource("2_gcdvv")
+texture_pressed = ExtResource("2_gcdvv")
+texture_hover = ExtResource("2_gcdvv")
+texture_disabled = ExtResource("2_gcdvv")
+texture_focused = ExtResource("2_gcdvv")
+stretch_mode = 0
+script = ExtResource("3_k6ick")
+chipTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="ChipBag"]
+wait_time = 0.1
+
+[node name="CheeseBottle" type="TextureButton" parent="." node_paths=PackedStringArray("cheeseTimer")]
+visible = false
+offset_left = 362.0
+offset_top = 153.0
+offset_right = 502.0
+offset_bottom = 514.0
+rotation = 3.14159
+scale = Vector2(0.275, 0.275)
+texture_normal = ExtResource("6_lonth")
+texture_pressed = ExtResource("6_lonth")
+texture_hover = ExtResource("6_lonth")
+texture_disabled = ExtResource("6_lonth")
+texture_focused = ExtResource("6_lonth")
+script = ExtResource("7_y75r0")
+cheeseTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="CheeseBottle"]
+wait_time = 0.1
+
+[node name="Meatbowl" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(132, 188)
+scale = Vector2(0.47549, 0.47549)
+texture = ExtResource("8_fo6km")
+
+[node name="Meatbowl" type="Area2D" parent="Meatbowl"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Meatbowl/Meatbowl"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-41, -69.5, -41, -68.4, -80.1, -65.5, -89.2, -65.5, -119.4, -59.5, -124.4, -59.5, -153.4, -48.5, -155.9, -48.5, -163.9, -39.5, -166.2, -39.5, -164, -13.3, -164, -9, -156, 7, -156, 9.3, -149, 17.2, -149, 19.4, -135, 32.4, -135, 33.6, -118, 44.6, -118, 45.8, -95, 55.7, -95, 57, -70, 63.9, -70, 65.2, -21.1, 72.5, 13.2, 72.5, 46.3, 67.5, 51.3, 67.5, 82.3, 57.5, 85.5, 57.5, 118.5, 38.5, 120.8, 38.5, 137.8, 21.5, 139.2, 21.5, 151.1, 0.5, 152.6, 0.5, 156.6, -16.5, 158.1, -16.5, 157, -37.6, 157, -40.6, 141, -50.7, 141, -52, 126, -56, 126, -57.2, 83, -64.3, 83, -65.4, 51, -67.4, 51, -68.5)
+
+[node name="Spoon" type="TextureButton" parent="."]
+visible = false
+offset_left = 450.0
+offset_top = 132.0
+offset_right = 616.0
+offset_bottom = 186.0
+texture_normal = ExtResource("9_8dant")
+texture_pressed = ExtResource("9_8dant")
+texture_hover = ExtResource("9_8dant")
+texture_disabled = ExtResource("9_8dant")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_wwtah")
+
+[node name="spoonArea" type="Area2D" parent="Spoon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon/spoonArea"]
+position = Vector2(29, 39)
+rotation = 1.39277
+shape = SubResource("CapsuleShape2D_fo6km")
+
+[node name="Spoonmeat" type="Sprite2D" parent="Spoon"]
+visible = false
+position = Vector2(29, 41)
+scale = Vector2(0.338608, 0.319149)
+texture = ExtResource("11_8dant")
+
+[connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
+[connection signal="body_entered" from="BowlArea/ChipSprite" to="." method="_on_chip_sprite_body_entered"]
+[connection signal="body_entered" from="BowlArea/ChipSprite/Left" to="." method="_on_left_body_entered"]
+[connection signal="body_entered" from="BowlArea/ChipSprite/Middle" to="." method="_on_middle_body_entered"]
+[connection signal="body_entered" from="BowlArea/ChipSprite/Right" to="." method="_on_right_body_entered"]
+[connection signal="button_down" from="ChipBag" to="ChipBag" method="_on_button_down"]
+[connection signal="button_up" from="ChipBag" to="ChipBag" method="_on_button_up"]
+[connection signal="timeout" from="ChipBag/Timer" to="ChipBag" method="_on_timer_timeout"]
+[connection signal="button_down" from="CheeseBottle" to="CheeseBottle" method="_on_button_down"]
+[connection signal="button_up" from="CheeseBottle" to="CheeseBottle" method="_on_button_up"]
+[connection signal="timeout" from="CheeseBottle/Timer" to="ChipBag" method="_on_timer_timeout"]
+[connection signal="timeout" from="CheeseBottle/Timer" to="CheeseBottle" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Meatbowl/Meatbowl" to="Spoon" method="_on_meatbowl_area_entered"]
+[connection signal="button_down" from="Spoon" to="Spoon" method="_on_button_down"]
+[connection signal="button_up" from="Spoon" to="Spoon" method="_on_button_up"]

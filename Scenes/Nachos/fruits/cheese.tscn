@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2l6o31tdie86"]
+
+[ext_resource type="Texture2D" uid="uid://82rhfjcvucxv" path="res://Assets/cheesecircle.png" id="1_k8dts"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qj14"]
+
+[node name="cheese" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.37, 0.37)
+shape = SubResource("CircleShape2D_0qj14")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.84217e-14, -3.55271e-15)
+scale = Vector2(0.061, 0.061)
+texture = ExtResource("1_k8dts")
