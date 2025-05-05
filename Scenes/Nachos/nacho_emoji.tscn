@@ -1,17 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://v3mapbmu5sqp"]
+[gd_scene load_steps=12 format=3 uid="uid://v3mapbmu5sqp"]
 
 [ext_resource type="Script" uid="uid://sex16ua4u5hc" path="res://Scripts/Nachos/nacho_emoji.gd" id="1_ogfk2"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="1_prp8n"]
 [ext_resource type="Texture2D" uid="uid://c7x4skbw3dy52" path="res://Assets/heartemoji.png" id="3_ogfk2"]
+[ext_resource type="Texture2D" uid="uid://cu7il2l15vruw" path="res://Assets/wrongemoji1.png" id="3_oguax"]
 [ext_resource type="Texture2D" uid="uid://dhsjo0w883k6j" path="res://Assets/eggplant.png" id="3_rcntr"]
 [ext_resource type="Texture2D" uid="uid://b303uwtirjtoq" path="res://Assets/joy.png" id="4_r0arr"]
+[ext_resource type="Texture2D" uid="uid://bwccn8opw73ip" path="res://Assets/wrongemoji2.png" id="4_u05rl"]
+[ext_resource type="Texture2D" uid="uid://cw5gy62awimvb" path="res://Assets/wrongemoji3.png" id="5_f4nub"]
 [ext_resource type="Texture2D" uid="uid://bhui44wjd3ogg" path="res://Assets/rose.png" id="5_lqhph"]
+[ext_resource type="Texture2D" uid="uid://bj7e4000wfhgx" path="res://Assets/wrongemoji.png" id="6_fobab"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2bemc"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="NachoEmoji" type="Node2D"]
+[node name="NachoEmoji" type="Node2D" node_paths=PackedStringArray("WrongButtons", "Buttons", "ButtonPositions")]
 script = ExtResource("1_ogfk2")
+WrongEmojis = Array[CompressedTexture2D]([ExtResource("3_rcntr"), ExtResource("3_oguax"), ExtResource("4_u05rl"), ExtResource("5_f4nub"), ExtResource("6_fobab")])
+WrongButtons = [NodePath("WrongButton"), NodePath("WrongButton2")]
+Buttons = [NodePath("RightButton"), NodePath("WrongButton"), NodePath("WrongButton2")]
+ButtonPositions = [NodePath("ButtonPosition1"), NodePath("ButtonPosition2"), NodePath("ButtonPosition3")]
 
 [node name="background" type="ColorRect" parent="."]
 offset_right = 640.0
@@ -28,44 +36,14 @@ offset_right = 525.0
 offset_bottom = 348.0
 color = Color(0.709804, 1, 1, 1)
 
-[node name="Heart" type="Button" parent="."]
-offset_left = 220.0
-offset_top = 261.0
-offset_right = 302.0
-offset_bottom = 334.0
+[node name="ButtonPosition1" type="Node2D" parent="."]
+position = Vector2(220, 261)
 
-[node name="Sprite2D" type="Sprite2D" parent="Heart"]
+[node name="ButtonPosition2" type="Node2D" parent="."]
+position = Vector2(328, 261)
 
-[node name="Heart" type="Sprite2D" parent="Heart"]
-position = Vector2(41, 37)
-scale = Vector2(0.256881, 0.256881)
-texture = ExtResource("3_ogfk2")
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 328.0
-offset_top = 261.0
-offset_right = 410.0
-offset_bottom = 334.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Button2"]
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 261.0
-offset_right = 514.0
-offset_bottom = 334.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Button3"]
-
-[node name="Eggplant" type="Sprite2D" parent="."]
-position = Vector2(368, 298)
-scale = Vector2(0.245556, 0.245556)
-texture = ExtResource("3_rcntr")
-
-[node name="Joy" type="Sprite2D" parent="."]
-position = Vector2(473, 298)
-scale = Vector2(0.256667, 0.256667)
-texture = ExtResource("4_r0arr")
+[node name="ButtonPosition3" type="Node2D" parent="."]
+position = Vector2(432, 261)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 223.0
@@ -94,4 +72,42 @@ offset_bottom = 32.0
 text = "Crush"
 label_settings = SubResource("LabelSettings_2bemc")
 
+[node name="RightButton" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 261.0
+offset_right = 302.0
+offset_bottom = 334.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RightButton"]
+
+[node name="Heart" type="Sprite2D" parent="RightButton"]
+position = Vector2(41, 37)
+scale = Vector2(0.256881, 0.256881)
+texture = ExtResource("3_ogfk2")
+
+[node name="WrongButton" type="Button" parent="."]
+offset_left = 328.0
+offset_top = 261.0
+offset_right = 410.0
+offset_bottom = 334.0
+
+[node name="Sprite" type="Sprite2D" parent="WrongButton"]
+position = Vector2(40, 37)
+scale = Vector2(0.245556, 0.245556)
+texture = ExtResource("3_rcntr")
+
+[node name="WrongButton2" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 261.0
+offset_right = 514.0
+offset_bottom = 334.0
+
+[node name="Sprite" type="Sprite2D" parent="WrongButton2"]
+position = Vector2(41, 37)
+scale = Vector2(0.256667, 0.256667)
+texture = ExtResource("4_r0arr")
+
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
+[connection signal="pressed" from="RightButton" to="." method="_on_heart_pressed"]
+[connection signal="pressed" from="WrongButton" to="." method="_on_wrong_button_pressed"]
+[connection signal="pressed" from="WrongButton2" to="." method="_on_wrong_button_pressed"]
