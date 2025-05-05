@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4vvp041fukdh"]
+
+[ext_resource type="Script" uid="uid://cc3dl4610keoy" path="res://Scripts/Nachos/fruit.gd" id="1_scyr4"]
+[ext_resource type="PackedScene" uid="uid://cddm83vcpo122" path="res://Scenes/Nachos/fruits/onionhalf1.tscn" id="2_hqinw"]
+[ext_resource type="PackedScene" uid="uid://dd8n86nq2ri3s" path="res://Scenes/Nachos/fruits/onionhalf2.tscn" id="3_fyqoj"]
+[ext_resource type="Texture2D" uid="uid://7jm5wj1crpcb" path="res://Assets/onion.png" id="4_qdv4a"]
+
+[node name="Onion" type="RigidBody2D"]
+script = ExtResource("1_scyr4")
+half1 = ExtResource("2_hqinw")
+half2 = ExtResource("3_fyqoj")
+
+[node name="Onion" type="Sprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("4_qdv4a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.215, 0.215)
+polygon = PackedVector2Array(95.3, -187.9, 93, -186.8, 93, -185.4, 83, -176.4, 81.2, -176.5, 75.5, -176.5, 61.5, -168.5, 59.2, -168.5, 58, -156.6, 58, -153, 52, -141, 52, -139.2, 36, -117.2, 36, -115.8, 28, -111.7, 11.1, -111.5, -36.7, -124.5, -72.2, -124.5, -102.1, -117.5, -106.5, -117.5, -137.5, -101.5, -139.7, -101.5, -154.7, -89.5, -156.9, -89.5, -178.8, -66.5, -180, -66.5, -193, -48.5, -194.2, -48.5, -208.2, -20.5, -209.6, -20.5, -216.7, 13.5, -218.1, 13.5, -217, 35.6, -217, 44.8, -213, 58.5, -213, 62.9, -196, 98.9, -196, 101.2, -180, 122.1, -180, 124.3, -155, 149.3, -155, 150.5, -120, 176.5, -120, 177.7, -92, 192.7, -92, 193.9, -58, 206.9, -58, 208.1, -26, 215.1, -26, 216.3, -1, 218.3, -1, 219.7, 37.2, 216.5, 43.3, 216.5, 63.4, 209.5, 67.5, 209.5, 85.5, 199.5, 87.8, 199.5, 117.9, 171.5, 119.2, 171.5, 137.1, 140.5, 138.5, 140.5, 151.5, 98.5, 152.8, 98.5, 154.8, 74.5, 156.2, 74.5, 153, 39.5, 153, 33.2, 143, 5, 143, 1.89999, 124, -29.1, 124, -31.2, 95.9, -65.5, 91.4, -76.5, 90.7, -76.5, 90, -79.9, 90, -91.1, 95, -117.3, 95, -121, 112.2, -154.5, 113.6, -154.5, 116.5, -166.5, 118, -166.5, 118, -175.6, 115, -177.6, 115, -179, 106.3, -181.5, 102.7, -181.5)
