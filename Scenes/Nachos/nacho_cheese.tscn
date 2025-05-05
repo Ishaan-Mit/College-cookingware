@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://84fancd1lcpb"]
+
+[ext_resource type="Script" uid="uid://o4rxf6nq18r6" path="res://Scripts/Nachos/nacho_cheese.gd" id="1_ayvmi"]
+[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_7ecn7"]
+[ext_resource type="Texture2D" uid="uid://c5t5l7tj0gn72" path="res://Assets/waterbucket1.png" id="3_ayvmi"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_wll0a"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_ohw54"]
+
+[sub_resource type="Gradient" id="Gradient_ayvmi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wll0a"]
+gradient = SubResource("Gradient_ayvmi")
+
+[node name="nacho_cheese" type="Node2D"]
+script = ExtResource("1_ayvmi")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.4, 0.871563)
+texture = ExtResource("2_7ecn7")
+centered = false
+vframes = 2
+frame = 1
+
+[node name="Waterbucket1" type="Sprite2D" parent="."]
+position = Vector2(232, 208)
+scale = Vector2(0.137573, 0.137573)
+texture = ExtResource("3_ayvmi")
+hframes = 2
+
+[node name="Cheese" type="Node2D" parent="."]
+
+[node name="cheeseBag" type="Polygon2D" parent="Cheese"]
+position = Vector2(466.51, 84.8528)
+color = Color(0.682765, 0.511263, 3.85046e-07, 1)
+polygon = PackedVector2Array(-64, -48, -64, 104, 48, 96, 56, -64)
+
+[node name="fallingcheese" type="Polygon2D" parent="Cheese/cheeseBag"]
+rotation = 0.759915
+color = Color(0.909259, 0.681932, 0, 1)
+polygon = PackedVector2Array(-104, -8, -256, 112, -208, 120, -96, 0)
+
+[node name="cheeseprogress" type="TextureProgressBar" parent="Cheese"]
+offset_left = 328.0
+offset_top = 224.0
+offset_right = 392.0
+offset_bottom = 288.0
+scale = Vector2(4.6, 1)
+value = 55.0
+texture_progress = SubResource("GradientTexture2D_wll0a")
+
+[node name="Milk" type="Node2D" parent="."]
+
+[node name="milkBag" type="Polygon2D" parent="Milk"]
+position = Vector2(466.51, 84.8528)
+color = Color(1, 0.961598, 0.88398, 1)
+polygon = PackedVector2Array(-64, -48, -64, 104, 48, 96, 56, -64)
+
+[node name="fallingmilk" type="Polygon2D" parent="Milk/milkBag"]
+rotation = 0.759915
+color = Color(1, 0.961598, 0.88398, 1)
+polygon = PackedVector2Array(-104, -8, -256, 112, -208, 120, -96, 0)
+
+[node name="milkprogress" type="TextureProgressBar" parent="Milk"]
+offset_left = 328.0
+offset_top = 304.0
+offset_right = 392.0
+offset_bottom = 368.0
+scale = Vector2(4.6, 1)
+step = 0.01
+texture_progress = SubResource("GradientTexture2D_wll0a")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color(1, 1, 1, 0.294118)
+position = Vector2(520, 296)
+color = Color(1, 0.109804, 0.054902, 1)
+polygon = PackedVector2Array(0, -80, 0, 80, 8, 80, 8, -80)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+modulate = Color(1, 1, 1, 0.294118)
+position = Vector2(488, 296)
+color = Color(1, 0.109804, 0.054902, 1)
+polygon = PackedVector2Array(0, -80, 0, 80, 8, 80, 8, -80)
+
+[node name="Swap" type="Button" parent="."]
+offset_left = 184.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("4_wll0a")
+theme_override_font_sizes/font_size = 41
+text = "Press to
+Swap"
+
+[node name="Timer" parent="." instance=ExtResource("5_ohw54")]
+offset_left = 0.0
+offset_right = 0.0
+time = 15
+
+[connection signal="pressed" from="Swap" to="." method="_on_swap_pressed"]
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

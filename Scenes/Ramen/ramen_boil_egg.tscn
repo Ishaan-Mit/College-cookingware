@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6ibkx5c1ayqx"]
+[gd_scene load_steps=14 format=3 uid="uid://6ibkx5c1ayqx"]
 
 [ext_resource type="Script" uid="uid://d3x7qo1nrs1ua" path="res://Scripts/Ramen/ramen_egg.gd" id="1_ydp5l"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_voemh"]
@@ -7,9 +7,6 @@
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="6_o0a5x"]
 [ext_resource type="Texture2D" uid="uid://65h2p2d8aigf" path="res://Assets/boil3.png" id="6_o6lml"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="7_o6lml"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="8_voemh"]
-[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="9_h04wo"]
-[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="10_o0a5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18oex"]
 atlas = ExtResource("4_h04wo")
@@ -51,28 +48,6 @@ size = Vector2(24, 40)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmsfj"]
 radius = 8.0
 height = 112.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
-atlas = ExtResource("9_h04wo")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
-atlas = ExtResource("10_o0a5x")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_o6lml"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhwlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3sht7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="ramen_egg" type="Node2D"]
 script = ExtResource("1_ydp5l")
@@ -172,16 +147,5 @@ text = "Temperature"
 
 [node name="Timer" parent="." instance=ExtResource("7_o6lml")]
 time = 6
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(376, 48)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("8_voemh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
-position = Vector2(23.6828, 23.6828)
-scale = Vector2(0.675668, 0.675668)
-sprite_frames = SubResource("SpriteFrames_o6lml")
-autoplay = "default"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

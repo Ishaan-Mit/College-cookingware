@@ -25,6 +25,8 @@ func _ready() -> void:
 func change_scene(target: String, text: String = "", controls: int = 0, success: bool = true):
 	get_tree().paused = true
 	instruction.text = text
+	var inst = get_node("Background/Controls/" + str(controls))
+	inst.show()
 	anim.play("scene_fade")
 	await anim.animation_finished
 	if text != "" or not success:
@@ -38,6 +40,7 @@ func change_scene(target: String, text: String = "", controls: int = 0, success:
 		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 	anim.play_backwards("scene_fade")
 	await anim.animation_finished
+	inst.hide()
 	get_tree().paused = false
 
 

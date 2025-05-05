@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://73k8cjcdgehs"]
+[gd_scene load_steps=5 format=3 uid="uid://73k8cjcdgehs"]
 
 [ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://Scripts/Ramen/ramen_reply.gd" id="1_3jy63"]
 [ext_resource type="Texture2D" uid="uid://bfsmlos2x7wwe" path="res://Assets/typeback.png" id="2_chwsi"]
 [ext_resource type="Texture2D" uid="uid://fd1wfsgq7cev" path="res://Assets/greyboxmonitor.png" id="2_ng5uj"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_chwsi"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="5_xmc3u"]
-[ext_resource type="Texture2D" uid="uid://bguwghoqtnejf" path="res://Assets/keys.png" id="6_oshj2"]
 
 [node name="RamenReply" type="Node2D"]
 script = ExtResource("1_3jy63")
@@ -53,15 +51,5 @@ the greatest student[/color]"
 scroll_active = false
 
 [node name="Timer" parent="." instance=ExtResource("3_chwsi")]
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(520, 272)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_xmc3u")
-
-[node name="Drag" type="Sprite2D" parent="Star"]
-position = Vector2(80, -80)
-scale = Vector2(0.49633, 0.49633)
-texture = ExtResource("6_oshj2")
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

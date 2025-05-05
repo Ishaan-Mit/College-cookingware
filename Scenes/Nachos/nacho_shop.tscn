@@ -179,6 +179,7 @@ texture_focused = ExtResource("3_3wrkd")
 stretch_mode = 3
 
 [node name="Timer" parent="." instance=ExtResource("9_440gg")]
+time = 15
 
 [connection signal="pressed" from="ColorRect/GridContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -1,13 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://du5ny3tgu2hh4"]
+[gd_scene load_steps=18 format=3 uid="uid://du5ny3tgu2hh4"]
 
 [ext_resource type="Script" uid="uid://ba2q2dpvi3sfj" path="res://Scripts/Ramen/ramen_find.gd" id="1_nh15l"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="1_qm5og"]
 [ext_resource type="Texture2D" uid="uid://dwtxtfrnhp41p" path="res://Assets/collander.png" id="2_nh15l"]
 [ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://Assets/cuttingboard.png" id="4_3iuy5"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_kp34d"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_f1a7k"]
-[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_4bmeb"]
-[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_05nb2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qm5og"]
 
@@ -35,28 +32,6 @@
 font = ExtResource("5_kp34d")
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
-atlas = ExtResource("7_4bmeb")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
-atlas = ExtResource("8_05nb2")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_v1b1y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhwlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3sht7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="RamenFind" type="Node2D"]
 script = ExtResource("1_nh15l")
@@ -158,17 +133,6 @@ offset_right = 85.0
 offset_bottom = 24.0
 text = "click on: "
 label_settings = SubResource("LabelSettings_x1jw3")
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(563, 215)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_f1a7k")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
-position = Vector2(23.6828, 23.6828)
-scale = Vector2(0.675668, 0.675668)
-sprite_frames = SubResource("SpriteFrames_v1b1y")
-autoplay = "default"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="pressed" from="PlayArea/CuttingBoard" to="." method="_on_cutting_board_pressed"]

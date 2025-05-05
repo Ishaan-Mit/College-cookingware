@@ -48,7 +48,7 @@ func randomizeTBPosition(object: TextureButton):
 	var pos_y = randf_range(yLowerBound, yUpperBound)
 	object.position = Vector2(pos_x, pos_y)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(currenttItems >= targetItems):
 		SceneManager.change_scene("res://Scenes/Ramen/ramen_chop.tscn", "chop!", 1)
 		# print("win go next minigame")

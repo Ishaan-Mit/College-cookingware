@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bunc6fo6hp7xb"]
+[gd_scene load_steps=11 format=3 uid="uid://bunc6fo6hp7xb"]
 
 [ext_resource type="Script" uid="uid://d1r5luvy6tegs" path="res://Scripts/Ramen/ramen_cook_pork.gd" id="1_ggdcr"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_e3phg"]
@@ -8,35 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dl6eapcreao8i" path="res://Assets/burnpork.png" id="5_e3phg"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_i0ir1"]
 [ext_resource type="Texture2D" uid="uid://cjlv0wo5ramqc" path="res://Assets/mid.png" id="6_e3phg"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_yf0tl"]
 [ext_resource type="Texture2D" uid="uid://dia1f74dct4ro" path="res://Assets/raw.png" id="7_d562s"]
-[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_p77mv"]
-[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_nd7nq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggdcr"]
 height = 80.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
-atlas = ExtResource("7_p77mv")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
-atlas = ExtResource("8_nd7nq")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_a5dub"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhwlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3sht7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="ramen_cook_pork" type="Node2D"]
 script = ExtResource("1_ggdcr")
@@ -115,18 +90,6 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_i0ir1")
 theme_override_font_sizes/font_size = 76
 text = "Flip"
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(216, 65)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("6_yf0tl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
-position = Vector2(23.6828, 23.6828)
-scale = Vector2(0.675668, 0.675668)
-sprite_frames = SubResource("SpriteFrames_a5dub")
-autoplay = "default"
-frame_progress = 0.893334
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

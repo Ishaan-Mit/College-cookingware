@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://4htxuv2y8aa6"]
+[gd_scene load_steps=16 format=3 uid="uid://4htxuv2y8aa6"]
 
 [ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_chop.gd" id="1_rn4r0"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_qtdsr"]
@@ -10,10 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://gdavga5fleiq" path="res://Assets/springfull.png" id="5_th1rt"]
 [ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://Assets/knife.png" id="9_fq2bp"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="9_m7yyf"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="10_e3w7u"]
-[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="11_qtdsr"]
-[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="12_bn8ff"]
-[ext_resource type="Texture2D" uid="uid://ckdkt10r085m4" path="res://Assets/drag.png" id="13_3j1g7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn4r0"]
 atlas = ExtResource("3_8l838")
@@ -42,28 +38,6 @@ size = Vector2(6, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8l838"]
 size = Vector2(11, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
-atlas = ExtResource("11_qtdsr")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
-atlas = ExtResource("12_bn8ff")
-region = Rect2(0, 0, 1280, 1280)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4k4ks"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qhwlb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3sht7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="ramen_chop" type="Node2D"]
 script = ExtResource("1_rn4r0")
@@ -212,25 +186,5 @@ offset = Vector2(-3.385, 29.04)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Knife"]
 position = Vector2(-9.5, -49)
 shape = SubResource("RectangleShape2D_8l838")
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(185, 86)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("10_e3w7u")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Star"]
-position = Vector2(23.6828, 23.6828)
-scale = Vector2(0.675668, 0.675668)
-sprite_frames = SubResource("SpriteFrames_4k4ks")
-autoplay = "default"
-
-[node name="Star2" type="Sprite2D" parent="."]
-position = Vector2(437, 86)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("10_e3w7u")
-
-[node name="Drag" type="Sprite2D" parent="Star2"]
-scale = Vector2(0.49633, 0.49633)
-texture = ExtResource("13_3j1g7")
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

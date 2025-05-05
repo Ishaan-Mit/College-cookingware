@@ -7,7 +7,7 @@ signal time_done
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progress.value = 8
-	time *= 100/74
+	time *= 100.0/74.0
 
 func _process(delta: float) -> void:
 	time_left += delta

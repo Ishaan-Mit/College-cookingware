@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://o8r1kov8l4n4"]
+[gd_scene load_steps=19 format=3 uid="uid://o8r1kov8l4n4"]
 
 [ext_resource type="Script" uid="uid://dbilbp1l1w6lt" path="res://Scripts/Ramen/ramen_fill.gd" id="1_1ue64"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_slt7w"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c4rsrx6nplidw" path="res://Assets/waterbucket4.png" id="6_slt7w"]
 [ext_resource type="Texture2D" uid="uid://c1t04isyrx1hw" path="res://Assets/waterbucket5.png" id="7_leo17"]
 [ext_resource type="Texture2D" uid="uid://bkgosd5deu4i1" path="res://Assets/waterbucket6.png" id="8_slt7w"]
-[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="10_yea5j"]
-[ext_resource type="Texture2D" uid="uid://ckdkt10r085m4" path="res://Assets/drag.png" id="11_slt7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3mnvl"]
 atlas = ExtResource("3_7x1dj")
@@ -125,15 +123,6 @@ offset_top = 93.0
 offset_right = 580.0
 offset_bottom = 109.0
 max_value = 250.0
-
-[node name="Star" type="Sprite2D" parent="."]
-position = Vector2(216, 72)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("10_yea5j")
-
-[node name="Drag" type="Sprite2D" parent="Star"]
-scale = Vector2(0.49633, 0.49633)
-texture = ExtResource("11_slt7w")
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="drag_ended" from="WaterDrag" to="." method="_on_water_drag_drag_ended"]

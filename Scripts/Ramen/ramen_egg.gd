@@ -36,4 +36,4 @@ func _on_timer_time_done() -> void:
 		pan.play("new_animation")
 		SceneManager.change_scene("res://Scenes/Ramen/ramen_find.tscn", "find!", 1)
 	else:
-		SceneManager.change_scene("res://Scenes/Ramen/ramen_fnd.tscn", "find!", 1, false)
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_find.tscn", "find!", 1, false)
