@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 		elif mode == "milk":
 			milkprogress.value += 0.5
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if mode == "cheese":
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			cheese_bag.rotation = -PI/4
@@ -55,7 +55,6 @@ func _on_swap_pressed() -> void:
 			SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "cut!", 2)
 		else:
 			SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "cut!", 2, false)
-
 	elif mode == "cheese":
 		cheese_bag.hide()
 		fallingcheese.hide()
