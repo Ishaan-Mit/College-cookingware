@@ -22,5 +22,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_time_done() -> void:
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_fridge.tscn", "find!", 1)
 	# print("win here")
 	return

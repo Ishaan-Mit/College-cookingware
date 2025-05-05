@@ -8,8 +8,9 @@ func _ready() -> void:
 	linear_velocity = initialSpeed
 
 func slice():
-	if(self.name == "Onion"):
-		print("onion sliced lose here")
+	if(name == "Onion"):
+		print("onion fail")
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_fridge.tscn", "find!", 1, false)
 	var half1 = half1.instantiate()
 	var half2 = half2.instantiate()
 	half1.global_position = global_position

@@ -24,21 +24,20 @@ func good_cut():
 	for i in range(knifemark.get_point_count()):
 		distances += knifemark.get_point_position(i).distance_squared_to(Vector2(320, 256))
 	var sqrtdist = sqrt(distances)
-	$Points.text += "\n" + str(int(sqrtdist))
 	knifemark.clear_points()
+	var quality = []
 	if sqrtdist < 500:
-		$Temp.text += "\n" + "Good!"
+		quality.append("Good!")
 	elif sqrtdist < 1000:
-		$Temp.text += "\n" + "Ok!"
+		quality.append("Ok!")
 	else:
-		$Temp.text += "\n" + "Not Good!"
+		quality.append("Not Good!")
 	get_node("Tortilla" + str(cuts_done)).hide()
 	get_node("Tortilla" + str(cuts_done+1)).show()
 	
 	if cuts_done == 4:
-		SceneManager.change_scene("res://Scenes/Nachos/nacho_emoji.tscn", "Rizz!", )
-	
-	
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_emoji.tscn", "Rizz!", 1)
+
 
 func _on_start_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

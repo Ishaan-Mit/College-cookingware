@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://j187nujlnd02"]
 
-[ext_resource type="Script" path="res://Scripts/Nachos/nacho_tortilla.gd" id="1_qm3u6"]
+[ext_resource type="Script" uid="uid://biuupaygfuivd" path="res://Scripts/Nachos/nacho_tortilla.gd" id="1_qm3u6"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_gasrt"]
-[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_gasrt"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_gasrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm3u6"]
 size = Vector2(16, 16)
@@ -239,23 +239,8 @@ polygon = PackedVector2Array(0, 0, 0, 64, 32, 56, 48, 48)
 [node name="Knifemark" type="Line2D" parent="."]
 points = PackedVector2Array(320, 184)
 
-[node name="Points" type="Label" parent="."]
-offset_left = 456.0
-offset_top = 32.0
-offset_right = 496.0
-offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("3_gasrt")
-theme_override_font_sizes/font_size = 46
-text = "Points"
-
-[node name="Temp" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 40.0
-offset_right = 150.0
-offset_bottom = 94.0
-theme_override_fonts/font = ExtResource("3_gasrt")
-theme_override_font_sizes/font_size = 46
-text = "Rank"
+[node name="Timer" parent="." instance=ExtResource("3_gasrt")]
+time = 20
 
 [connection signal="input_event" from="Tortilla1/Start" to="." method="_on_start_input_event"]
 [connection signal="input_event" from="Tortilla1/Middle" to="." method="_on_middle_input_event"]

@@ -23,10 +23,9 @@ func _ready() -> void:
 
 func _on_timer_time_done() -> void:
 	print("lose here to time")
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2) #you should lose here
-
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2, false)
 func _on_heart_pressed() -> void:
-	print("win here")
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2)
 
 func _on_wrong_button_pressed() -> void:
-	print("lose here mistake made")
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2, false)

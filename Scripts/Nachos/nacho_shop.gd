@@ -46,5 +46,5 @@ func _on_texture_button_6_pressed() -> void:
 func _on_timer_time_done() -> void:
 	for item in needed:
 		if not SceneManager.has_ingredient(item):
-			SceneManager.change_scene("res://Scenes/defeat.tscn", "Aww", 0, false)
+			SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1, false)
 	SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1)
