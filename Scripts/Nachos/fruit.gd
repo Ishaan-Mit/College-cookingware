@@ -8,6 +8,8 @@ func _ready() -> void:
 	linear_velocity = initialSpeed
 
 func slice():
+	if(self.name == "Onion"):
+		print("onion sliced lose here")
 	var half1 = half1.instantiate()
 	var half2 = half2.instantiate()
 	half1.global_position = global_position
