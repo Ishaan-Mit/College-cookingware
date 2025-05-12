@@ -11,9 +11,15 @@ var cheeseCount: Array[int] = [0, 0, 0]
 var eachTargetMeat: int = 0
 var meatCount: Array[int] = [0, 0, 0]
 
+@export var targetTJ = 20
+var eachTargetTJ: int = 0
+var TJCount: Array[int] = [0, 0, 0]
+
 func _ready() -> void:
 	eachTargetCheese = targetCheese/3
 	eachTargetMeat = targetMeat/3
+	eachTargetTJ = targetTJ/3
+
 #stage 1: chips
 func _on_bowl_area_body_entered(body: Node2D) -> void:
 	if(body.name.contains("Chips") && chipLevel < targetChips):
@@ -26,7 +32,7 @@ func _on_bowl_area_body_entered(body: Node2D) -> void:
 			$BowlArea.monitoring = false
 	#print("object in bowl")
 
-#stage 2 and 3: cheese and meat
+#stage 2, 3, 4: cheese, meat, and tomato/jalapeno
 func _on_chip_sprite_body_entered(body: Node2D) -> void:
 	if(body.name.contains("cheese")):
 		print(body.name)
@@ -49,24 +55,38 @@ func _on_chip_sprite_body_entered(body: Node2D) -> void:
 			print("meat won")
 			$Meatbowl.hide()
 			$Spoon.hide()
-
+			$PicoBowl.visible = true
+	if(body.name.contains("TJ")): #stage 4 TJ
+		print(body.name)
+		var rigid_body = body as RigidBody2D
+		#if body is RigidBody2D: print("is rb")
+		rigid_body.freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
+		rigid_body.freeze = true
+		if(is_TJ_won()):
+			print("final stage won, transition here")
 func _on_left_body_entered(body: Node2D) -> void:
 	if(body.name.contains("cheese")):
 		cheeseCount[0] += 1
 	elif(body.name.contains("Meat")):
 		meatCount[0] += 1
+	elif(body.name.contains("TJ")):
+		TJCount[0] += 1
 
 func _on_middle_body_entered(body: Node2D) -> void:
 	if(body.name.contains("cheese")):
 		cheeseCount[1] += 1
 	elif(body.name.contains("Meat")):
 		meatCount[1] += 1
+	elif(body.name.contains("TJ")):
+		TJCount[1] += 1
 
 func _on_right_body_entered(body: Node2D) -> void:
 	if(body.name.contains("cheese")):
 		cheeseCount[2] += 1
 	elif(body.name.contains("Meat")):
 		meatCount[2] += 1
+	elif(body.name.contains("TJ")):
+		TJCount[2] += 1
 
 func is_cheese_won() -> bool:
 	for i in cheeseCount:
@@ -76,4 +96,9 @@ func is_cheese_won() -> bool:
 func is_meat_won() -> bool:
 	for i in meatCount:
 		if(i < eachTargetMeat): return false
+	return true
+
+func is_TJ_won() -> bool:
+	for i in meatCount:
+		if(i < eachTargetTJ): return false
 	return true

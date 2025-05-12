@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctofwk1m4tnth"]
+[gd_scene load_steps=17 format=3 uid="uid://ctofwk1m4tnth"]
 
 [ext_resource type="Texture2D" uid="uid://br38m4ygbys4n" path="res://Assets/bowl.png" id="1_1mnlr"]
 [ext_resource type="Script" uid="uid://bo1p8aipfoxu1" path="res://Scripts/Nachos/nacho_plate.gd" id="1_k6ick"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://sx3ytf5ybjl6" path="res://Assets/spoon.png" id="9_8dant"]
 [ext_resource type="Script" uid="uid://dqgkechryicjo" path="res://Scripts/Nachos/spoon.gd" id="10_wwtah"]
 [ext_resource type="Texture2D" uid="uid://jix28sce1x8g" path="res://Assets/spoonmeat.png" id="11_8dant"]
+[ext_resource type="Texture2D" uid="uid://km0brt26r5fj" path="res://Assets/bowlpico.png" id="12_1bfdl"]
+[ext_resource type="Script" uid="uid://bc2ng8yu0nk28" path="res://Scripts/Nachos/pico_bowl.gd" id="13_yyxdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q74f"]
 size = Vector2(168, 33.5)
@@ -73,6 +75,25 @@ position = Vector2(123, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea/ChipSprite/Right"]
 position = Vector2(260, 270)
 shape = SubResource("RectangleShape2D_lonth")
+
+[node name="PicoBowl" type="TextureButton" parent="." node_paths=PackedStringArray("spawnTimer")]
+visible = false
+offset_left = 419.0
+offset_top = 172.0
+offset_right = 761.0
+offset_bottom = 325.0
+rotation = 3.14159
+scale = Vector2(0.475, 0.475)
+texture_normal = ExtResource("12_1bfdl")
+texture_pressed = ExtResource("12_1bfdl")
+texture_hover = ExtResource("12_1bfdl")
+texture_disabled = ExtResource("12_1bfdl")
+texture_focused = ExtResource("12_1bfdl")
+script = ExtResource("13_yyxdo")
+spawnTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="PicoBowl"]
+wait_time = 0.1
 
 [node name="ChipBag" type="TextureButton" parent="." node_paths=PackedStringArray("chipTimer")]
 offset_left = 399.0
@@ -155,6 +176,10 @@ texture = ExtResource("11_8dant")
 [connection signal="body_entered" from="BowlArea/ChipSprite/Left" to="." method="_on_left_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite/Middle" to="." method="_on_middle_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite/Right" to="." method="_on_right_body_entered"]
+[connection signal="button_down" from="PicoBowl" to="PicoBowl" method="_on_button_down"]
+[connection signal="button_up" from="PicoBowl" to="PicoBowl" method="_on_button_up"]
+[connection signal="timeout" from="PicoBowl/Timer" to="ChipBag" method="_on_timer_timeout"]
+[connection signal="timeout" from="PicoBowl/Timer" to="PicoBowl" method="_on_timer_timeout"]
 [connection signal="button_down" from="ChipBag" to="ChipBag" method="_on_button_down"]
 [connection signal="button_up" from="ChipBag" to="ChipBag" method="_on_button_up"]
 [connection signal="timeout" from="ChipBag/Timer" to="ChipBag" method="_on_timer_timeout"]
