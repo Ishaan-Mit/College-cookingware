@@ -64,8 +64,8 @@ func _on_arrow_hit_area_entered(area: Area2D) -> void:
 	if area == rock_hit and input_mode == "rock":
 		animation.play("flip_chips")
 		await animation.animation_finished
-		print("win")
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "shop!", 2)
 
 
 func _on_timer_time_done() -> void:
-	print("fail")
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "shop!", 2, false)

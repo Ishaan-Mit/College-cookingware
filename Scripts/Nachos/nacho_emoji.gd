@@ -23,9 +23,9 @@ func _ready() -> void:
 
 func _on_timer_time_done() -> void:
 	print("lose here to time")
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2, false)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!", 2, false)
 func _on_heart_pressed() -> void:
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!!", 2)
 
 func _on_wrong_button_pressed() -> void:
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2, false)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!!", 2, false)

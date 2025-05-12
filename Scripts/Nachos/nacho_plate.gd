@@ -63,7 +63,7 @@ func _on_chip_sprite_body_entered(body: Node2D) -> void:
 		rigid_body.freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 		rigid_body.freeze = true
 		if(is_TJ_won()):
-			print("final stage won, transition here")
+				SceneManager.change_scene("res://Scenes/Nachos/nacho_fridge.tscn", "find!", 1)
 func _on_left_body_entered(body: Node2D) -> void:
 	if(body.name.contains("cheese")):
 		cheeseCount[0] += 1
@@ -105,4 +105,4 @@ func is_TJ_won() -> bool:
 
 
 func _on_timer_time_done() -> void:
-	print("lose to time here")
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_fridge.tscn", "find!", 1, false)

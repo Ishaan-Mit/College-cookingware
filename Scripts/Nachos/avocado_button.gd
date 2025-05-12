@@ -19,7 +19,7 @@ signal button_disappeared()
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_dragging:
 		position = get_viewport().get_mouse_position() - (size * scale)/2
 	if position.x >= min_x and position.x <= max_x and position.y >= min_y and position.y <= max_y:
