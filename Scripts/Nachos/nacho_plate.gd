@@ -102,3 +102,7 @@ func is_TJ_won() -> bool:
 	for i in meatCount:
 		if(i < eachTargetTJ): return false
 	return true
+
+
+func _on_timer_time_done() -> void:
+	print("lose to time here")

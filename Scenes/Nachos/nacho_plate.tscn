@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctofwk1m4tnth"]
+[gd_scene load_steps=18 format=3 uid="uid://ctofwk1m4tnth"]
 
 [ext_resource type="Texture2D" uid="uid://br38m4ygbys4n" path="res://Assets/bowl.png" id="1_1mnlr"]
 [ext_resource type="Script" uid="uid://bo1p8aipfoxu1" path="res://Scripts/Nachos/nacho_plate.gd" id="1_k6ick"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jix28sce1x8g" path="res://Assets/spoonmeat.png" id="11_8dant"]
 [ext_resource type="Texture2D" uid="uid://km0brt26r5fj" path="res://Assets/bowlpico.png" id="12_1bfdl"]
 [ext_resource type="Script" uid="uid://bc2ng8yu0nk28" path="res://Scripts/Nachos/pico_bowl.gd" id="13_yyxdo"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="14_yyxdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q74f"]
 size = Vector2(168, 33.5)
@@ -171,6 +172,9 @@ position = Vector2(29, 41)
 scale = Vector2(0.338608, 0.319149)
 texture = ExtResource("11_8dant")
 
+[node name="Timer" parent="." instance=ExtResource("14_yyxdo")]
+time = 20
+
 [connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite" to="." method="_on_chip_sprite_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite/Left" to="." method="_on_left_body_entered"]
@@ -190,3 +194,4 @@ texture = ExtResource("11_8dant")
 [connection signal="area_entered" from="Meatbowl/Meatbowl" to="Spoon" method="_on_meatbowl_area_entered"]
 [connection signal="button_down" from="Spoon" to="Spoon" method="_on_button_down"]
 [connection signal="button_up" from="Spoon" to="Spoon" method="_on_button_up"]
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
