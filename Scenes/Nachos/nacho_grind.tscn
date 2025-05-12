@@ -1,0 +1,404 @@
+[gd_scene load_steps=10 format=3 uid="uid://n673iwjcxxar"]
+
+[ext_resource type="Script" uid="uid://bbmui0a3k5omf" path="res://Scripts/Nachos/nacho_grind.gd" id="1_qqio4"]
+[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_o5nay"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_o5nay"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqio4"]
+height = 51.9213
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5nay"]
+radius = 32.9848
+
+[sub_resource type="Animation" id="Animation_o5nay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Beef:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(297, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spatula:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spatula:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(251, 165)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spatula:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spatula:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tray:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, 100)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arrow:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(424, -56)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tray/Node2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Tray/Node2D:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0739729]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Rock:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(432, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_1jfe4"]
+resource_name = "flip_chips"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tray/Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -153), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tray/Node2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.633333, 2.52667, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0739729, 2.22355, 24.2548, 25.206]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spatula:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.80642, 8.0896]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spatula:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(339.28, 263.045)]
+}
+
+[sub_resource type="Animation" id="Animation_qqio4"]
+resource_name = "move_beef"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Beef:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(297, 288), Vector2(297, 503.725)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spatula:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.80642]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spatula:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(251, 165), Vector2(339.28, 263.045)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spatula:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spatula:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.6322)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tray:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-130, 105), Vector2(219, 257)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arrow:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.71, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(424, -56), Vector2(424, 256)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Rock:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.67, 1.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(432, -48), Vector2(432, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jfe4"]
+_data = {
+&"RESET": SubResource("Animation_o5nay"),
+&"flip_chips": SubResource("Animation_1jfe4"),
+&"move_beef": SubResource("Animation_qqio4")
+}
+
+[node name="nacho_grind" type="Node2D"]
+script = ExtResource("1_qqio4")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(0.4, 0.351563)
+texture = ExtResource("2_o5nay")
+centered = false
+
+[node name="Beef" type="Polygon2D" parent="."]
+position = Vector2(297, 288)
+color = Color(0.38354, 0.261117, 0.0847879, 1)
+polygon = PackedVector2Array(-40, -40, -56, 40, 64, 48, 72, -32)
+
+[node name="Spatula" type="Polygon2D" parent="."]
+position = Vector2(251, 165)
+color = Color(0.738949, 0.277553, 0.301738, 1)
+polygon = PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)
+uv = PackedVector2Array(-64, -80, -64, 32, -88, 40, -88, 104, 0, 104, 0, 48, -16, 32, -16, -80, -56, -80)
+
+[node name="Tray" type="Polygon2D" parent="."]
+z_index = -1
+position = Vector2(-150, 100)
+color = Color(0.273873, 0.273873, 0.273873, 1)
+polygon = PackedVector2Array(-26, -31, -54, 52, 78, 75, 102, -14)
+
+[node name="Node2D" type="Node2D" parent="Tray"]
+rotation = 0.0739729
+
+[node name="Chip" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(-4, -4)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip2" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(25, -2)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip3" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(57, 2)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip4" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(-21, 17)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip5" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(12, 23)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip6" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(47, 25)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip7" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(6, 45)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Chip8" type="Polygon2D" parent="Tray/Node2D"]
+z_index = 1
+position = Vector2(48, 51)
+color = Color(0.694366, 0.537352, 1.92523e-07, 1)
+polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+
+[node name="Arrow" type="Polygon2D" parent="."]
+position = Vector2(424, -56)
+scale = Vector2(1.06683, 2.15711)
+color = Color(1, 0.0784314, 0.129412, 1)
+polygon = PackedVector2Array(-8, -24, -8, 0, -16, 0, 0, 16, 16, 0, 8, 0, 8, -24)
+
+[node name="Arrow_hit" type="Area2D" parent="Arrow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/Arrow_hit"]
+position = Vector2(0, -11.126)
+shape = SubResource("CapsuleShape2D_qqio4")
+
+[node name="Rock" type="Polygon2D" parent="."]
+position = Vector2(432, -48)
+color = Color(0.258263, 0.232369, 0.252456, 1)
+polygon = PackedVector2Array(-16, -16, 8, -32, 40, -16, 40, 8, 24, 24, -16, 40, -24, 8)
+
+[node name="Rock_hit" type="Area2D" parent="Rock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/Rock_hit"]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_o5nay")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1jfe4")
+}
+
+[node name="Timer" parent="." instance=ExtResource("3_o5nay")]
+time = 30
+
+[connection signal="area_entered" from="Arrow/Arrow_hit" to="." method="_on_arrow_hit_area_entered"]
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

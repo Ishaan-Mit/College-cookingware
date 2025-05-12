@@ -8,7 +8,7 @@
 size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gasrt"]
-size = Vector2(111.596, 64)
+size = Vector2(192, 192)
 
 [node name="nacho_tortilla" type="Node2D"]
 script = ExtResource("1_qm3u6")
@@ -243,14 +243,15 @@ points = PackedVector2Array(320, 184)
 time = 20
 
 [connection signal="input_event" from="Tortilla1/Start" to="." method="_on_start_input_event"]
-[connection signal="input_event" from="Tortilla1/Middle" to="." method="_on_middle_input_event"]
+[connection signal="mouse_exited" from="Tortilla1/Middle" to="." method="_on_middle_mouse_exited"]
 [connection signal="input_event" from="Tortilla1/End" to="." method="_on_end_input_event"]
 [connection signal="input_event" from="Tortilla2/Start" to="." method="_on_start_input_event"]
-[connection signal="input_event" from="Tortilla2/Middle" to="." method="_on_middle_input_event"]
+[connection signal="mouse_exited" from="Tortilla2/Middle" to="." method="_on_middle_mouse_exited"]
 [connection signal="input_event" from="Tortilla2/End" to="." method="_on_end_input_event"]
 [connection signal="input_event" from="Tortilla3/Start" to="." method="_on_start_input_event"]
-[connection signal="input_event" from="Tortilla3/Middle" to="." method="_on_middle_input_event"]
+[connection signal="mouse_exited" from="Tortilla3/Middle" to="." method="_on_middle_mouse_exited"]
 [connection signal="input_event" from="Tortilla3/End" to="." method="_on_end_input_event"]
 [connection signal="input_event" from="Tortilla4/Start" to="." method="_on_start_input_event"]
-[connection signal="input_event" from="Tortilla4/Middle" to="." method="_on_middle_input_event"]
+[connection signal="mouse_exited" from="Tortilla4/Middle" to="." method="_on_middle_mouse_exited"]
 [connection signal="input_event" from="Tortilla4/End" to="." method="_on_end_input_event"]
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

@@ -44,20 +44,20 @@ func _on_start_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) 
 		if event.pressed:
 			cutting = true
 			knifemark.add_point(get_local_mouse_position())
-		else:
+		elif not event.pressed:
 			cutting = false
 			knifemark.clear_points()
 	
-func _on_middle_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		knifemark.add_point(get_local_mouse_position())
-
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-		cutting = false
-		knifemark.clear_points()
+func _on_middle_mouse_exited() -> void:
+	cutting = false
+	knifemark.clear_points()
 
 func _on_end_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		if cutting:
 			good_cut()
 			cutting = false
+
+
+func _on_timer_time_done() -> void:
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_emoji.tscn", "Rizz!", 1, false)
