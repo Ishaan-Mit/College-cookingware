@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ctofwk1m4tnth"]
+[gd_scene load_steps=19 format=3 uid="uid://ctofwk1m4tnth"]
 
 [ext_resource type="Texture2D" uid="uid://br38m4ygbys4n" path="res://Assets/bowl.png" id="1_1mnlr"]
 [ext_resource type="Script" uid="uid://bo1p8aipfoxu1" path="res://Scripts/Nachos/nacho_plate.gd" id="1_k6ick"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b7456pdq6duvg" path="res://Assets/chips.png" id="4_gcdvv"]
 [ext_resource type="Texture2D" uid="uid://fp5blmsd60fj" path="res://Assets/cheesebottle.png" id="6_lonth"]
 [ext_resource type="Script" uid="uid://t4tp02hwr10n" path="res://Scripts/Nachos/cheese_bottle.gd" id="7_y75r0"]
-[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="8_bkfci"]
 [ext_resource type="Texture2D" uid="uid://c4tuhceyn8q3x" path="res://Assets/meatbowl.png" id="8_fo6km"]
 [ext_resource type="Texture2D" uid="uid://sx3ytf5ybjl6" path="res://Assets/spoon.png" id="9_8dant"]
 [ext_resource type="Script" uid="uid://dqgkechryicjo" path="res://Scripts/Nachos/spoon.gd" id="10_wwtah"]
@@ -22,10 +21,8 @@ size = Vector2(168, 33.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lonth"]
 size = Vector2(58.5, 43)
 
-[sub_resource type="LabelSettings" id="LabelSettings_pmkxe"]
-font = ExtResource("8_bkfci")
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_yyxdo"]
+font_size = 30
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo6km"]
 radius = 14.94
@@ -102,6 +99,17 @@ spawnTimer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="PicoBowl"]
 wait_time = 0.1
 
+[node name="Label" type="Label" parent="PicoBowl"]
+offset_left = 396.0
+offset_top = 259.0
+offset_right = 589.0
+offset_bottom = 301.0
+rotation = 3.14159
+scale = Vector2(2.1923, 2.81922)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "click n shake!"
+label_settings = SubResource("LabelSettings_yyxdo")
+
 [node name="ChipBag" type="TextureButton" parent="." node_paths=PackedStringArray("chipTimer")]
 offset_left = 399.0
 offset_top = 158.0
@@ -122,14 +130,15 @@ chipTimer = NodePath("Timer")
 wait_time = 0.1
 
 [node name="Label" type="Label" parent="ChipBag"]
-offset_left = 220.0
-offset_top = 140.0
-offset_right = 414.0
-offset_bottom = 163.0
+offset_left = 505.015
+offset_top = 694.904
+offset_right = 705.015
+offset_bottom = 717.904
 rotation = 3.14159
+scale = Vector2(2.15617, 3.20017)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-text = "Click to find the avocado!"
-label_settings = SubResource("LabelSettings_pmkxe")
+text = "click n shake!"
+label_settings = SubResource("LabelSettings_yyxdo")
 
 [node name="CheeseBottle" type="TextureButton" parent="." node_paths=PackedStringArray("cheeseTimer")]
 visible = false
@@ -150,6 +159,17 @@ cheeseTimer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="CheeseBottle"]
 wait_time = 0.1
 
+[node name="Label" type="Label" parent="CheeseBottle"]
+offset_left = 272.726
+offset_top = 505.455
+offset_right = 465.726
+offset_bottom = 547.455
+rotation = 3.14159
+scale = Vector2(2.1923, 2.81922)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "click n drag!"
+label_settings = SubResource("LabelSettings_yyxdo")
+
 [node name="Meatbowl" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(132, 188)
@@ -160,6 +180,27 @@ texture = ExtResource("8_fo6km")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Meatbowl/Meatbowl"]
 polygon = PackedVector2Array(-41, -69.5, -41, -68.4, -80.1, -65.5, -89.2, -65.5, -119.4, -59.5, -124.4, -59.5, -153.4, -48.5, -155.9, -48.5, -163.9, -39.5, -166.2, -39.5, -164, -13.3, -164, -9, -156, 7, -156, 9.3, -149, 17.2, -149, 19.4, -135, 32.4, -135, 33.6, -118, 44.6, -118, 45.8, -95, 55.7, -95, 57, -70, 63.9, -70, 65.2, -21.1, 72.5, 13.2, 72.5, 46.3, 67.5, 51.3, 67.5, 82.3, 57.5, 85.5, 57.5, 118.5, 38.5, 120.8, 38.5, 137.8, 21.5, 139.2, 21.5, 151.1, 0.5, 152.6, 0.5, 156.6, -16.5, 158.1, -16.5, 157, -37.6, 157, -40.6, 141, -50.7, 141, -52, 126, -56, 126, -57.2, 83, -64.3, 83, -65.4, 51, -67.4, 51, -68.5)
+
+[node name="Label" type="Label" parent="Meatbowl"]
+offset_left = 651.959
+offset_top = -288.124
+offset_right = 953.959
+offset_bottom = -201.124
+scale = Vector2(1.27522, 1.22064)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "click to drag
+release to drop meat"
+label_settings = SubResource("LabelSettings_yyxdo")
+
+[node name="Label2" type="Label" parent="Meatbowl"]
+offset_left = -168.247
+offset_top = -134.598
+offset_right = 133.753
+offset_bottom = -47.598
+scale = Vector2(1.27522, 1.22064)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "drag spoon here!"
+label_settings = SubResource("LabelSettings_yyxdo")
 
 [node name="Spoon" type="TextureButton" parent="."]
 visible = false
@@ -189,10 +230,10 @@ scale = Vector2(0.338608, 0.319149)
 texture = ExtResource("11_8dant")
 
 [node name="Timer" parent="." instance=ExtResource("14_yyxdo")]
-offset_left = -72.0
-offset_top = -61.0
-offset_right = -72.0
-offset_bottom = -61.0
+offset_left = -83.0
+offset_top = -91.0
+offset_right = -83.0
+offset_bottom = -91.0
 time = 20
 
 [connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
