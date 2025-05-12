@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://kkla0gu4xa8p"]
+
+[ext_resource type="Script" uid="uid://ct4fhpivgoefh" path="res://Scripts/Nachos/nacho_mash.gd" id="1_7y4li"]
+[ext_resource type="Texture2D" uid="uid://cikxdt861g3p" path="res://Assets/guacbowl.png" id="1_gjjkg"]
+[ext_resource type="Texture2D" uid="uid://mg3iwp134mta" path="res://Assets/guacbowl1.png" id="2_7y4li"]
+[ext_resource type="Texture2D" uid="uid://cpon2ptju470m" path="res://Assets/guacbowl2.png" id="3_uxnoa"]
+[ext_resource type="Texture2D" uid="uid://06yin4v55yp1" path="res://Assets/guacbowl3.png" id="4_qfit0"]
+[ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="5_2k8ub"]
+[ext_resource type="Script" uid="uid://d6npcgrbt882" path="res://Scripts/Nachos/avocado_button.gd" id="6_b8fra"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="8_uxnoa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eon6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gjjkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7y4li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uxnoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qfit0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NachoMash" type="Node2D" node_paths=PackedStringArray("bowl_area", "bowl", "avocados")]
+script = ExtResource("1_7y4li")
+bowl_area = NodePath("BowlArea")
+bowl = NodePath("BowlArea/bowl")
+avocados = [NodePath("ButtonArea")]
+
+[node name="ButtonArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButtonArea"]
+visible = false
+position = Vector2(506, 67)
+polygon = PackedVector2Array(-10, -25, -19, -7.4, -19, 18.5, -11, 24.9, 16.6, 25, 19, 22, 19, -8.5, 17, -12.5, 17, -14.8, 7, -24.8)
+
+[node name="BowlArea" type="Area2D" parent="."]
+
+[node name="bowl" type="AnimatedSprite2D" parent="BowlArea"]
+position = Vector2(336, 274)
+scale = Vector2(0.193, 0.193)
+sprite_frames = SubResource("SpriteFrames_eon6v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BowlArea"]
+position = Vector2(336, 275)
+scale = Vector2(0.193, 0.193)
+polygon = PackedVector2Array(-126, -246, -126, -245, -237.1, -241, -250.3, -241, -322.4, -216, -325.5, -216, -367.5, -194, -369.7, -194, -392.7, -176, -394.9, -176, -418.9, -147, -420.4, -147, -430, -120.3, -430, -81.9, -422, -7.79999, -422, -0.799988, -408, 57, -408, 61.4, -386, 118.4, -386, 121.5, -356, 173.4, -356, 175.7, -321, 217.7, -321, 219.9, -289, 248.8, -289, 250.1, -248, 278, -248, 279.2, -203.5, 302, -202.5, 302, -198, 317.2, -198, 319.8, -184, 334.8, -184, 336.1, -161, 350, -161, 351.4, -124, 364.4, -124, 365.7, -69, 375.7, -69, 376.9, -14, 379.8, -14, 381.1, 54.1, 377, 63.2, 377, 114.4, 366, 118.4, 366, 146.4, 355, 149.5, 355, 166.5, 345, 168.8, 345, 188.8, 326, 190.2, 326, 199, 308.5, 199, 301.2, 217.4, 293, 219.6, 293, 247.5, 276, 249.7, 276, 284.7, 249, 286.8, 249, 320.8, 215, 322, 215, 345, 185, 346.1, 185, 368.1, 148, 369.3, 148, 384.3, 115, 385.4, 115, 401.4, 68, 402.6, 68, 413.5, 20, 414.8, 20, 421.8, -33, 422.9, -33, 425.9, -90, 427, -90, 427, -116.3, 422, -133.3, 422, -136.6, 410, -154.7, 410, -156.9, 391, -175, 391, -176.1, 359, -197.2, 359, -198.3, 333, -210.3, 333, -211.4, 275, -233.5, 275, -234.7, 242, -239.8, 242, -240.9, 200, -243, 200, -244)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 255.0
+offset_top = 230.0
+offset_right = 417.0
+offset_bottom = 348.0
+
+[node name="AvocadoButton3" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = -11.0
+anchor_top = -1.44
+anchor_right = -11.0
+anchor_bottom = -1.44
+offset_left = 526.0
+offset_top = 76.0
+offset_right = 564.0
+offset_bottom = 126.0
+texture_normal = ExtResource("5_2k8ub")
+texture_pressed = ExtResource("5_2k8ub")
+texture_hover = ExtResource("5_2k8ub")
+texture_disabled = ExtResource("5_2k8ub")
+texture_focused = ExtResource("5_2k8ub")
+script = ExtResource("6_b8fra")
+metadata/_edit_use_anchors_ = true
+
+[node name="AvocadoButton2" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = -13.1053
+anchor_top = -0.22
+anchor_right = -13.1053
+anchor_bottom = -0.22
+offset_left = 500.0
+offset_top = 139.0
+offset_right = 538.0
+offset_bottom = 189.0
+texture_normal = ExtResource("5_2k8ub")
+texture_pressed = ExtResource("5_2k8ub")
+texture_hover = ExtResource("5_2k8ub")
+texture_disabled = ExtResource("5_2k8ub")
+texture_focused = ExtResource("5_2k8ub")
+script = ExtResource("6_b8fra")
+metadata/_edit_use_anchors_ = true
+
+[node name="AvocadoButton" type="TextureButton" parent="."]
+offset_left = 472.0
+offset_top = 74.0
+offset_right = 510.0
+offset_bottom = 124.0
+texture_normal = ExtResource("5_2k8ub")
+texture_pressed = ExtResource("5_2k8ub")
+texture_hover = ExtResource("5_2k8ub")
+texture_disabled = ExtResource("5_2k8ub")
+texture_focused = ExtResource("5_2k8ub")
+script = ExtResource("6_b8fra")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" parent="." instance=ExtResource("8_uxnoa")]
+time = 8
+
+[connection signal="area_entered" from="BowlArea" to="." method="_on_bowl_area_area_entered"]
+[connection signal="area_exited" from="BowlArea" to="." method="_on_bowl_area_area_exited"]
+[connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
+[connection signal="body_exited" from="BowlArea" to="." method="_on_bowl_area_body_exited"]
+[connection signal="button_disappeared" from="AvocadoButton3" to="." method="_on_avocado_button_button_disappeared"]
+[connection signal="button_down" from="AvocadoButton3" to="AvocadoButton3" method="_on_button_down"]
+[connection signal="button_up" from="AvocadoButton3" to="AvocadoButton3" method="_on_button_up"]
+[connection signal="pressed" from="AvocadoButton3" to="AvocadoButton3" method="_on_pressed"]
+[connection signal="button_disappeared" from="AvocadoButton2" to="." method="_on_avocado_button_button_disappeared"]
+[connection signal="button_down" from="AvocadoButton2" to="AvocadoButton2" method="_on_button_down"]
+[connection signal="button_up" from="AvocadoButton2" to="AvocadoButton2" method="_on_button_up"]
+[connection signal="pressed" from="AvocadoButton2" to="AvocadoButton2" method="_on_pressed"]
+[connection signal="button_disappeared" from="AvocadoButton" to="." method="_on_avocado_button_button_disappeared"]
+[connection signal="button_down" from="AvocadoButton" to="AvocadoButton" method="_on_button_down"]
+[connection signal="button_up" from="AvocadoButton" to="AvocadoButton" method="_on_button_up"]
+[connection signal="pressed" from="AvocadoButton" to="AvocadoButton" method="_on_pressed"]
+[connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
