@@ -39,8 +39,8 @@ func makeRect(z_index: float, playAreaIndex: int):
 
 func randomizeTBPosition(object: TextureButton, playAreaIndex: int):
 	playAreas[playAreaIndex].add_child(object)
-	var pos_x = randf_range(0, playAreas[playAreaIndex].size.x)
-	var pos_y = randf_range(0, playAreas[playAreaIndex].size.y)
+	var pos_x = randf_range(playAreas[playAreaIndex].size.x / 100, playAreas[playAreaIndex].size.x)
+	var pos_y = randf_range(playAreas[playAreaIndex].size.y / 100, playAreas[playAreaIndex].size.y)
 	object.position = Vector2(pos_x, pos_y)
 	var console: String = str(playAreaIndex + 1) + " "+ str(pos_x) +  " " + str(pos_y)
 	print(console)

@@ -27,10 +27,10 @@ offset_bottom = 1.0
 metadata/_edit_lock_ = true
 
 [node name="Avocado" type="TextureButton" parent="."]
-offset_left = 114.0
-offset_top = 172.0
-offset_right = 154.0
-offset_bottom = 222.0
+offset_left = 111.0
+offset_top = 7.0
+offset_right = 151.0
+offset_bottom = 57.0
 texture_normal = ExtResource("4_jnw37")
 texture_pressed = ExtResource("4_jnw37")
 texture_hover = ExtResource("4_jnw37")

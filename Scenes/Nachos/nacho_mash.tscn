@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kkla0gu4xa8p"]
+[gd_scene load_steps=12 format=3 uid="uid://kkla0gu4xa8p"]
 
 [ext_resource type="Script" uid="uid://ct4fhpivgoefh" path="res://Scripts/Nachos/nacho_mash.gd" id="1_7y4li"]
 [ext_resource type="Texture2D" uid="uid://cikxdt861g3p" path="res://Assets/guacbowl.png" id="1_gjjkg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="5_2k8ub"]
 [ext_resource type="Script" uid="uid://d6npcgrbt882" path="res://Scripts/Nachos/avocado_button.gd" id="6_b8fra"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="8_uxnoa"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="9_qfit0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eon6v"]
 animations = [{
@@ -28,6 +29,11 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2k8ub"]
+font = ExtResource("9_qfit0")
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="NachoMash" type="Node2D" node_paths=PackedStringArray("bowl_area", "bowl", "avocados")]
 script = ExtResource("1_7y4li")
@@ -113,6 +119,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Timer" parent="." instance=ExtResource("8_uxnoa")]
 time = 8
+
+[node name="Label" type="Label" parent="."]
+offset_left = 415.0
+offset_top = 27.0
+offset_right = 620.0
+offset_bottom = 50.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Drag To the bowl and click!"
+label_settings = SubResource("LabelSettings_2k8ub")
 
 [connection signal="area_entered" from="BowlArea" to="." method="_on_bowl_area_area_entered"]
 [connection signal="area_exited" from="BowlArea" to="." method="_on_bowl_area_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v3mapbmu5sqp"]
+[gd_scene load_steps=13 format=3 uid="uid://v3mapbmu5sqp"]
 
 [ext_resource type="Script" uid="uid://sex16ua4u5hc" path="res://Scripts/Nachos/nacho_emoji.gd" id="1_ogfk2"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="1_prp8n"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cw5gy62awimvb" path="res://Assets/wrongemoji3.png" id="5_f4nub"]
 [ext_resource type="Texture2D" uid="uid://bhui44wjd3ogg" path="res://Assets/rose.png" id="5_lqhph"]
 [ext_resource type="Texture2D" uid="uid://bj7e4000wfhgx" path="res://Assets/wrongemoji.png" id="6_fobab"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="11_u05rl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2bemc"]
 font_color = Color(0, 0, 0, 1)
@@ -106,6 +107,11 @@ offset_bottom = 334.0
 position = Vector2(41, 37)
 scale = Vector2(0.256667, 0.256667)
 texture = ExtResource("4_r0arr")
+
+[node name="Click" type="Sprite2D" parent="."]
+position = Vector2(577, 88)
+scale = Vector2(0.0687499, 0.0687499)
+texture = ExtResource("11_u05rl")
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="pressed" from="RightButton" to="." method="_on_heart_pressed"]
