@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctofwk1m4tnth"]
+[gd_scene load_steps=20 format=3 uid="uid://ctofwk1m4tnth"]
 
 [ext_resource type="Texture2D" uid="uid://br38m4ygbys4n" path="res://Assets/bowl.png" id="1_1mnlr"]
 [ext_resource type="Script" uid="uid://bo1p8aipfoxu1" path="res://Scripts/Nachos/nacho_plate.gd" id="1_k6ick"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b7456pdq6duvg" path="res://Assets/chips.png" id="4_gcdvv"]
 [ext_resource type="Texture2D" uid="uid://fp5blmsd60fj" path="res://Assets/cheesebottle.png" id="6_lonth"]
 [ext_resource type="Script" uid="uid://t4tp02hwr10n" path="res://Scripts/Nachos/cheese_bottle.gd" id="7_y75r0"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="8_bkfci"]
 [ext_resource type="Texture2D" uid="uid://c4tuhceyn8q3x" path="res://Assets/meatbowl.png" id="8_fo6km"]
 [ext_resource type="Texture2D" uid="uid://sx3ytf5ybjl6" path="res://Assets/spoon.png" id="9_8dant"]
 [ext_resource type="Script" uid="uid://dqgkechryicjo" path="res://Scripts/Nachos/spoon.gd" id="10_wwtah"]
@@ -20,6 +21,11 @@ size = Vector2(168, 33.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lonth"]
 size = Vector2(58.5, 43)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pmkxe"]
+font = ExtResource("8_bkfci")
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo6km"]
 radius = 14.94
@@ -115,6 +121,16 @@ chipTimer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="ChipBag"]
 wait_time = 0.1
 
+[node name="Label" type="Label" parent="ChipBag"]
+offset_left = 220.0
+offset_top = 140.0
+offset_right = 414.0
+offset_bottom = 163.0
+rotation = 3.14159
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Click to find the avocado!"
+label_settings = SubResource("LabelSettings_pmkxe")
+
 [node name="CheeseBottle" type="TextureButton" parent="." node_paths=PackedStringArray("cheeseTimer")]
 visible = false
 offset_left = 362.0
@@ -173,6 +189,10 @@ scale = Vector2(0.338608, 0.319149)
 texture = ExtResource("11_8dant")
 
 [node name="Timer" parent="." instance=ExtResource("14_yyxdo")]
+offset_left = -72.0
+offset_top = -61.0
+offset_right = -72.0
+offset_bottom = -61.0
 time = 20
 
 [connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
