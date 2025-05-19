@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_n1jgn"]
 [ext_resource type="Script" uid="uid://52it5q5ou386" path="res://Scripts/foodChoice.gd" id="3_b5m4b"]
-[ext_resource type="Texture2D" uid="uid://lo55ywt6g8k1" path="res://Assets/frid.png" id="3_qtxxp"]
+[ext_resource type="Texture2D" uid="uid://cib2n1n1iuk1g" path="res://Assets/fridge.png" id="3_x2qai"]
 [ext_resource type="Texture2D" uid="uid://cyveqylro38ma" path="res://Assets/egg_trio.png" id="4_uci4v"]
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="7_3sht7"]
 [ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="8_b5m4b"]
@@ -29,7 +29,7 @@ centered = false
 [node name="Frid" type="Sprite2D" parent="."]
 position = Vector2(320, 208)
 scale = Vector2(0.665804, 0.665804)
-texture = ExtResource("3_qtxxp")
+texture = ExtResource("3_x2qai")
 
 [node name="Egg" type="Area2D" parent="."]
 position = Vector2(296, 208)
@@ -76,6 +76,15 @@ offset_top = -23.0
 offset_right = -58.0
 offset_bottom = -23.0
 time = 8
+
+[node name="Label" type="Label" parent="."]
+offset_left = 408.0
+offset_top = 8.0
+offset_right = 633.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 21
+text = "Gather the ingredients 
+to make Ramen"
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
 [connection signal="input_event" from="Onion" to="Onion" method="_on_input_event"]

@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bunc6fo6hp7xb"]
+[gd_scene load_steps=13 format=3 uid="uid://bunc6fo6hp7xb"]
 
 [ext_resource type="Script" uid="uid://d1r5luvy6tegs" path="res://Scripts/Ramen/ramen_cook_pork.gd" id="1_ggdcr"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_e3phg"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_a2wg0"]
+[ext_resource type="Texture2D" uid="uid://dsaxoem5fnoj4" path="res://Assets/hotstove.png" id="4_a5dub"]
 [ext_resource type="Texture2D" uid="uid://cnxny44djyxwx" path="res://Assets/pan.png" id="4_yf0tl"]
 [ext_resource type="Texture2D" uid="uid://cwbi23miusitw" path="res://Assets/cooked.png" id="5_a5dub"]
 [ext_resource type="Texture2D" uid="uid://dl6eapcreao8i" path="res://Assets/burnpork.png" id="5_e3phg"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_i0ir1"]
 [ext_resource type="Texture2D" uid="uid://cjlv0wo5ramqc" path="res://Assets/mid.png" id="6_e3phg"]
 [ext_resource type="Texture2D" uid="uid://dia1f74dct4ro" path="res://Assets/raw.png" id="7_d562s"]
+[ext_resource type="Texture2D" uid="uid://cbceoggei77n2" path="res://Assets/stove_button.png" id="11_e3phg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggdcr"]
 height = 80.0
@@ -24,13 +26,30 @@ centered = false
 [node name="Timer" parent="." instance=ExtResource("3_a2wg0")]
 time = 30
 
+[node name="Hotstove" type="Sprite2D" parent="."]
+position = Vector2(320, 296)
+rotation = 1.5708
+scale = Vector2(0.219832, 0.219832)
+texture = ExtResource("4_a5dub")
+
 [node name="Pan" type="Sprite2D" parent="."]
-position = Vector2(360.094, 291.045)
+position = Vector2(328, 280)
 scale = Vector2(0.105621, 0.105621)
 texture = ExtResource("4_yf0tl")
 
+[node name="StoveButton" type="Sprite2D" parent="."]
+position = Vector2(278, 328)
+scale = Vector2(0.314648, 0.314648)
+texture = ExtResource("11_e3phg")
+offset = Vector2(6.35626, -0.00012207)
+
+[node name="StoveButton2" type="Sprite2D" parent="."]
+position = Vector2(360, 328)
+scale = Vector2(0.314648, 0.314648)
+texture = ExtResource("11_e3phg")
+
 [node name="Pork" type="Node2D" parent="."]
-position = Vector2(321.094, 303.795)
+position = Vector2(288, 296)
 scale = Vector2(0.0841155, 0.0841155)
 
 [node name="Raw" type="Sprite2D" parent="Pork"]
@@ -64,12 +83,14 @@ color = Color(0.215686, 0.8, 0.145098, 1)
 polygon = PackedVector2Array(0, 0, 0, 24, 88, 24, 88, 0)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 176.0
-offset_right = 616.0
-offset_bottom = 232.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 256.0
+offset_top = 312.0
+offset_right = 296.0
+offset_bottom = 344.0
 toggle_mode = true
-text = "Stove: Off"
+button_pressed = true
+text = " "
 
 [node name="Arrow" type="Area2D" parent="."]
 position = Vector2(480, 72)
@@ -82,14 +103,46 @@ polygon = PackedVector2Array(0, -24, -24, 0, -8, 0, -8, 56, 8, 56, 8, 0, 24, 0)
 shape = SubResource("CapsuleShape2D_ggdcr")
 
 [node name="FlipButton" type="Button" parent="."]
-offset_left = 208.0
-offset_top = 136.0
-offset_right = 352.0
-offset_bottom = 232.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 243.0
+offset_top = 262.0
+offset_right = 328.0
+offset_bottom = 304.0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_i0ir1")
 theme_override_font_sizes/font_size = 76
-text = "Flip"
+
+[node name="Label" type="Label" parent="FlipButton"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = 14.0
+offset_right = -7.0
+offset_bottom = 34.0
+text = "Click pork to flip →"
+uppercase = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 302.0
+offset_right = 261.0
+offset_bottom = 348.0
+text = "Click stove button 
+to toggle heat"
+uppercase = true
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "→"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

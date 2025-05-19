@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://o8r1kov8l4n4"]
+[gd_scene load_steps=20 format=3 uid="uid://o8r1kov8l4n4"]
 
 [ext_resource type="Script" uid="uid://dbilbp1l1w6lt" path="res://Scripts/Ramen/ramen_fill.gd" id="1_1ue64"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_slt7w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c4rsrx6nplidw" path="res://Assets/waterbucket4.png" id="6_slt7w"]
 [ext_resource type="Texture2D" uid="uid://c1t04isyrx1hw" path="res://Assets/waterbucket5.png" id="7_leo17"]
 [ext_resource type="Texture2D" uid="uid://bkgosd5deu4i1" path="res://Assets/waterbucket6.png" id="8_slt7w"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="11_yea5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3mnvl"]
 atlas = ExtResource("3_7x1dj")
@@ -123,6 +124,26 @@ offset_top = 93.0
 offset_right = 580.0
 offset_bottom = 109.0
 max_value = 250.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 92.0
+offset_right = 322.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("11_yea5j")
+text = "DRAG PIPE TO FILL BUCKET →
+DONT OVERFLOW"
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+modulate = Color(0, 0, 0, 0.721569)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="drag_ended" from="WaterDrag" to="." method="_on_water_drag_drag_ended"]

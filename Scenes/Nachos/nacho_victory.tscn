@@ -1,0 +1,107 @@
+[gd_scene load_steps=19 format=3 uid="uid://li6cfgjwqrpd"]
+
+[ext_resource type="Script" uid="uid://bjlmhrg6ylxu5" path="res://Scripts/victory.gd" id="1_njlrs"]
+[ext_resource type="Texture2D" uid="uid://bagd0ndb122yv" path="res://Assets/nacho_win.png" id="2_vl5po"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_a07km"]
+[ext_resource type="Script" uid="uid://jrcoawckfb0x" path="res://Scripts/defeatButton.gd" id="5_pgm3q"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="7_whj2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xy5eq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hbb2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dl4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjssh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxnk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpxkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oogxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfg8y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v66y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apju7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k74ab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hn41"]
+font = ExtResource("4_a07km")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2k88"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_njlrs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+scale = Vector2(15.92, 9.08)
+color = Color(0.839216, 0.882353, 0.721569, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(320, 144)
+rotation = 1.5708
+scale = Vector2(0.706372, 0.817083)
+texture = ExtResource("2_vl5po")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 254.0
+offset_right = 627.0
+offset_bottom = 332.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_a07km")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xy5eq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hbb2g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1dl4n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vjssh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fxnk1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rpxkf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oogxl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nfg8y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5v66y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_apju7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k74ab")
+text = "Restart!"
+script = ExtResource("5_pgm3q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 32.0
+offset_right = 860.0
+offset_bottom = 97.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_a07km")
+theme_override_font_sizes/font_size = 14
+text = "You cooked 
+edible nachos!"
+label_settings = SubResource("LabelSettings_5hn41")
+horizontal_alignment = 1
+
+[node name="RatingLabel" type="Label" parent="."]
+offset_left = 363.0
+offset_top = 218.0
+offset_right = 633.0
+offset_bottom = 269.0
+rotation = -0.182787
+theme_override_fonts/font = ExtResource("7_whj2r")
+text = "Your Rating: S"
+label_settings = SubResource("LabelSettings_n2k88")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]

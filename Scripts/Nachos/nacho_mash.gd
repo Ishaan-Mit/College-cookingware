@@ -17,7 +17,7 @@ func advance_bowl_animation() -> void:
 		bowl.frame += 1
 	else:
 		bowl.frame += 1
-		SceneManager.change_scene("res://Scenes/victory.tscn")
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_victory.tscn")
 
 func _on_bowl_area_body_entered(body: Node2D) -> void:
 	print("body entered")
@@ -58,4 +58,4 @@ func _on_avocado_button_button_disappeared() -> void:
 
 
 func _on_timer_time_done() -> void:
-	SceneManager.change_scene("res://Scenes/victory.tscn", "", 0, false)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_victory.tscn", "", 0, false)

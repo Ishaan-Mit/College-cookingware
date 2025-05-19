@@ -8,6 +8,7 @@ extends Node2D
 @onready var cooked: Sprite2D = $Pork/Cooked
 @onready var burnt: Sprite2D = $Pork/Burnpork
 @onready var flip_label: Button = $FlipButton
+@onready var stove_button: Sprite2D = $StoveButton
 
 var temperature = 100
 var cook_temp = 0
@@ -69,9 +70,11 @@ func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		button.text = "Stove: On"
 		SceneManager.play_sfx2("res://Assets/audio/stovelight.wav")
+		stove_button.rotation = PI/3
 	else:
 		button.text = "Stove: Off"
 		SceneManager.play_sfx2("res://Assets/audio/stoveoff.wav")
+		stove_button.rotation = 0
 
 func _on_flip_button_pressed() -> void:
 	if cook_temp > 6 and cook_temp < 12:
@@ -81,4 +84,4 @@ func _on_flip_button_pressed() -> void:
 
 func _on_timer_time_done() -> void:
 	SceneManager.stop_sfx()
-	SceneManager.change_scene("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!", 1, false	)
+	SceneManager.change_scene("res://Scenes/Ramen/ramen_boil_egg.tscn", "boil!", 1, false)

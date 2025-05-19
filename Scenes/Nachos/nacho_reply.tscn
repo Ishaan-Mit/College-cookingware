@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://73k8cjcdgehs"]
+[gd_scene load_steps=6 format=3 uid="uid://cepbfr4c6hshg"]
 
-[ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://Scripts/Ramen/ramen_reply.gd" id="1_3jy63"]
-[ext_resource type="Texture2D" uid="uid://bfsmlos2x7wwe" path="res://Assets/typeback.png" id="2_chwsi"]
-[ext_resource type="Texture2D" uid="uid://fd1wfsgq7cev" path="res://Assets/greyboxmonitor.png" id="2_ng5uj"]
-[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_chwsi"]
+[ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://Scripts/Ramen/ramen_reply.gd" id="1_gxui7"]
+[ext_resource type="Texture2D" uid="uid://bfsmlos2x7wwe" path="res://Assets/typeback.png" id="2_fno2f"]
+[ext_resource type="Texture2D" uid="uid://fd1wfsgq7cev" path="res://Assets/greyboxmonitor.png" id="3_l8ow7"]
+[ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="4_msf4l"]
 
 [sub_resource type="FontFile" id="FontFile_ng5uj"]
 cache/0/16/0/ascent = 0.0
@@ -18,18 +18,18 @@ cache/0/11/0/underline_thickness = 0.0
 cache/0/11/0/scale = 1.0
 
 [node name="RamenReply" type="Node2D"]
-script = ExtResource("1_3jy63")
+script = ExtResource("1_gxui7")
 targetClicks = 30
 
 [node name="Typeback" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
 scale = Vector2(0.222222, 0.208817)
-texture = ExtResource("2_chwsi")
+texture = ExtResource("2_fno2f")
 
 [node name="Greyboxmonitor" type="Sprite2D" parent="."]
 position = Vector2(318.194, 178.375)
 scale = Vector2(0.765394, 0.765394)
-texture = ExtResource("2_ng5uj")
+texture = ExtResource("3_l8ow7")
 metadata/_edit_lock_ = true
 
 [node name="Greeting" type="RichTextLabel" parent="."]
@@ -68,6 +68,6 @@ text = "[code][color=black]Best regards,
 the greatest student[/color][/code]"
 scroll_active = false
 
-[node name="Timer" parent="." instance=ExtResource("3_chwsi")]
+[node name="Timer" parent="." instance=ExtResource("4_msf4l")]
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

@@ -8,15 +8,15 @@ var full_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 
 
 func _process(_delta: float) -> void:
-	var charsToDisplay = (full_text.length()/targetClicks) * currentClicks
+	var charsToDisplay = (ceil(full_text.length()/targetClicks)) * currentClicks
 	var display = full_text.substr(0, charsToDisplay)
 	
-	TextBody.text = "[color=black]" + display + "[/color]" #displays text
+	TextBody.text = "[color=black][code]" + display + "[/code][/color]" #displays text
 	
 	if currentClicks >= targetClicks:
 		SceneManager.change_scene("res://Scenes/Ramen/ramen_cook_pork.tscn", "cook!", 1)
 
-#mouse detection
+#keyboard detection
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		currentClicks += 1
