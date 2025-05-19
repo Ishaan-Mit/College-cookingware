@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n673iwjcxxar"]
+[gd_scene load_steps=10 format=3 uid="uid://bmsqqei2h2e47"]
 
 [ext_resource type="Script" uid="uid://bbmui0a3k5omf" path="res://Scripts/Nachos/nacho_grind.gd" id="1_qqio4"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_o5nay"]
