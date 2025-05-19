@@ -148,4 +148,6 @@ text = "Temperature"
 [node name="Timer" parent="." instance=ExtResource("7_o6lml")]
 time = 6
 
+[node name="UIContainer" type="Node2D" parent="."]
+
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

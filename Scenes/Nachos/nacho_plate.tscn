@@ -100,6 +100,7 @@ spawnTimer = NodePath("Timer")
 wait_time = 0.1
 
 [node name="Label" type="Label" parent="PicoBowl"]
+layout_mode = 0
 offset_left = 396.0
 offset_top = 259.0
 offset_right = 589.0
@@ -130,6 +131,7 @@ chipTimer = NodePath("Timer")
 wait_time = 0.1
 
 [node name="Label" type="Label" parent="ChipBag"]
+layout_mode = 0
 offset_left = 505.015
 offset_top = 694.904
 offset_right = 705.015
@@ -160,6 +162,7 @@ cheeseTimer = NodePath("Timer")
 wait_time = 0.1
 
 [node name="Label" type="Label" parent="CheeseBottle"]
+layout_mode = 0
 offset_left = 272.726
 offset_top = 505.455
 offset_right = 465.726
