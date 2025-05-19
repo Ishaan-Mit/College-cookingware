@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv35x38lntvhv"]
+[gd_scene load_steps=13 format=3 uid="uid://bv35x38lntvhv"]
 
 [ext_resource type="Script" uid="uid://v8rrf4n7ucnd" path="res://Scripts/Ramen/ramen_gather.gd" id="1_uci4v"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_n1jgn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyveqylro38ma" path="res://Assets/egg_trio.png" id="4_uci4v"]
 [ext_resource type="Texture2D" uid="uid://d17tl7jfpknlw" path="res://Assets/greenonion.png" id="7_3sht7"]
 [ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="8_b5m4b"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="9_fe6gy"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="10_uci4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyscb"]
@@ -82,9 +83,21 @@ offset_left = 408.0
 offset_top = 8.0
 offset_right = 633.0
 offset_bottom = 61.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_fe6gy")
 theme_override_font_sizes/font_size = 21
 text = "Gather the ingredients 
 to make Ramen"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 168.0
+offset_top = 174.0
+offset_right = 393.0
+offset_bottom = 227.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_fe6gy")
+theme_override_font_sizes/font_size = 21
+text = "CLICK!"
 
 [connection signal="input_event" from="Egg" to="Egg" method="_on_input_event"]
 [connection signal="input_event" from="Onion" to="Onion" method="_on_input_event"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://73k8cjcdgehs"]
+[gd_scene load_steps=7 format=3 uid="uid://73k8cjcdgehs"]
 
 [ext_resource type="Script" uid="uid://rwtl3g32ra55" path="res://Scripts/Ramen/ramen_reply.gd" id="1_3jy63"]
 [ext_resource type="Texture2D" uid="uid://bfsmlos2x7wwe" path="res://Assets/typeback.png" id="2_chwsi"]
 [ext_resource type="Texture2D" uid="uid://fd1wfsgq7cev" path="res://Assets/greyboxmonitor.png" id="2_ng5uj"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_chwsi"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="5_chwsi"]
 
 [sub_resource type="FontFile" id="FontFile_ng5uj"]
 cache/0/16/0/ascent = 0.0
@@ -69,5 +70,16 @@ the greatest student[/color][/code]"
 scroll_active = false
 
 [node name="Timer" parent="." instance=ExtResource("3_chwsi")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 214.0
+offset_top = 301.0
+offset_right = 451.0
+offset_bottom = 354.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_chwsi")
+theme_override_font_sizes/font_size = 21
+text = "MASH YOUR KEYBOARD 
+TO REPLY!"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
