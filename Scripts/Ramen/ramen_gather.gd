@@ -12,6 +12,9 @@ func _on_timer_time_done() -> void:
 func _process(_delta: float) -> void:
 	if randi_range(1, 100) == 14:
 		person_move()
+	if SceneManager.has_ingredient("Ramen") and SceneManager.has_ingredient("Onion") and SceneManager.has_ingredient("Egg"):
+		await get_tree().create_timer(1).timeout
+		SceneManager.change_scene("res://Scenes/Ramen/ramen_fill.tscn", "fill!", 2)
 		
 func person_move():
 	print("make")
