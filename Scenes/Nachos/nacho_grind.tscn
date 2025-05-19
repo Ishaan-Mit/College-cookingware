@@ -398,7 +398,7 @@ libraries = {
 }
 
 [node name="Timer" parent="." instance=ExtResource("3_o5nay")]
-time = 30
+time = 20
 
 [connection signal="area_entered" from="Arrow/Arrow_hit" to="." method="_on_arrow_hit_area_entered"]
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
