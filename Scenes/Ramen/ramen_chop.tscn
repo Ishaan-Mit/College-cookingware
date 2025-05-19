@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4htxuv2y8aa6"]
+[gd_scene load_steps=17 format=3 uid="uid://4htxuv2y8aa6"]
 
 [ext_resource type="Script" uid="uid://dtqy0fiahe2in" path="res://Scripts/Ramen/ramen_chop.gd" id="1_rn4r0"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_qtdsr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d34xpy503onqj" path="res://Assets/cuttingboard.png" id="4_th1rt"]
 [ext_resource type="Texture2D" uid="uid://b0pisffqkxwlj" path="res://Assets/eggcut.png" id="5_m7yyf"]
 [ext_resource type="Texture2D" uid="uid://gdavga5fleiq" path="res://Assets/springfull.png" id="5_th1rt"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="9_e0yil"]
 [ext_resource type="Texture2D" uid="uid://f2i3awmh3n76" path="res://Assets/knife.png" id="9_fq2bp"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="9_m7yyf"]
 
@@ -75,6 +76,16 @@ points = PackedVector2Array(420, 317, 230, 317)
 width = 11.29
 default_color = Color(0.325441, 0.325441, 0.325441, 1)
 end_cap_mode = 1
+
+[node name="Label6" type="Label" parent="Pork"]
+offset_left = 186.0
+offset_top = 134.0
+offset_right = 464.0
+offset_bottom = 157.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_e0yil")
+theme_override_font_sizes/font_size = 18
+text = "CLICK ON THE KNIFE AND DRAG!"
 
 [node name="Egg" type="Node2D" parent="."]
 position = Vector2(0, 45)
@@ -151,6 +162,16 @@ points = PackedVector2Array(283, 246, 283, 332)
 width = 2.185
 default_color = Color(0, 0, 0, 1)
 
+[node name="Label6" type="Label" parent="Egg"]
+offset_left = 191.0
+offset_top = 131.0
+offset_right = 430.0
+offset_bottom = 154.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_e0yil")
+theme_override_font_sizes/font_size = 18
+text = "CLICK TO CHOP ON THE LINE!"
+
 [node name="Green Onion" type="Node2D" parent="."]
 position = Vector2(0, 203)
 
@@ -168,6 +189,16 @@ offset_bottom = 718.0
 scale = Vector2(0.304247, 0.380306)
 value = 90.0
 texture_progress = ExtResource("5_th1rt")
+
+[node name="Label6" type="Label" parent="Green Onion"]
+offset_left = 221.0
+offset_top = 143.0
+offset_right = 400.0
+offset_bottom = 166.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("9_e0yil")
+theme_override_font_sizes/font_size = 18
+text = "SPAM CLICK TO CHOP!"
 
 [node name="Timer" parent="." instance=ExtResource("9_m7yyf")]
 time = 30

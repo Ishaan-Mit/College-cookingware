@@ -150,4 +150,75 @@ time = 6
 
 [node name="UIContainer" type="Node2D" parent="."]
 
+[node name="Label2" type="Label" parent="UIContainer"]
+offset_left = 152.0
+offset_top = 69.0
+offset_right = 254.0
+offset_bottom = 92.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 18
+text = "LEFT CLICK!"
+
+[node name="Label3" type="Label" parent="UIContainer"]
+offset_left = 579.0
+offset_top = 49.0
+offset_right = 681.0
+offset_bottom = 72.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 15
+text = "TOO HOT!"
+
+[node name="Label4" type="Label" parent="UIContainer"]
+offset_left = 578.0
+offset_top = 93.0
+offset_right = 680.0
+offset_bottom = 116.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 14
+text = "PERFECT!"
+
+[node name="Label5" type="Label" parent="UIContainer"]
+offset_left = 580.0
+offset_top = 151.0
+offset_right = 682.0
+offset_bottom = 196.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 18
+text = "TOO
+CoLD!"
+
+[node name="Label6" type="Label" parent="UIContainer"]
+offset_left = 85.0
+offset_top = 105.0
+offset_right = 187.0
+offset_bottom = 128.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 18
+text = "COOL DOWN!"
+
+[node name="Label7" type="Label" parent="UIContainer"]
+offset_left = 94.0
+offset_top = 146.0
+offset_right = 196.0
+offset_bottom = 169.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 18
+text = "HEAT UP!"
+
+[node name="Label8" type="Label" parent="UIContainer"]
+offset_left = 84.0
+offset_top = 186.0
+offset_right = 186.0
+offset_bottom = 209.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_o0a5x")
+theme_override_font_sizes/font_size = 18
+text = "COOL DOWN!"
+
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
