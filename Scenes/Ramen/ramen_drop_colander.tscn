@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhe3gitwiwt4t"]
+[gd_scene load_steps=9 format=3 uid="uid://bhe3gitwiwt4t"]
 
 [ext_resource type="Script" uid="uid://dpfyq8dur8vx2" path="res://Scripts/Ramen/ramen_drop_colander.gd" id="1_fihw1"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_8dlcs"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_2u0n0"]
 [ext_resource type="Texture2D" uid="uid://dwtxtfrnhp41p" path="res://Assets/collander.png" id="4_fihw1"]
 [ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="5_8dlcs"]
+[ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="6_wmy2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n64hr"]
 size = Vector2(73, 30)
@@ -54,6 +55,31 @@ position = Vector2(550, 98)
 color = Color(0.878431, 0, 0, 1)
 polygon = PackedVector2Array(24, 8, 8, 16, 8, -24, -8, -24, -8, 16, -24, 8, -1.10269e-06, 56)
 uv = PackedVector2Array(6, -2, 0, 3, 0, -22, -4, -22, -4, 3, -10, -2, -2, 10)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 30.0
+offset_right = 425.0
+offset_bottom = 76.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_wmy2d")
+text = "Click to drop!"
+uppercase = true
+
+[node name="Label" type="Label" parent="Label"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "→"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="area_entered" from="Pan" to="." method="_on_colander_area_entered"]
