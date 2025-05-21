@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bunc6fo6hp7xb"]
+[gd_scene load_steps=14 format=3 uid="uid://bunc6fo6hp7xb"]
 
 [ext_resource type="Script" uid="uid://d1r5luvy6tegs" path="res://Scripts/Ramen/ramen_cook_pork.gd" id="1_ggdcr"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_e3phg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlv0wo5ramqc" path="res://Assets/mid.png" id="6_e3phg"]
 [ext_resource type="Texture2D" uid="uid://dia1f74dct4ro" path="res://Assets/raw.png" id="7_d562s"]
 [ext_resource type="Texture2D" uid="uid://cbceoggei77n2" path="res://Assets/stove_button.png" id="11_e3phg"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="12_e3phg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggdcr"]
 height = 80.0
@@ -19,7 +20,8 @@ height = 80.0
 script = ExtResource("1_ggdcr")
 
 [node name="Stove2" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.351563)
+position = Vector2(-169, -191)
+scale = Vector2(0.612222, 0.538086)
 texture = ExtResource("2_e3phg")
 centered = false
 
@@ -27,30 +29,31 @@ centered = false
 time = 30
 
 [node name="Hotstove" type="Sprite2D" parent="."]
-position = Vector2(320, 296)
+position = Vector2(396.32, 241.98)
 rotation = 1.5708
-scale = Vector2(0.219832, 0.219832)
+scale = Vector2(0.429214, 0.429214)
 texture = ExtResource("4_a5dub")
 
 [node name="Pan" type="Sprite2D" parent="."]
-position = Vector2(328, 280)
-scale = Vector2(0.105621, 0.105621)
+position = Vector2(397, 221)
+scale = Vector2(0.164179, 0.164179)
 texture = ExtResource("4_yf0tl")
 
 [node name="StoveButton" type="Sprite2D" parent="."]
-position = Vector2(278, 328)
-scale = Vector2(0.314648, 0.314648)
+position = Vector2(319, 305)
+rotation = 1.0472
+scale = Vector2(0.603106, 0.603106)
 texture = ExtResource("11_e3phg")
 offset = Vector2(6.35626, -0.00012207)
 
 [node name="StoveButton2" type="Sprite2D" parent="."]
-position = Vector2(360, 328)
-scale = Vector2(0.314648, 0.314648)
+position = Vector2(470, 302)
+scale = Vector2(0.518421, 0.518421)
 texture = ExtResource("11_e3phg")
 
 [node name="Pork" type="Node2D" parent="."]
-position = Vector2(288, 296)
-scale = Vector2(0.0841155, 0.0841155)
+position = Vector2(338, 247)
+scale = Vector2(0.135485, 0.135485)
 
 [node name="Raw" type="Sprite2D" parent="Pork"]
 texture = ExtResource("7_d562s")
@@ -84,10 +87,10 @@ polygon = PackedVector2Array(0, 0, 0, 24, 88, 24, 88, 0)
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 256.0
-offset_top = 312.0
-offset_right = 296.0
-offset_bottom = 344.0
+offset_left = 287.0
+offset_top = 282.0
+offset_right = 352.0
+offset_bottom = 331.0
 toggle_mode = true
 button_pressed = true
 text = " "
@@ -103,29 +106,40 @@ polygon = PackedVector2Array(0, -24, -24, 0, -8, 0, -8, 56, 8, 56, 8, 0, 24, 0)
 shape = SubResource("CapsuleShape2D_ggdcr")
 
 [node name="FlipButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = 243.0
-offset_top = 262.0
-offset_right = 328.0
-offset_bottom = 304.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 272.0
+offset_top = 193.0
+offset_right = 392.0
+offset_bottom = 263.0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_i0ir1")
 theme_override_font_sizes/font_size = 76
 
 [node name="Label" type="Label" parent="FlipButton"]
-layout_mode = 0
-offset_left = -156.0
-offset_top = 14.0
-offset_right = -7.0
-offset_bottom = 34.0
-text = "Click pork to flip →"
-uppercase = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -42.0
+offset_right = -129.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("12_e3phg")
+theme_override_font_sizes/font_size = 18
+text = "CLick Pork to flip→"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 100.0
-offset_top = 302.0
-offset_right = 261.0
-offset_bottom = 348.0
+offset_left = 86.0
+offset_top = 264.0
+offset_right = 247.0
+offset_bottom = 310.0
+scale = Vector2(1.21461, 1.21461)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_i0ir1")
 text = "Click stove button 

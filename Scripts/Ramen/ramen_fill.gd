@@ -11,7 +11,6 @@ var time_track = 0
 
 func _ready() -> void:
 	particles.emitting = true
-	particles.emitting = false
 
 	fill_level = 0
 	particles.emitting = false

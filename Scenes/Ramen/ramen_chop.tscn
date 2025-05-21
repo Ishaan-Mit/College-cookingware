@@ -78,14 +78,14 @@ default_color = Color(0.325441, 0.325441, 0.325441, 1)
 end_cap_mode = 1
 
 [node name="Label6" type="Label" parent="Pork"]
-offset_left = 176.0
+offset_left = 136.0
 offset_top = 134.0
-offset_right = 471.0
+offset_right = 528.0
 offset_bottom = 157.0
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("9_e0yil")
 theme_override_font_sizes/font_size = 18
-text = "CLICK ON THE HANDLE AND DRAG!"
+text = "CLICK ON THE HANDLE AND DRAG CAREFULLY!"
 
 [node name="Egg" type="Node2D" parent="."]
 position = Vector2(0, 45)
