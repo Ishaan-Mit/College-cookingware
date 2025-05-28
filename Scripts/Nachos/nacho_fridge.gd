@@ -6,13 +6,20 @@ extends Node2D
 @export var yLowerBound = 0
 @export var yUpperBound = 256
 
+@export var x2LowerBound = 0
+@export var x2UpperBound = 345
+@export var y2LowerBound = 0
+@export var y2UpperBound = 256
+
 @export var playAreas: Array[ColorRect]
 @onready var playArea = $PlayArea
 
-@export var avocado: TextureButton
+@onready var avocado = $Avocado
 @export var buttonZ = 0
 
-@export var sampleButton: TextureButton
+@export var sampleButtons: Array[TextureButton] = []
+
+@onready var root = $NachoFridge
 
 func _ready() -> void:
 	randomize()
@@ -22,25 +29,38 @@ func _ready() -> void:
 	avocado.z_index = buttonZ
 
 func makeRect(z_index: float, playAreaIndex: int):
-	var rect = sampleButton.duplicate()
+	var template = sampleButtons[randi() % sampleButtons.size()]
+	var rect = template.duplicate()
 	rect.mouse_filter = Control.MOUSE_FILTER_PASS 
-	var width = randf_range(36,100)
-	var height = randf_range(36,100)
-	rect.custom_minimum_size = Vector2(width, height)
+	#var width = randf_range(36,100)
+	#var height = randf_range(36,100)
+	#rect.custom_minimum_size = Vector2(width, height)
 	
-	playAreas[playAreaIndex].add_child(rect)
-	var pos_x = randf_range(0, playAreas[playAreaIndex].size.x - width)
-	var pos_y = randf_range(0, playAreas[playAreaIndex].size.y - height)
-	rect.position = Vector2(pos_x, pos_y)
+	add_child(rect)
+	var pos_x
+	var pos_y
+	if(playAreaIndex == 0):
+		pos_x = randf_range(xLowerBound, xUpperBound)
+		pos_y = randf_range(yLowerBound, yUpperBound)
+	else:
+		pos_x = randf_range(x2LowerBound, x2UpperBound)
+		pos_y = randf_range(y2LowerBound, y2UpperBound)
+	rect.global_position = Vector2(pos_x, pos_y)
 	
 	#rect.add_color_override("font_color", Color(randf(), randf(), randf()))
 	
 	rect.z_index = z_index
 
 func randomizeTBPosition(object: TextureButton, playAreaIndex: int):
-	playAreas[playAreaIndex].add_child(object)
-	var pos_x = randf_range(playAreas[playAreaIndex].size.x / 100, playAreas[playAreaIndex].size.x)
-	var pos_y = randf_range(playAreas[playAreaIndex].size.y / 100, playAreas[playAreaIndex].size.y)
+	#playAreas[playAreaIndex].add_child(object)
+	var pos_x
+	var pos_y
+	if(playAreaIndex == 0):
+		pos_x = randf_range(xLowerBound, xUpperBound)
+		pos_y = randf_range(yLowerBound, yUpperBound)
+	else:
+		pos_x = randf_range(x2LowerBound, x2UpperBound)
+		pos_y = randf_range(y2LowerBound, y2UpperBound)
 	object.position = Vector2(pos_x, pos_y)
 	var console: String = str(playAreaIndex + 1) + " "+ str(pos_x) +  " " + str(pos_y)
 	print(console)
