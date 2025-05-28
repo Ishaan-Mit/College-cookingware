@@ -10,6 +10,8 @@ func _ready() -> void:
 func slice():
 	if(name == "Onion"):
 		print("onion fail")
+		SceneManager.play_sfx3("res://Assets/audio/squish.wav")
+		SceneManager.play_sfx2("res://Assets/audio/scream.wav")
 		SceneManager.change_scene("res://Scenes/Nachos/nacho_plate.tscn", "plate!", 1, false)
 	var half1 = half1.instantiate()
 	var half2 = half2.instantiate()

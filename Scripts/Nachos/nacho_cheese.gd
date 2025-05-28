@@ -24,6 +24,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if pouring and swap.button_up:
+		if(!SceneManager.is_sfx_playing()): SceneManager.play_sfx("res://Assets/audio/waterfill.wav")
 		if mode == "cheese":
 			cheeseprogress.value += 0.5
 		elif mode == "milk":
@@ -50,6 +51,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pouring = false
 
 func _on_swap_pressed() -> void:
+	if(!SceneManager.is_sfx_playing()): SceneManager.play_sfx("res://Assets/audio/throw.wav")
 	if mode == "milk":
 		if milkprogress.value > 55 and milkprogress.value < 69 and cheeseprogress.value > 55 and cheeseprogress.value < 69:
 			SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "cut!", 2)

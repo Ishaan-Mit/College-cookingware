@@ -57,6 +57,7 @@ func _on_chip_sprite_body_entered(body: Node2D) -> void:
 			$Meatbowl.hide()
 			$Spoon.hide()
 			$PicoBowl.visible = true
+			$PicoBowl.position = Vector2(389,230)
 	if(body.name.contains("TJ")): #stage 4 TJ
 		print(body.name)
 		var rigid_body = body as RigidBody2D

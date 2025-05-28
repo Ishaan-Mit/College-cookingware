@@ -9,6 +9,7 @@ func _ready() -> void:
 	spawnTimer.start()
 
 func _on_spawn_timer_timeout() -> void:
+	SceneManager.play_sfx("res://Assets/audio/throw.wav")
 	for i in range(fruitsAtTime):
 		var fruit = fruit_scenes[randi() % fruit_scenes.size()].instantiate()
 		fruit.initialSpeed = Vector2(randf_range(-50,50), -1 * randf_range(throwForce-200,throwForce+100 ))

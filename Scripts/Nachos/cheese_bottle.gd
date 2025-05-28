@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 		get_parent().add_child(half1)
 		half1.name = "cheese"
 		can_produce = false
+		if(!SceneManager.is_sfx_playing()): SceneManager.play_sfx("res://Assets/audio/waterfill.wav")
 		cheeseTimer.start(0.1)
 
 
