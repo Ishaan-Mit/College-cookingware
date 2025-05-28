@@ -1,14 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://deedkw5xpj6r2"]
 
-[ext_resource type="Texture2D" uid="uid://bahiqede2u525" path="res://Assets/tomatohalf2.png" id="1_tdtmt"]
+[ext_resource type="Texture2D" uid="uid://d0f8ug6ps04v8" path="res://Assets/cuttomato.png" id="2_1t66i"]
 
 [node name="Tomatohalf2" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 4
 
 [node name="Tomatohalf2" type="Sprite2D" parent="."]
-scale = Vector2(0.215, 0.215)
-texture = ExtResource("1_tdtmt")
+position = Vector2(-5.9, 8.35)
+scale = Vector2(0.221563, 0.246389)
+texture = ExtResource("2_1t66i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.215, 0.215)
