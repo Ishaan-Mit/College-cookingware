@@ -85,7 +85,6 @@ position = Vector2(-38.4677, -523.161)
 occluder = SubResource("OccluderPolygon2D_dcgty")
 
 [node name="Timer" parent="." instance=ExtResource("4_ivndb")]
-time = 16
 
 [node name="Pipe" type="Node2D" parent="."]
 position = Vector2(328, 0)

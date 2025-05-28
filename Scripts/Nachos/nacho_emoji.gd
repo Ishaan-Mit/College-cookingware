@@ -5,6 +5,12 @@ extends Node2D
 @export var Buttons: Array[Button]
 @export var ButtonPositions: Array[Node2D]
 
+@export var sentPosition: Node2D
+@export var timeOutTime: float
+@export var timer: timeLogic
+
+@export var background: Sprite2D
+
 func _ready() -> void:
 	randomize()
 	#random sprites
@@ -24,8 +30,19 @@ func _ready() -> void:
 func _on_timer_time_done() -> void:
 	print("lose here to time")
 	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!", 2, false)
-func _on_heart_pressed() -> void:
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!!", 2)
 
+func _on_heart_pressed() -> void:
+	print("win")
+	timer.deltaTime = 0
+	await get_tree().create_timer(timeOutTime).timeout
+	background.set_texture(preload("res://Assets/rizzwin.png"))
+	await get_tree().create_timer(1).timeout
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!!", 2)
+	
 func _on_wrong_button_pressed() -> void:
+	print("lose")
+	timer.deltaTime = 0
+	await get_tree().create_timer(timeOutTime).timeout
+	background.set_texture(preload("res://Assets/rizzlose.png"))
+	await get_tree().create_timer(1).timeout
 	SceneManager.change_scene("res://Scenes/Nachos/nacho_grind.tscn", "Grind 'n' flip!!", 2, false)

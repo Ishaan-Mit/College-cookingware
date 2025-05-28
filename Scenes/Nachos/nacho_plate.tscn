@@ -235,7 +235,6 @@ texture = ExtResource("11_8dant")
 [node name="Timer" parent="." instance=ExtResource("14_yyxdo")]
 offset_left = -56.0
 offset_right = -56.0
-time = 30
 
 [connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite" to="." method="_on_chip_sprite_body_entered"]
