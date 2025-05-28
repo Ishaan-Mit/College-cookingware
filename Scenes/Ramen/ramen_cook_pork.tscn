@@ -132,7 +132,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("12_e3phg")
 theme_override_font_sizes/font_size = 18
-text = "CLick Pork to flip→"
+text = "CLick Pork to flip > "
 
 [node name="Label" type="Label" parent="."]
 offset_left = 86.0
@@ -158,7 +158,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 28
-text = "→"
+text = ">"
 
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

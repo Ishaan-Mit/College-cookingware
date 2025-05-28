@@ -21,13 +21,14 @@ func row_select(row_num):
 	if !SceneManager.has_ingredient(item.text):
 		SceneManager.add_ingredient(item.text)
 	item.modulate = Color("ffffff00")
+	SceneManager.play_sfx("res://Assets/audio/grab.wav")
 	$ColorRect/GridContainer/TextureButton5.grab_focus()
 	print(SceneManager.ingredients)
 	used_coords.append([col, row])
 	
 	if len(SceneManager.ingredients) >= 9:
 		await get_tree().create_timer(1).timeout
-		SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1)
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "mix!", 1)
 
 func _on_texture_button_pressed() -> void:
 	row_select(0)
@@ -50,5 +51,5 @@ func _on_texture_button_6_pressed() -> void:
 func _on_timer_time_done() -> void:
 	for item in needed:
 		if not SceneManager.has_ingredient(item):
-			SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1, false)
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1)
+			SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "mix!", 1, false)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "mix!", 1)

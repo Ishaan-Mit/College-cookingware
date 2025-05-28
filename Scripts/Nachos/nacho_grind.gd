@@ -22,25 +22,28 @@ func _process(delta: float) -> void:
 		boulder.position = Vector2((320 + sin(counter)*120), 48)
 		
 func do_chips():
+	input_mode = "none"
+	$Arrow.show()
 	animation.play("move_beef")
 	await animation.animation_finished
 	$Beef.hide()
-	$Arrow.show()
 	rock = true
-	input_mode = "rock"
 	counter = 0
-	
+	input_mode = "rock"
+
 func drop_boulder():
 	rock = false
 	await get_tree().create_timer(0.1).timeout
 	await get_tree().create_tween().tween_property(boulder, "position:y", 408, 0.3).finished
 	
 	await get_tree().create_timer(6).timeout
-	print("fail")
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2, false)
 	
 	
-func _input(event: InputEvent) -> void:
-	if input_mode == "spatula":
+func _unhandled_input(event: InputEvent) -> void:
+	if input_mode == "none":
+		pass
+	elif input_mode == "spatula":
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			spatula.position.y += 15
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:

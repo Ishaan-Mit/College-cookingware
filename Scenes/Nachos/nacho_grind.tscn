@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmsqqei2h2e47"]
+[gd_scene load_steps=14 format=3 uid="uid://bmsqqei2h2e47"]
 
 [ext_resource type="Script" uid="uid://bbmui0a3k5omf" path="res://Scripts/Nachos/nacho_grind.gd" id="1_qqio4"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_o5nay"]
+[ext_resource type="Texture2D" uid="uid://c1bncxtntslff" path="res://Assets/spatula.png" id="3_c7qxg"]
+[ext_resource type="Texture2D" uid="uid://jpxw31h4as1g" path="res://Assets/pisspan.png" id="3_h648n"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_o5nay"]
+[ext_resource type="Texture2D" uid="uid://cmowdg82k5e5n" path="res://Assets/beef.png" id="4_oqt3d"]
+[ext_resource type="Texture2D" uid="uid://byiysudrfa5iw" path="res://Assets/chpipile.png" id="4_yxomd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqio4"]
 height = 51.9213
@@ -27,50 +31,50 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spatula:rotation")
+tracks/1/path = NodePath("Spatula:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Spatula:position")
+tracks/2/path = NodePath("Spatula:polygon")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(251, 165)]
+"values": [PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Spatula:polygon")
+tracks/3/path = NodePath("Spatula:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)]
+"values": [Vector2(251, 165)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Spatula:scale")
+tracks/4/path = NodePath("Spatula:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -163,26 +167,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Spatula:rotation")
-tracks/2/interp = 2
+tracks/2/path = NodePath("Spatula:position")
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.80642, 8.0896]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Spatula:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(339.28, 263.045)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spatula:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.80642, 8.0896]
 }
 
 [sub_resource type="Animation" id="Animation_qqio4"]
@@ -203,50 +207,50 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spatula:rotation")
+tracks/1/path = NodePath("Spatula:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.80642]
+"values": [Vector2(1, 1), Vector2(1, 1.6322)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Spatula:position")
+tracks/2/path = NodePath("Spatula:polygon")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(251, 165), Vector2(339.28, 263.045)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Spatula:polygon")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spatula:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(251, 165), Vector2(339.28, 263.045)]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Spatula:scale")
+tracks/4/path = NodePath("Spatula:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1.6322)]
+"values": [0.0, 1.80642]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -303,14 +307,31 @@ centered = false
 
 [node name="Beef" type="Polygon2D" parent="."]
 position = Vector2(297, 288)
-color = Color(0.38354, 0.261117, 0.0847879, 1)
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-40, -40, -56, 40, 64, 48, 72, -32)
+
+[node name="pan" type="Sprite2D" parent="Beef"]
+position = Vector2(87, 0)
+scale = Vector2(0.114746, 0.114746)
+texture = ExtResource("3_h648n")
+
+[node name="beef" type="Sprite2D" parent="Beef"]
+position = Vector2(6.99999, -9.05991e-06)
+rotation = 0.227148
+scale = Vector2(0.212635, 0.18654)
+texture = ExtResource("4_oqt3d")
 
 [node name="Spatula" type="Polygon2D" parent="."]
 position = Vector2(251, 165)
-color = Color(0.738949, 0.277553, 0.301738, 1)
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(24, -72, 24, 16, 8, 32, 8, 80, 64, 80, 64, 32, 48, 16, 48, -72)
 uv = PackedVector2Array(-64, -80, -64, 32, -88, 40, -88, 104, 0, 104, 0, 48, -16, 32, -16, -80, -56, -80)
+
+[node name="Sprite2D" type="Sprite2D" parent="Spatula"]
+position = Vector2(37, 11)
+rotation = -0.851092
+scale = Vector2(0.109845, 0.109845)
+texture = ExtResource("3_c7qxg")
 
 [node name="Tray" type="Polygon2D" parent="."]
 z_index = -1
@@ -321,53 +342,11 @@ polygon = PackedVector2Array(-26, -31, -54, 52, 78, 75, 102, -14)
 [node name="Node2D" type="Node2D" parent="Tray"]
 rotation = 0.0739729
 
-[node name="Chip" type="Polygon2D" parent="Tray/Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Tray/Node2D"]
 z_index = 1
-position = Vector2(-4, -4)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip2" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(25, -2)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip3" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(57, 2)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip4" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(-21, 17)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip5" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(12, 23)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip6" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(47, 25)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip7" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(6, 45)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
-
-[node name="Chip8" type="Polygon2D" parent="Tray/Node2D"]
-z_index = 1
-position = Vector2(48, 51)
-color = Color(0.694366, 0.537352, 1.92523e-07, 1)
-polygon = PackedVector2Array(-2, -9, -8, 6, 11, 5)
+position = Vector2(13.4398, 18.3988)
+scale = Vector2(0.0806287, 0.0691373)
+texture = ExtResource("4_yxomd")
 
 [node name="Arrow" type="Polygon2D" parent="."]
 position = Vector2(424, -56)
