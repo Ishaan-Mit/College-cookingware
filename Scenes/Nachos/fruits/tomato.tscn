@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpdklfsahjt5y"]
 
 [ext_resource type="Script" uid="uid://cc3dl4610keoy" path="res://Scripts/Nachos/fruit.gd" id="1_s41sa"]
-[ext_resource type="Texture2D" uid="uid://bfqoxc11h2aru" path="res://Assets/tomato.png" id="2_7hlst"]
 [ext_resource type="PackedScene" uid="uid://df2xxkdvuvleh" path="res://Scenes/Nachos/fruits/tomatohalf1.tscn" id="2_qw286"]
 [ext_resource type="PackedScene" uid="uid://deedkw5xpj6r2" path="res://Scenes/Nachos/fruits/tomatohalf2.tscn" id="3_5ugle"]
+[ext_resource type="Texture2D" uid="uid://1lojnasq6lij" path="res://Assets/tomatonew.png" id="4_qw286"]
 
 [node name="Tomato" type="RigidBody2D"]
 collision_mask = 2
@@ -12,8 +12,9 @@ half1 = ExtResource("2_qw286")
 half2 = ExtResource("3_5ugle")
 
 [node name="Tomato" type="Sprite2D" parent="."]
-scale = Vector2(0.215, 0.215)
-texture = ExtResource("2_7hlst")
+position = Vector2(-2.5, 11)
+scale = Vector2(0.300589, 0.308081)
+texture = ExtResource("4_qw286")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.215, 0.215)

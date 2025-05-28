@@ -1,22 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6fa22t5sjgwy"]
+[gd_scene load_steps=15 format=3 uid="uid://b6fa22t5sjgwy"]
 
 [ext_resource type="Script" uid="uid://bkbjx4763sbqq" path="res://Scripts/Nachos/nacho_fridge.gd" id="1_yowej"]
-[ext_resource type="Texture2D" uid="uid://cib2n1n1iuk1g" path="res://Assets/fridge.png" id="2_jnw37"]
+[ext_resource type="Texture2D" uid="uid://dar58j1gkw8c1" path="res://Assets/fridgefind.png" id="2_mxorl"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_j5mfw"]
 [ext_resource type="Texture2D" uid="uid://b6ddaodslqdrk" path="res://Assets/avdo.png" id="4_jnw37"]
 [ext_resource type="Texture2D" uid="uid://yij6hylp0kyj" path="res://Assets/cheese.png" id="5_j5mfw"]
+[ext_resource type="Texture2D" uid="uid://gx4xn41ucx2t" path="res://Assets/find1.png" id="5_welav"]
 [ext_resource type="Script" uid="uid://dcpffon4vpkix" path="res://Scripts/Nachos/fridgebutton.gd" id="6_mxorl"]
+[ext_resource type="Texture2D" uid="uid://c78qtsplbvhqi" path="res://Assets/avdo2.png" id="7_uisx2"]
+[ext_resource type="Texture2D" uid="uid://cwdp144qfvw68" path="res://Assets/find2.png" id="9_s5yod"]
+[ext_resource type="Texture2D" uid="uid://dbqacjceyxd7" path="res://Assets/find3.png" id="10_u20hm"]
+[ext_resource type="Texture2D" uid="uid://cdbntgwun7jqw" path="res://Assets/find4.png" id="11_coeso"]
+[ext_resource type="Texture2D" uid="uid://c7alsfan0lwsx" path="res://Assets/find5.png" id="12_26bk4"]
+[ext_resource type="Texture2D" uid="uid://dpnburyn1lr62" path="res://Assets/find7.png" id="13_10vb5"]
+[ext_resource type="Texture2D" uid="uid://bmy4x5d83j8ud" path="res://Assets/find6.png" id="14_lceq2"]
 
-[node name="NachoFridge" type="Node2D" node_paths=PackedStringArray("playAreas", "avocado", "sampleButton")]
+[node name="NachoFridge" type="Node2D" node_paths=PackedStringArray("playAreas", "sampleButtons")]
 script = ExtResource("1_yowej")
 numObjects = 30
+xLowerBound = 124
+xUpperBound = 448
+yLowerBound = 30
+yUpperBound = 65
+x2LowerBound = 122
+x2UpperBound = 457
+y2LowerBound = 220
+y2UpperBound = 242
 playAreas = [NodePath("PlayArea"), NodePath("PlayArea2")]
-avocado = NodePath("Avocado")
-sampleButton = NodePath("TextureButton")
+sampleButtons = [NodePath("TextureButton2"), NodePath("TextureButton3"), NodePath("TextureButton4"), NodePath("TextureButton5"), NodePath("TextureButton6"), NodePath("TextureButton7"), NodePath("TextureButton8")]
 
 [node name="Fridge" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
-texture = ExtResource("2_jnw37")
+texture = ExtResource("2_mxorl")
 metadata/_edit_lock_ = true
 
 [node name="Timer" parent="." instance=ExtResource("3_j5mfw")]
@@ -26,23 +41,13 @@ offset_right = -62.0
 offset_bottom = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Avocado" type="TextureButton" parent="."]
-offset_left = 111.0
-offset_top = 7.0
-offset_right = 151.0
-offset_bottom = 57.0
-texture_normal = ExtResource("4_jnw37")
-texture_pressed = ExtResource("4_jnw37")
-texture_hover = ExtResource("4_jnw37")
-texture_disabled = ExtResource("4_jnw37")
-texture_focused = ExtResource("4_jnw37")
-
 [node name="PlayArea" type="ColorRect" parent="."]
 offset_left = 114.0
 offset_top = 172.0
 offset_right = 496.0
 offset_bottom = 257.0
 color = Color(0.427451, 0.427451, 0.427451, 0)
+metadata/_edit_lock_ = true
 
 [node name="PlayArea2" type="ColorRect" parent="."]
 offset_left = 118.0
@@ -51,12 +56,53 @@ offset_right = 476.0
 offset_bottom = 76.0
 mouse_filter = 2
 color = Color(0.427451, 0.427451, 0.427451, 0)
+metadata/_edit_lock_ = true
+
+[node name="Avocadoold" type="TextureButton" parent="."]
+visible = false
+offset_left = 459.0
+offset_top = 241.0
+offset_right = 499.0
+offset_bottom = 291.0
+texture_normal = ExtResource("4_jnw37")
+texture_pressed = ExtResource("4_jnw37")
+texture_hover = ExtResource("4_jnw37")
+texture_disabled = ExtResource("4_jnw37")
+texture_focused = ExtResource("4_jnw37")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = -204.0
-offset_top = 112.0
-offset_right = -164.0
-offset_bottom = 169.0
+visible = false
+offset_left = -277.0
+offset_top = 84.0
+offset_right = 1003.0
+offset_bottom = 1364.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("5_welav")
+texture_pressed = ExtResource("5_welav")
+texture_hover = ExtResource("5_welav")
+texture_disabled = ExtResource("5_welav")
+texture_focused = ExtResource("5_welav")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="Avocado" type="TextureButton" parent="."]
+offset_left = 449.0
+offset_top = 65.0
+offset_right = 1449.0
+offset_bottom = 1065.0
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("7_uisx2")
+texture_pressed = ExtResource("7_uisx2")
+texture_hover = ExtResource("7_uisx2")
+texture_disabled = ExtResource("7_uisx2")
+texture_focused = ExtResource("7_uisx2")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = -304.0
+offset_top = 83.0
+offset_right = -244.0
+offset_bottom = 168.0
 texture_normal = ExtResource("5_j5mfw")
 texture_pressed = ExtResource("5_j5mfw")
 texture_hover = ExtResource("5_j5mfw")
@@ -65,5 +111,97 @@ texture_focused = ExtResource("5_j5mfw")
 stretch_mode = 0
 script = ExtResource("6_mxorl")
 
-[connection signal="pressed" from="Avocado" to="." method="_on_avocado_pressed"]
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = -241.0
+offset_top = 85.0
+offset_right = 1039.0
+offset_bottom = 1365.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("9_s5yod")
+texture_pressed = ExtResource("9_s5yod")
+texture_hover = ExtResource("9_s5yod")
+texture_disabled = ExtResource("9_s5yod")
+texture_focused = ExtResource("9_s5yod")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = -207.0
+offset_top = 88.0
+offset_right = 1073.0
+offset_bottom = 1368.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("10_u20hm")
+texture_pressed = ExtResource("10_u20hm")
+texture_hover = ExtResource("10_u20hm")
+texture_disabled = ExtResource("10_u20hm")
+texture_focused = ExtResource("10_u20hm")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="TextureButton5" type="TextureButton" parent="."]
+offset_left = -317.0
+offset_top = 146.0
+offset_right = 963.0
+offset_bottom = 1426.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("11_coeso")
+texture_pressed = ExtResource("11_coeso")
+texture_hover = ExtResource("11_coeso")
+texture_disabled = ExtResource("11_coeso")
+texture_focused = ExtResource("11_coeso")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="TextureButton6" type="TextureButton" parent="."]
+offset_left = -255.0
+offset_top = 159.0
+offset_right = 1025.0
+offset_bottom = 1439.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("12_26bk4")
+texture_pressed = ExtResource("12_26bk4")
+texture_hover = ExtResource("12_26bk4")
+texture_disabled = ExtResource("12_26bk4")
+texture_focused = ExtResource("12_26bk4")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="TextureButton7" type="TextureButton" parent="."]
+offset_left = -199.0
+offset_top = 150.0
+offset_right = 1081.0
+offset_bottom = 1430.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("13_10vb5")
+texture_pressed = ExtResource("13_10vb5")
+texture_hover = ExtResource("13_10vb5")
+texture_disabled = ExtResource("13_10vb5")
+texture_focused = ExtResource("13_10vb5")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[node name="TextureButton8" type="TextureButton" parent="."]
+offset_left = -199.0
+offset_top = 150.0
+offset_right = 1081.0
+offset_bottom = 1430.0
+scale = Vector2(0.065, 0.065)
+texture_normal = ExtResource("14_lceq2")
+texture_pressed = ExtResource("14_lceq2")
+texture_hover = ExtResource("14_lceq2")
+texture_disabled = ExtResource("14_lceq2")
+texture_focused = ExtResource("14_lceq2")
+stretch_mode = 0
+script = ExtResource("6_mxorl")
+
+[connection signal="pressed" from="Avocadoold" to="." method="_on_avocado_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="Avocado" to="." method="_on_avocado_pressed"]
+[connection signal="pressed" from="TextureButton2" to="TextureButton2" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton3" to="TextureButton3" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton4" to="TextureButton4" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton5" to="TextureButton5" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton6" to="TextureButton6" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton7" to="TextureButton7" method="_on_riffraff_pressed"]
+[connection signal="pressed" from="TextureButton8" to="TextureButton8" method="_on_riffraff_pressed"]
