@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://j187nujlnd02"]
+[gd_scene load_steps=11 format=3 uid="uid://j187nujlnd02"]
 
 [ext_resource type="Script" uid="uid://biuupaygfuivd" path="res://Scripts/Nachos/nacho_tortilla.gd" id="1_qm3u6"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_gasrt"]
+[ext_resource type="Texture2D" uid="uid://bbeujd8ov4tx2" path="res://Assets/tort1.png" id="3_8gtl7"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_gasrt"]
+[ext_resource type="Texture2D" uid="uid://cjgauk2jecmct" path="res://Assets/tort2.png" id="4_3qsx8"]
+[ext_resource type="Texture2D" uid="uid://7eqvsn50cymj" path="res://Assets/tort3.png" id="5_up1aj"]
+[ext_resource type="Texture2D" uid="uid://ba668mlx1eae5" path="res://Assets/tort4.png" id="6_0kuia"]
+[ext_resource type="Texture2D" uid="uid://wh7nusjdavmy" path="res://Assets/tort5.png" id="7_ivwqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm3u6"]
 size = Vector2(48, 48)
@@ -19,11 +24,12 @@ texture = ExtResource("2_gasrt")
 centered = false
 
 [node name="Tortilla1" type="Node2D" parent="."]
+visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Tortilla1"]
+[node name="toirtilla" type="Sprite2D" parent="Tortilla1"]
 position = Vector2(320, 256)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, -32, -56, -48, -48, -56, -32, -64, 0, -56, 32, -48, 48, -32, 56, 0, 64, 32, 56, 48, 48, 56, 32, 64, 0, 56, -32, 48, -48, 32, -56)
+scale = Vector2(0.36083, 0.36083)
+texture = ExtResource("3_8gtl7")
 
 [node name="Line2D" type="Line2D" parent="Tortilla1"]
 points = PackedVector2Array(312, 184, 328, 184, 320, 184, 320, 328, 328, 312, 320, 328, 315.483, 318.967, 312, 312)
@@ -51,15 +57,10 @@ shape = SubResource("RectangleShape2D_qm3u6")
 [node name="Tortilla2" type="Node2D" parent="."]
 visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Tortilla2"]
-position = Vector2(312, 256)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, -32, -56, -48, -48, -56, -32, -64, 0, -56, 32, -48, 48, -32, 56, 0, 64)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Tortilla2"]
-position = Vector2(328, 256)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, 0, 64, 32, 56, 48, 48, 56, 32, 64, 0, 56, -32, 48, -48, 32, -56)
+[node name="toirtilla" type="Sprite2D" parent="Tortilla2"]
+position = Vector2(320, 256)
+scale = Vector2(0.36083, 0.36083)
+texture = ExtResource("4_3qsx8")
 
 [node name="Start" type="Area2D" parent="Tortilla2"]
 position = Vector2(240, 256)
@@ -87,25 +88,10 @@ default_color = Color(0, 0, 0, 1)
 [node name="Tortilla3" type="Node2D" parent="."]
 visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Tortilla3"]
-position = Vector2(312, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, -32, -56, -48, -48, -56, -32, -64, 0, 0, 0)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Tortilla3"]
-position = Vector2(328, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, 0, 0, 64, 0, 56, -32, 48, -48, 32, -56)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Tortilla3"]
-position = Vector2(312, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, -64, 0, -56, 32, -48, 48, -32, 56, 0, 64)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Tortilla3"]
-position = Vector2(328, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 0, 64, 32, 56, 48, 48, 56, 32, 64, 0)
+[node name="toirtilla" type="Sprite2D" parent="Tortilla3"]
+position = Vector2(368, 256)
+scale = Vector2(0.36083, 0.36083)
+texture = ExtResource("5_up1aj")
 
 [node name="Line2D" type="Line2D" parent="Tortilla3"]
 points = PackedVector2Array(256, 208, 264, 200, 272, 192, 264, 200, 376, 312, 376, 304, 376, 312, 368, 312)
@@ -136,35 +122,10 @@ shape = SubResource("RectangleShape2D_qm3u6")
 [node name="Tortilla4" type="Node2D" parent="."]
 visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(312, 240)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, -32, -56, -48, -48, 0, 0)
-
-[node name="Polygon2D5" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(304, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(-48, -48, -56, -32, -64, 0, 0, 0)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(328, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, 0, 0, 64, 0, 56, -32, 48, -48, 32, -56)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(312, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, -64, 0, -56, 32, -48, 48, -32, 56, 0, 64)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(336, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 48, 48, 56, 32, 64, 0)
-
-[node name="Polygon2D6" type="Polygon2D" parent="Tortilla4"]
-position = Vector2(328, 272)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 0, 64, 32, 56, 48, 48)
+[node name="toirtilla" type="Sprite2D" parent="Tortilla4"]
+position = Vector2(320, 256)
+scale = Vector2(0.36083, 0.36083)
+texture = ExtResource("6_0kuia")
 
 [node name="Line2D" type="Line2D" parent="Tortilla4"]
 points = PackedVector2Array(368, 192, 384, 208, 376, 200, 264, 312, 264, 304, 264, 312, 272, 312)
@@ -196,45 +157,10 @@ shape = SubResource("RectangleShape2D_qm3u6")
 [node name="Tortilla5" type="Node2D" parent="."]
 visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(312, 240)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, -32, -56, -48, -48, 0, 0)
-
-[node name="Polygon2D5" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(304, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(-48, -48, -56, -32, -64, 0, 0, 0)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(336, 248)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 64, 0, 56, -32, 48, -48)
-
-[node name="Polygon2D7" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(328, 240)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, -64, 0, 0, 48, -48, 32, -56)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(312, 272)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, -48, 48, -32, 56, 0, 64)
-
-[node name="Polygon2D8" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(304, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, -64, 0, -56, 32, -48, 48)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(336, 264)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 48, 48, 56, 32, 64, 0)
-
-[node name="Polygon2D6" type="Polygon2D" parent="Tortilla5"]
-position = Vector2(328, 272)
-color = Color(0.918188, 0.624318, 0.397836, 1)
-polygon = PackedVector2Array(0, 0, 0, 64, 32, 56, 48, 48)
+[node name="toirtilla" type="Sprite2D" parent="Tortilla5"]
+position = Vector2(320, 256)
+scale = Vector2(0.36083, 0.36083)
+texture = ExtResource("7_ivwqo")
 
 [node name="Knifemark" type="Line2D" parent="."]
 points = PackedVector2Array(320, 184)

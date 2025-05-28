@@ -4,9 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://Assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="3_py5r8"]
 [ext_resource type="Texture2D" uid="uid://ddjgjoo0ki6al" path="res://Assets/door.jpg" id="3_t7rfq"]
+[ext_resource type="PackedScene" uid="uid://drc6n0i73gta6" path="res://Scenes/heart.tscn" id="5_vbxak"]
 [ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_424ls"]
 [ext_resource type="Texture2D" uid="uid://bvbibk72rc04r" path="res://Assets/border.png" id="6_t7rfq"]
-[ext_resource type="Texture2D" uid="uid://cktne2x4f32l" path="res://Assets/heart.png" id="6_thx0b"]
 [ext_resource type="Texture2D" uid="uid://d0cgx2jyex8w8" path="res://Assets/space.png" id="7_424ls"]
 [ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_ccwmf"]
 [ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_aq7jj"]
@@ -172,38 +172,34 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Hearts" type="HBoxContainer" parent="Background"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 272.0
-offset_bottom = 56.0
 
-[node name="1" type="TextureRect" parent="Background/Hearts"]
+[node name="1" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="2" type="TextureRect" parent="Background/Hearts"]
+[node name="2" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="3" type="TextureRect" parent="Background/Hearts"]
+[node name="3" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="4" type="TextureRect" parent="Background/Hearts"]
+[node name="4" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="5" type="TextureRect" parent="Background/Hearts"]
+[node name="5" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="6" type="TextureRect" parent="Background/Hearts"]
+[node name="6" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
-[node name="7" type="TextureRect" parent="Background/Hearts"]
+[node name="7" parent="Background/Hearts" instance=ExtResource("5_vbxak")]
+visible = false
 layout_mode = 2
-texture = ExtResource("6_thx0b")
 
 [node name="Controls" type="Node2D" parent="Background"]
 

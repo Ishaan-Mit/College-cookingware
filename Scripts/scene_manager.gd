@@ -9,7 +9,6 @@ extends CanvasLayer
 @onready var hearts: HBoxContainer = $Background/Hearts
 
 var lives = 3
-var heart = preload("res://Assets/heart.png")
 var ingredients = []
 
 func _ready() -> void:
@@ -48,7 +47,10 @@ func change_scene(target: String, text: String = "", controls: int = 0, success:
 func update_lives(health: int):
 	lives = health
 	for i in hearts.get_child_count():
-		hearts.get_child(i).visible = lives > i
+		if !hearts.get_child(i).visible and i < lives:
+			hearts.get_child(i).visible = true
+		elif hearts.get_child(i).visible and i >= lives:
+			hearts.get_child(i).drain()
 
 func _on_pause_pressed() -> void:
 	if get_tree().paused:

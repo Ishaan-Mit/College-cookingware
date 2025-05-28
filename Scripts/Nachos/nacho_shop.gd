@@ -11,7 +11,6 @@ var needed = ["Tortillas", "Oil", "Nacho Cheese", "Milk"]
 func _ready() -> void:
 	$ColorRect/GridContainer/TextureButton5.grab_focus()
 
-
 func col_select(col_num):
 	col = col_num
 	$ColorRect/GridContainer/TextureButton2.grab_focus()
@@ -19,11 +18,16 @@ func col_select(col_num):
 func row_select(row_num):
 	row = row_num
 	var item = grid.get_child(row*4+col)
-	SceneManager.add_ingredient(item.text)
+	if !SceneManager.has_ingredient(item.text):
+		SceneManager.add_ingredient(item.text)
 	item.modulate = Color("ffffff00")
 	$ColorRect/GridContainer/TextureButton5.grab_focus()
 	print(SceneManager.ingredients)
 	used_coords.append([col, row])
+	
+	if len(SceneManager.ingredients) >= 9:
+		await get_tree().create_timer(1).timeout
+		SceneManager.change_scene("res://Scenes/Nachos/nacho_cheese.tscn", "mix!", 1)
 
 func _on_texture_button_pressed() -> void:
 	row_select(0)

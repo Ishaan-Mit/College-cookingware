@@ -9,7 +9,7 @@ func _on_ramen_pressed() -> void:
 
 func _on_nachos_pressed() -> void:
 	SceneManager.update_lives(3)
-	SceneManager.change_scene("res://Scenes/Nachos/nacho_shop.tscn", "shop!", 3)
+	SceneManager.change_scene("res://Scenes/Nachos/nacho_shop.tscn", "shop!", 4)
 	SceneManager.play_music("res://Assets/audio/ramen_bgm.wav")
 	SceneManager.play_sfx("res://Assets/audio/click.wav")
 
