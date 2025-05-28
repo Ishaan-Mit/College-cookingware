@@ -44,6 +44,7 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			spatula.position.y += 15
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			SceneManager.play_sfx("res://Assets/audio/crunch.wav")
 			col_counter += 1
 			if col_counter == 3:
 				spatula.position.y += 20
@@ -56,6 +57,7 @@ func _input(event: InputEvent) -> void:
 			if row_counter == 3:
 				do_chips()
 	elif input_mode == "rock":
+		SceneManager.play_sfx("res://Assets/audio/throw.wav")
 		drop_boulder()
 		rock = false
 		
@@ -64,6 +66,7 @@ func _on_arrow_hit_area_entered(area: Area2D) -> void:
 	if area == rock_hit and input_mode == "rock":
 		animation.play("flip_chips")
 		await animation.animation_finished
+		SceneManager.play_sfx("res://Assets/audio/ding.wav")
 		SceneManager.change_scene("res://Scenes/Nachos/nacho_ninja.tscn", "chop!", 2)
 
 

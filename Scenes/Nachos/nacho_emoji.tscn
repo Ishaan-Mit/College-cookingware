@@ -146,5 +146,7 @@ scale = Vector2(0.717, 0.717)
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="button_up" from="RightButton" to="RightButton" method="_on_button_up"]
 [connection signal="pressed" from="RightButton" to="." method="_on_heart_pressed"]
+[connection signal="button_up" from="WrongButton" to="WrongButton" method="_on_button_up"]
 [connection signal="pressed" from="WrongButton" to="." method="_on_wrong_button_pressed"]
+[connection signal="button_up" from="WrongButton2" to="WrongButton2" method="_on_button_up"]
 [connection signal="pressed" from="WrongButton2" to="." method="_on_wrong_button_pressed"]

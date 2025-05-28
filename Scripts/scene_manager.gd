@@ -22,6 +22,8 @@ func _ready() -> void:
 ## Controls: 0: None, 1: Click, 2: Drag, 3: keyboard, 4: Sppace [br]
 ## success, True: Yes Success, False: Not Success
 func change_scene(target: String, text: String = "", controls: int = 0, success: bool = true):
+	if(success): play_sfx("res://Assets/audio/successedit.wav")
+	else: play_sfx("res://Assets/audio/lose.wav")
 	get_tree().paused = true
 	instruction.text = text
 	var inst = get_node("Background/Controls/" + str(controls))

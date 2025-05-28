@@ -130,6 +130,7 @@ spawnTimer = NodePath("Timer")
 wait_time = 0.1
 
 [node name="Label" type="Label" parent="PicoBowl"]
+layout_mode = 0
 offset_left = 1400.0
 offset_top = 1636.37
 offset_right = 1596.0

@@ -67,7 +67,7 @@ func randomizeTBPosition(object: TextureButton, playAreaIndex: int):
 	
 
 func _on_avocado_pressed() -> void:
-	SceneManager.play_sfx("res://Assets/audio/grabnew.wav")
+	SceneManager.play_sfx2("res://Assets/audio/wingrab.wav")
 	SceneManager.change_scene("res://Scenes/Nachos/nacho_mash.tscn", "mash!", 1)
 
 

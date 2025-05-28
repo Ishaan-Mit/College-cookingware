@@ -33,6 +33,7 @@ func _on_timer_time_done() -> void:
 
 func _on_heart_pressed() -> void:
 	print("win")
+	SceneManager.play_sfx2("res://Assets/audio/message.wav")
 	timer.deltaTime = 0
 	await get_tree().create_timer(timeOutTime).timeout
 	background.set_texture(preload("res://Assets/rizzwin.png"))
@@ -41,6 +42,7 @@ func _on_heart_pressed() -> void:
 	
 func _on_wrong_button_pressed() -> void:
 	print("lose")
+	SceneManager.play_sfx2("res://Assets/audio/message.wav")
 	timer.deltaTime = 0
 	await get_tree().create_timer(timeOutTime).timeout
 	background.set_texture(preload("res://Assets/rizzlose.png"))
