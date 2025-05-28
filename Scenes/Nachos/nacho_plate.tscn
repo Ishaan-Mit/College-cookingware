@@ -112,10 +112,10 @@ shape = SubResource("RectangleShape2D_lonth")
 
 [node name="PicoBowl" type="TextureButton" parent="." node_paths=PackedStringArray("spawnTimer")]
 visible = false
-offset_left = 389.0
-offset_top = 230.0
-offset_right = 1669.0
-offset_bottom = 1510.0
+offset_left = -34.0
+offset_top = 272.0
+offset_right = 1246.0
+offset_bottom = 1552.0
 rotation = 3.14159
 scale = Vector2(0.11, 0.11)
 texture_normal = ExtResource("9_ty3uo")

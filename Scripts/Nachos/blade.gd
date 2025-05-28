@@ -23,4 +23,5 @@ func _check_slice(pos: Vector2) -> void:
 	if hit and hit.has("collider"):
 		var body = hit.collider
 		if body and body.has_method("slice"):
+			SceneManager.play_sfx("res://Assets/audio/slice.wav")
 			body.slice()

@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 		#print("not mashable")
 
 func _on_button_down() -> void:
+	SceneManager.play_sfx3("res://Assets/audio/grabnew.wav")
 	is_dragging = true
 	#print("dragging")
 
@@ -41,5 +42,6 @@ func _on_pressed() -> void:
 	if is_mashable:
 		currentClicks += 1
 		if(currentClicks >= clicks):
+			SceneManager.play_sfx2("res://Assets/audio/squish.wav")
 			emit_signal("button_disappeared") 
 			self.hide()

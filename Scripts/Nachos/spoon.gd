@@ -32,11 +32,13 @@ func _on_button_up() -> void:
 	half1.global_position = global_position + (Vector2(size.x - 100, -size.y + 100)* scale)/2 
 	get_parent().add_child(half1)
 	half1.name = "meat"
+	SceneManager.play_sfx3("res://Assets/audio/throw.wav")
 	can_produce = false
 
 func _on_meatbowl_area_entered(area: Area2D) -> void:
 	print(area.name)
 	if(area.name.contains("spoon")):
 		print("meat scooped")
+		SceneManager.play_sfx3("res://Assets/audio/squish.wav")
 		$Spoonmeat.visible = true
 		can_produce = true

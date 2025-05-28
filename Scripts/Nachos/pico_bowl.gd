@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 		half1.global_position = global_position + Vector2(0, -100) - (Vector2(size.x, -size.y)* scale)/2 
 		get_parent().add_child(half1)
 		half1.name = "TJ"
+		SceneManager.play_sfx3("res://Assets/audio/throw.wav")
 		can_produce = false
 		spawnTimer.start(0.2)
 
