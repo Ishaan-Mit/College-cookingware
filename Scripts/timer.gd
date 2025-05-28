@@ -2,7 +2,7 @@ extends Control
 
 @onready var progress: TextureProgressBar = $Progress
 @export var time: int = 10
-var time_left = 0
+var time_left : float = 0
 signal time_done
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

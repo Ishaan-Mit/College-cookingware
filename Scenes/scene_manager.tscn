@@ -7,27 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="6_424ls"]
 [ext_resource type="Texture2D" uid="uid://bvbibk72rc04r" path="res://Assets/border.png" id="6_t7rfq"]
 [ext_resource type="Texture2D" uid="uid://cktne2x4f32l" path="res://Assets/heart.png" id="6_thx0b"]
-[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_ccwmf"]
-[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_aq7jj"]
+[ext_resource type="Texture2D" uid="uid://d0cgx2jyex8w8" path="res://Assets/space.png" id="7_424ls"]
+[ext_resource type="Texture2D" uid="uid://b3txlaxhpvwqf" path="res://Assets/unspace.png" id="8_ccwmf"]
 [ext_resource type="Texture2D" uid="uid://ckdkt10r085m4" path="res://Assets/drag.png" id="9_vbxak"]
 [ext_resource type="Texture2D" uid="uid://bguwghoqtnejf" path="res://Assets/keys.png" id="10_sym2d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhwlb"]
-atlas = ExtResource("7_ccwmf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq7jj"]
+atlas = ExtResource("7_424ls")
 region = Rect2(0, 0, 1280, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sht7"]
-atlas = ExtResource("8_aq7jj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbxak"]
+atlas = ExtResource("8_ccwmf")
 region = Rect2(0, 0, 1280, 1280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jrumy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhwlb")
+"texture": SubResource("AtlasTexture_aq7jj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3sht7")
+"texture": SubResource("AtlasTexture_vbxak")
 }],
 "loop": true,
 "name": &"default",
@@ -220,6 +220,31 @@ texture = ExtResource("6_424ls")
 position = Vector2(80, -80)
 scale = Vector2(0.49633, 0.49633)
 texture = ExtResource("10_sym2d")
+
+[node name="4" type="Sprite2D" parent="Background/Controls"]
+position = Vector2(313.001, 253.11)
+scale = Vector2(0.102033, 0.102033)
+texture = ExtResource("6_424ls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background/Controls/4"]
+position = Vector2(47.9355, -164.158)
+scale = Vector2(0.675668, 0.675668)
+sprite_frames = SubResource("SpriteFrames_jrumy")
+autoplay = "default"
+frame_progress = 0.169646
+
+[node name="Label" type="Label" parent="Background/Controls/4"]
+modulate = Color(0.129558, 0.129558, 0.129558, 1)
+offset_left = -201.311
+offset_top = -27.3567
+offset_right = 137.689
+offset_bottom = 106.643
+rotation = -0.219726
+scale = Vector2(1.65477, 1.36498)
+theme_override_fonts/font = ExtResource("3_py5r8")
+theme_override_font_sizes/font_size = 116
+text = "Space"
+uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
