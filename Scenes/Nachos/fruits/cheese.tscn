@@ -1,16 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2l6o31tdie86"]
+[gd_scene load_steps=4 format=3 uid="uid://b2l6o31tdie86"]
 
 [ext_resource type="Texture2D" uid="uid://82rhfjcvucxv" path="res://Assets/cheesecircle.png" id="1_k8dts"]
+[ext_resource type="Texture2D" uid="uid://byqmpwxtln0k6" path="res://Assets/cheesedrop.png" id="2_0btx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qj14"]
 
 [node name="cheese" type="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(0.37, 0.37)
 shape = SubResource("CircleShape2D_0qj14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.84217e-14, -3.55271e-15)
 scale = Vector2(0.061, 0.061)
 texture = ExtResource("1_k8dts")
+
+[node name="Cheesedrop" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_0btx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.02, 0.02)
+polygon = PackedVector2Array(23, -33.3, 23, -31.8, -0.200012, -29, -6.29999, -29, -41.2, -19, -45.4, -19, -67.4, -9, -69.6, -9, -111, 16.9, -159.1, 29, -163.4, 29, -186.4, 38, -189.6, 38, -212.6, 53, -214.9, 53, -227.9, 67, -229.2, 67, -235.2, 79, -236.8, 79, -237.8, 88, -239.6, 88, -237, 98, -237, 101.6, -231, 110.6, -231, 112.9, -214, 126.9, -214, 128.4, -182, 139.4, -182, 140.6, -140, 149.6, -140, 151.2, -127.8, 150, -114.8, 150, -72, 141.6, -72, 140.8, -40.9, 139, -15.8, 139, 24, 130.6, 56.9, 134, 72.6, 134, 117, 143.6, 117, 145.3, 149.3, 141, 154.3, 141, 180.4, 132, 183.6, 132, 206.5, 118, 208.9, 118, 218.9, 107, 220.3, 107, 226.3, 94, 228, 94, 228, 68.4, 215, 47.3, 215, 45.1, 192, 25.1, 192, 23.8, 173, 13.7, 173, 12.4, 115.2, -2, 112.5, -2, 79, -19.3, 79, -20.5, 57, -27.5, 57, -28.8)

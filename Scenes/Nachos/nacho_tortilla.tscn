@@ -166,7 +166,6 @@ texture = ExtResource("7_ivwqo")
 points = PackedVector2Array(320, 184)
 
 [node name="Timer" parent="." instance=ExtResource("3_gasrt")]
-time = 20
 
 [connection signal="input_event" from="Tortilla1/Start" to="." method="_on_start_input_event"]
 [connection signal="mouse_exited" from="Tortilla1/Middle" to="." method="_on_middle_mouse_exited"]

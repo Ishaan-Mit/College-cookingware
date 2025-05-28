@@ -110,7 +110,6 @@ label_settings = SubResource("LabelSettings_pq52q")
 [node name="Timer" parent="." instance=ExtResource("5_ohw54")]
 offset_left = 0.0
 offset_right = 0.0
-time = 15
 
 [connection signal="pressed" from="Swap" to="." method="_on_swap_pressed"]
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]

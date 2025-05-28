@@ -128,7 +128,6 @@ script = ExtResource("6_b8fra")
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" parent="." instance=ExtResource("8_uxnoa")]
-time = 8
 
 [node name="Label" type="Label" parent="."]
 offset_left = 415.0

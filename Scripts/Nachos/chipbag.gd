@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	#if(velocity.y != 0): print(velocity)
 	if((velocity.y >= 70) && can_produce): 
 		var half1 = load("res://Scenes/Nachos/fruits/Chips.tscn").instantiate()
-		half1.global_position = global_position - (Vector2(size.x, -size.y)* scale)/2 
+		half1.global_position = global_position + Vector2(0, -50) - (Vector2(size.x, -size.y)* scale)/2 
 		get_parent().add_child(half1)
 		half1.name = "Chips"
 		can_produce = false

@@ -17,16 +17,11 @@
 [sub_resource type="LabelSettings" id="LabelSettings_2bemc"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="NachoEmoji" type="Node2D" node_paths=PackedStringArray("WrongButtons", "Buttons", "ButtonPositions", "sentPosition", "timer", "background")]
+[node name="NachoEmoji" type="Node2D" node_paths=PackedStringArray("sentPosition")]
 script = ExtResource("1_ogfk2")
 WrongEmojis = Array[CompressedTexture2D]([ExtResource("3_rcntr"), ExtResource("3_oguax"), ExtResource("4_u05rl"), ExtResource("5_f4nub"), ExtResource("6_fobab")])
-WrongButtons = [NodePath("WrongButton"), NodePath("WrongButton2")]
-Buttons = [NodePath("RightButton"), NodePath("WrongButton"), NodePath("WrongButton2")]
-ButtonPositions = [NodePath("ButtonPosition2"), NodePath("ButtonPosition1"), NodePath("ButtonPosition3")]
 sentPosition = NodePath("sentPosition")
 timeOutTime = 1.0
-timer = NodePath("Timer")
-background = NodePath("Background")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
@@ -107,26 +102,24 @@ position = Vector2(41, 37)
 scale = Vector2(0.256881, 0.256881)
 texture = ExtResource("3_ogfk2")
 
-[node name="WrongButton" type="Button" parent="." node_paths=PackedStringArray("sentPosition")]
+[node name="WrongButton" type="Button" parent="."]
 offset_left = 328.0
 offset_top = 261.0
 offset_right = 410.0
 offset_bottom = 334.0
 script = ExtResource("10_fobab")
-sentPosition = NodePath("../sentPosition")
 
 [node name="Sprite" type="Sprite2D" parent="WrongButton"]
 position = Vector2(40, 37)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_rcntr")
 
-[node name="WrongButton2" type="Button" parent="." node_paths=PackedStringArray("sentPosition")]
+[node name="WrongButton2" type="Button" parent="."]
 offset_left = 432.0
 offset_top = 261.0
 offset_right = 514.0
 offset_bottom = 334.0
 script = ExtResource("10_fobab")
-sentPosition = NodePath("../sentPosition")
 
 [node name="Sprite" type="Sprite2D" parent="WrongButton2"]
 position = Vector2(41, 37)
@@ -146,7 +139,5 @@ scale = Vector2(0.717, 0.717)
 [connection signal="time_done" from="Timer" to="." method="_on_timer_time_done"]
 [connection signal="button_up" from="RightButton" to="RightButton" method="_on_button_up"]
 [connection signal="pressed" from="RightButton" to="." method="_on_heart_pressed"]
-[connection signal="button_up" from="WrongButton" to="WrongButton" method="_on_button_up"]
 [connection signal="pressed" from="WrongButton" to="." method="_on_wrong_button_pressed"]
-[connection signal="button_up" from="WrongButton2" to="WrongButton2" method="_on_button_up"]
 [connection signal="pressed" from="WrongButton2" to="." method="_on_wrong_button_pressed"]
