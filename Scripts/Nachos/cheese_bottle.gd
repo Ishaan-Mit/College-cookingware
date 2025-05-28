@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	#if(velocity.y != 0): print(velocity)
 	if(can_produce && is_dragging): 
 		var half1 = load("res://Scenes/Nachos/fruits/cheese.tscn").instantiate()
-		half1.global_position = global_position - (Vector2(size.x, -size.y + 100)* scale)/2 
+		half1.global_position = global_position + Vector2(0, -100) - (Vector2(size.x, -size.y + 100)* scale)/2 
 		get_parent().add_child(half1)
 		half1.name = "cheese"
 		can_produce = false
