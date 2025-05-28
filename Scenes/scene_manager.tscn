@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1ejm3by8gm3f"]
+[gd_scene load_steps=25 format=3 uid="uid://c1ejm3by8gm3f"]
 
 [ext_resource type="Script" uid="uid://bdno5ldvcpn3j" path="res://Scripts/scene_manager.gd" id="1_mk1ro"]
 [ext_resource type="AudioStream" uid="uid://8q7h7rdb1cx1" path="res://Assets/audio/goofyrecorderbit.wav" id="2_8bihv"]
@@ -8,9 +8,34 @@
 [ext_resource type="Texture2D" uid="uid://bvbibk72rc04r" path="res://Assets/border.png" id="6_t7rfq"]
 [ext_resource type="Texture2D" uid="uid://cktne2x4f32l" path="res://Assets/heart.png" id="6_thx0b"]
 [ext_resource type="Texture2D" uid="uid://d0cgx2jyex8w8" path="res://Assets/space.png" id="7_424ls"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="7_ccwmf"]
+[ext_resource type="Texture2D" uid="uid://q67jqq7d22qa" path="res://Assets/unclick.png" id="8_aq7jj"]
 [ext_resource type="Texture2D" uid="uid://b3txlaxhpvwqf" path="res://Assets/unspace.png" id="8_ccwmf"]
 [ext_resource type="Texture2D" uid="uid://ckdkt10r085m4" path="res://Assets/drag.png" id="9_vbxak"]
 [ext_resource type="Texture2D" uid="uid://bguwghoqtnejf" path="res://Assets/keys.png" id="10_sym2d"]
+[ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="11_ccwmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sym2d"]
+atlas = ExtResource("8_aq7jj")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrumy"]
+atlas = ExtResource("7_ccwmf")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqoe6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sym2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrumy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aq7jj"]
 atlas = ExtResource("7_424ls")
@@ -31,7 +56,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [sub_resource type="Animation" id="Animation_r3jrp"]
@@ -196,9 +221,10 @@ texture = ExtResource("6_424ls")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background/Controls/1"]
 position = Vector2(23.6828, 23.6828)
 scale = Vector2(0.675668, 0.675668)
-sprite_frames = SubResource("SpriteFrames_jrumy")
+sprite_frames = SubResource("SpriteFrames_xqoe6")
 autoplay = "default"
-frame_progress = 0.682797
+frame = 1
+frame_progress = 0.204829
 
 [node name="2" type="Sprite2D" parent="Background/Controls"]
 visible = false
@@ -221,7 +247,56 @@ position = Vector2(80, -80)
 scale = Vector2(0.49633, 0.49633)
 texture = ExtResource("10_sym2d")
 
+[node name="Label" type="Label" parent="Background/Controls/3"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -143.793
+offset_top = -9.11638
+offset_right = -18.7929
+offset_bottom = 135.884
+rotation = -0.183003
+scale = Vector2(1.2736, 1.2736)
+theme_override_fonts/font = ExtResource("11_ccwmf")
+theme_override_font_sizes/font_size = 126
+text = "<"
+
+[node name="Label2" type="Label" parent="Background/Controls/3"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -9.58348
+offset_top = -227.999
+offset_right = 120.417
+offset_bottom = -82.9993
+rotation = -0.180487
+scale = Vector2(1.58889, 1.58889)
+theme_override_fonts/font = ExtResource("11_ccwmf")
+theme_override_font_sizes/font_size = 126
+text = "^"
+
+[node name="Label3" type="Label" parent="Background/Controls/3"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 249.249
+offset_top = -82.0774
+offset_right = 374.249
+offset_bottom = 62.9226
+rotation = -0.240939
+scale = Vector2(1.2784, 1.10791)
+theme_override_fonts/font = ExtResource("11_ccwmf")
+theme_override_font_sizes/font_size = 126
+text = ">"
+
+[node name="Label4" type="Label" parent="Background/Controls/3"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 57.5214
+offset_top = -45.5969
+offset_right = 182.521
+offset_bottom = 99.4031
+rotation = -0.284964
+scale = Vector2(1.2784, 1.18506)
+theme_override_fonts/font = ExtResource("11_ccwmf")
+theme_override_font_sizes/font_size = 126
+text = "v"
+
 [node name="4" type="Sprite2D" parent="Background/Controls"]
+visible = false
 position = Vector2(313.001, 253.11)
 scale = Vector2(0.102033, 0.102033)
 texture = ExtResource("6_424ls")
@@ -231,7 +306,7 @@ position = Vector2(47.9355, -164.158)
 scale = Vector2(0.675668, 0.675668)
 sprite_frames = SubResource("SpriteFrames_jrumy")
 autoplay = "default"
-frame_progress = 0.169646
+frame_progress = 0.0283888
 
 [node name="Label" type="Label" parent="Background/Controls/4"]
 modulate = Color(0.129558, 0.129558, 0.129558, 1)

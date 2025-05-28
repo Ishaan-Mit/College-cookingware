@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func good_cut():
 	cuts_done += 1
-	var distances := 0
+	var distances: int= 0
 	for i in range(knifemark.get_point_count()):
 		distances += knifemark.get_point_position(i).distance_squared_to(Vector2(320, 256))
 	var sqrtdist = sqrt(distances)
