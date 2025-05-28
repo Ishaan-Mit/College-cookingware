@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://drimcf688ulj4"]
+[gd_scene load_steps=11 format=3 uid="uid://drimcf688ulj4"]
 
 [ext_resource type="Script" uid="uid://o4rxf6nq18r6" path="res://Scripts/Nachos/nacho_cheese.gd" id="1_ayvmi"]
 [ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_7ecn7"]
 [ext_resource type="Texture2D" uid="uid://c5t5l7tj0gn72" path="res://Assets/waterbucket1.png" id="3_ayvmi"]
+[ext_resource type="Texture2D" uid="uid://dv4n7pbr7v03" path="res://Assets/chese.png" id="4_pq52q"]
 [ext_resource type="FontFile" uid="uid://c0rwlbrgyuc5h" path="res://font/MAROLA_OUTLINE.TTF" id="4_wll0a"]
 [ext_resource type="FontFile" uid="uid://v7gf2w6o6byq" path="res://font/MAROLA__.TTF" id="5_6cixb"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="5_ohw54"]
@@ -36,10 +37,9 @@ hframes = 2
 
 [node name="Cheese" type="Node2D" parent="."]
 
-[node name="cheeseBag" type="Polygon2D" parent="Cheese"]
+[node name="cheeseBag" type="Sprite2D" parent="Cheese"]
 position = Vector2(466.51, 84.8528)
-color = Color(0.682765, 0.511263, 3.85046e-07, 1)
-polygon = PackedVector2Array(-64, -48, -64, 104, 48, 96, 56, -64)
+texture = ExtResource("4_pq52q")
 
 [node name="fallingcheese" type="Polygon2D" parent="Cheese/cheeseBag"]
 rotation = 0.759915
