@@ -50,7 +50,7 @@ func update_lives(health: int):
 	lives = health
 	for i in hearts.get_child_count():
 		if !hearts.get_child(i).visible and i < lives:
-			hearts.get_child(i).visible = true
+			hearts.get_child(i).reveal()
 		elif hearts.get_child(i).visible and i >= lives:
 			hearts.get_child(i).drain()
 

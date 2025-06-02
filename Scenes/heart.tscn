@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drc6n0i73gta6"]
+[gd_scene load_steps=10 format=3 uid="uid://drc6n0i73gta6"]
 
 [ext_resource type="Script" uid="uid://bt11mlxriybhs" path="res://Scripts/heart.gd" id="1_rycqq"]
 [ext_resource type="Texture2D" uid="uid://cktne2x4f32l" path="res://Assets/heart.png" id="2_6wkup"]
@@ -17,6 +17,10 @@ region = Rect2(0, 0, 516, 729)
 atlas = ExtResource("4_4obt7")
 region = Rect2(0, 0, 516, 729)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycqq"]
+atlas = ExtResource("2_6wkup")
+region = Rect2(0, 0, 516, 729)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_hyv53"]
 animations = [{
 "frames": [{
@@ -32,6 +36,14 @@ animations = [{
 "loop": false,
 "name": &"drain",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycqq")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
 }]
 
 [node name="heart" type="Control"]
@@ -48,6 +60,4 @@ script = ExtResource("1_rycqq")
 position = Vector2(49, 66)
 scale = Vector2(0.184487, 0.184487)
 sprite_frames = SubResource("SpriteFrames_hyv53")
-animation = &"drain"
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+animation = &"full"

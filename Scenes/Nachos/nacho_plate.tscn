@@ -277,7 +277,7 @@ offset_left = -53.0
 offset_top = -9.0
 offset_right = -53.0
 offset_bottom = -9.0
-time = 20.0
+time = 35.0
 
 [connection signal="body_entered" from="BowlArea" to="." method="_on_bowl_area_body_entered"]
 [connection signal="body_entered" from="BowlArea/ChipSprite" to="." method="_on_chip_sprite_body_entered"]
