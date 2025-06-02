@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6fa22t5sjgwy"]
+[gd_scene load_steps=17 format=3 uid="uid://b6fa22t5sjgwy"]
 
 [ext_resource type="Script" uid="uid://bkbjx4763sbqq" path="res://Scripts/Nachos/nacho_fridge.gd" id="1_yowej"]
 [ext_resource type="Texture2D" uid="uid://dar58j1gkw8c1" path="res://Assets/fridgefind.png" id="2_mxorl"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c7alsfan0lwsx" path="res://Assets/find5.png" id="12_26bk4"]
 [ext_resource type="Texture2D" uid="uid://dpnburyn1lr62" path="res://Assets/find7.png" id="13_10vb5"]
 [ext_resource type="Texture2D" uid="uid://bmy4x5d83j8ud" path="res://Assets/find6.png" id="14_lceq2"]
+[ext_resource type="Texture2D" uid="uid://ceaptd7nk2lfa" path="res://Assets/star.png" id="15_u20hm"]
+[ext_resource type="Texture2D" uid="uid://1y0hj6ecxjhd" path="res://Assets/click.png" id="16_coeso"]
 
 [node name="NachoFridge" type="Node2D" node_paths=PackedStringArray("playAreas", "sampleButtons")]
 script = ExtResource("1_yowej")
@@ -194,6 +196,21 @@ texture_disabled = ExtResource("14_lceq2")
 texture_focused = ExtResource("14_lceq2")
 stretch_mode = 0
 script = ExtResource("6_mxorl")
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(584, 59)
+scale = Vector2(0.0867187, 0.0867187)
+texture = ExtResource("15_u20hm")
+
+[node name="Avdo2" type="Sprite2D" parent="."]
+position = Vector2(601, 53)
+scale = Vector2(0.0781617, 0.0781616)
+texture = ExtResource("7_uisx2")
+
+[node name="Click" type="Sprite2D" parent="."]
+position = Vector2(565, 61)
+scale = Vector2(0.0460937, 0.0453125)
+texture = ExtResource("16_coeso")
 
 [connection signal="pressed" from="Avocadoold" to="." method="_on_avocado_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_riffraff_pressed"]
