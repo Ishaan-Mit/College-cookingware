@@ -7,5 +7,5 @@ func drain():
 	hide()
 	
 func reveal():
-	show()
 	$AnimatedSprite2D.play("full")
+	show()

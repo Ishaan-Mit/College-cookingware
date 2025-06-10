@@ -45,7 +45,6 @@ func change_scene(target: String, text: String = "", controls: int = 0, success:
 	get_tree().paused = false
 
 
-
 func update_lives(health: int):
 	lives = health
 	for i in hearts.get_child_count():

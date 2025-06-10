@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhe3gitwiwt4t"]
 
 [ext_resource type="Script" uid="uid://dpfyq8dur8vx2" path="res://Scripts/Ramen/ramen_drop_colander.gd" id="1_fihw1"]
-[ext_resource type="Texture2D" uid="uid://dd4p6yhgvu67s" path="res://Assets/backgroundcool.png" id="2_8dlcs"]
+[ext_resource type="Texture2D" uid="uid://dap00x1esbt0c" path="res://Assets/sink.png" id="2_wmy2d"]
 [ext_resource type="PackedScene" uid="uid://gk1lglu6jxso" path="res://Scenes/timer.tscn" id="3_2u0n0"]
 [ext_resource type="Texture2D" uid="uid://dwtxtfrnhp41p" path="res://Assets/collander.png" id="4_fihw1"]
 [ext_resource type="Texture2D" uid="uid://btwmrotolhogw" path="res://Assets/ramen.png" id="5_8dlcs"]
@@ -19,9 +19,10 @@ arrowSpeed = 250
 lowerXBound = 151
 upperXBound = 550
 
-[node name="Stove2" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.351563)
-texture = ExtResource("2_8dlcs")
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(-32, -32)
+scale = Vector2(1.02312, 0.899225)
+texture = ExtResource("2_wmy2d")
 centered = false
 
 [node name="Timer" parent="." instance=ExtResource("3_2u0n0")]

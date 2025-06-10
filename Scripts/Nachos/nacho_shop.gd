@@ -27,7 +27,6 @@ func row_select(row_num):
 	used_coords.append([col, row])
 	
 	if len(SceneManager.ingredients) >= 9:
-		await get_tree().create_timer(1).timeout
 		SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "mix!", 1)
 
 func _on_texture_button_pressed() -> void:
@@ -52,4 +51,5 @@ func _on_timer_time_done() -> void:
 	for item in needed:
 		if not SceneManager.has_ingredient(item):
 			SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "chop!", 1, false)
+			break
 	SceneManager.change_scene("res://Scenes/Nachos/nacho_tortilla.tscn", "chop!", 1)
